@@ -1,1 +1,1 @@
-Build an internet banking(simulation)
+Build an book store
