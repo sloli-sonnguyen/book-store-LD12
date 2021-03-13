@@ -33,6 +33,7 @@
       }
     ],
     "comma-dangle": ["error", "never"],
-    "react/state-in-constructor": "off"
+    "react/state-in-constructor": "off",
+    "linebreak-style": ["error", "windows"]
   }
 }

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const getWidthString = (span) => {
   if (!span) return;
 
-  let width = (span / 12) * 100;
+  const width = (span / 12) * 100;
   return `width: ${width}%;`;
 };
 
