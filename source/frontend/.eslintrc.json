@@ -28,7 +28,8 @@
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
+        "endOfLine": "auto",
+        "linebreak-style": 0
       }
     ],
     "comma-dangle": ["error", "never"],
