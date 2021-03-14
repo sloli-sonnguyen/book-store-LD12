@@ -14,6 +14,7 @@ export const BWrapper = styled.div`
 export const BContainer = styled.div`
   display: flex;
   justify-content: ${({ center }) => center && 'center'};
+  justify-content: ${({ between }) => between && 'space-between'};
   width: 100%;
   margin: auto;
   padding-left: 4rem;
@@ -47,6 +48,7 @@ export const BContainer = styled.div`
 export const BFluidContainer = styled.div`
   display: flex;
   justify-content: ${({ center }) => center && 'center'};
+  justify-content: ${({ between }) => between && 'space-between'};
   width: 100%;
   padding-left: 0;
   padding-right: 0;
@@ -62,10 +64,10 @@ export const BRow = styled.div`
 
 export const BColumn = styled.div`
   float: left;
-  ${({ xs }) => (xs ? getWidthString(xs) : 'width: 100%')};
+  ${({ xs }) => (xs ? getWidthString(xs) : 'width: 100%')}; // Từ 0px -> 767px thì xs sẽ kích hoạt
 
   @media only screen and (min-width: 768px) {
-    ${({ sm }) => sm && getWidthString(sm)};
+    ${({ sm }) => sm && getWidthString(sm)}; // từ 768px -> 991px vo cung thì sm kích hoạt
   }
 
   @media only screen and (min-width: 992px) {

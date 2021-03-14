@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { BWrapper } from '../../Layout/Base';
+import styled from 'styled-components';
+import { BWrapper, BContainer, BFluidContainer, BColumn } from '../../Layout/Base';
 
 function Header() {
   return <BWrapper>Header</BWrapper>;
