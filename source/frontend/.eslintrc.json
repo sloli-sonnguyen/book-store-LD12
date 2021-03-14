@@ -26,7 +26,7 @@
     ],
     "quotes": ["error", "single"],
     "prettier/prettier": [
-      "error",
+      "off",
       {
         "endOfLine": "auto",
         "linebreak-style": 0
