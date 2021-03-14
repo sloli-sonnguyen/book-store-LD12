@@ -14,8 +14,8 @@ export const BWrapper = styled.div`
 export const BContainer = styled.div`
   width: 100%;
   margin: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 
   @media (min-width: 576px) {
     .container {
