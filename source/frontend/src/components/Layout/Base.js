@@ -7,6 +7,47 @@ const getWidthString = (span) => {
   return `width: ${width}%;`;
 };
 
+export const BWrapper = styled.div`
+  width: 100%;
+`;
+
+export const BContainer = styled.div`
+  width: 100%;
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+`;
+
+export const BFluidContainer = styled.div`
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+`;
+
 export const BRow = styled.div`
   &::after {
     content: '';
