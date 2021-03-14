@@ -36,6 +36,7 @@
     "react/state-in-constructor": "off",
     "linebreak-style": ["error", "windows"],
     "consistent-return": "off",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "import/prefer-default-export": "off"
   }
 }

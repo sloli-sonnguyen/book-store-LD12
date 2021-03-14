@@ -12,6 +12,8 @@ export const BWrapper = styled.div`
 `;
 
 export const BContainer = styled.div`
+  display: flex;
+  justify-content: ${({ center }) => center && 'center'};
   width: 100%;
   margin: auto;
   padding-left: 4rem;
@@ -43,6 +45,8 @@ export const BContainer = styled.div`
 `;
 
 export const BFluidContainer = styled.div`
+  display: flex;
+  justify-content: ${({ center }) => center && 'center'};
   width: 100%;
   padding-left: 0;
   padding-right: 0;
