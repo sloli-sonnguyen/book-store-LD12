@@ -19,14 +19,14 @@ const GlobalStyle = styled.createGlobalStyle`
   }
 
   :root {
-    font-size: ${px2vw(24)};
+    font-size: 12px;
 
     @media (min-width: 768px) {
-      font-size: ${px2vw(18)};
+      font-size: 14px;
     }
 
     @media (min-width: 1024px) {
-      font-size: ${px2vw(16)};
+      font-size: 16px;
     }
   }
 `;

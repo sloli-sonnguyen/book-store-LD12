@@ -4,6 +4,7 @@ import { BWrapper, BContainer, BFluidContainer, BRow, BColumn } from '../compone
 import NewArrivals from '../components/HomePage/NewArrivals/NewArrival';
 import Header from '../components/commons/Header/Header';
 import Footer from '../components/commons/Footer/Footer';
+import Intro from '../components/HomePage/Intro/Intro';
 
 function HomePage() {
   return (
@@ -11,11 +12,10 @@ function HomePage() {
       <BFluidContainer>
         <Header />
       </BFluidContainer>
-      <BContainer>
-        <BRow>
-          <NewArrivals />
-        </BRow>
-      </BContainer>
+      <BFluidContainer column="true">
+        <Intro />
+        <NewArrivals />
+      </BFluidContainer>
       <BFluidContainer>
         <Footer />
       </BFluidContainer>
