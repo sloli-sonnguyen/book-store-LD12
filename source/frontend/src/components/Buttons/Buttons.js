@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const Button = styled.button`
   outline: none;
   border: none;
-  max-width: 9rem;
   color: white;
+  max-width: 150px;
   font-size: 1rem;
   font-weight: bold;
-  padding: 12px 0px;
+  padding: 12px 35px;
   text-transform: capitalize;
   background-color: #d14031;
   border-radius: 2px;
@@ -19,9 +19,10 @@ export const Button = styled.button`
   }
 `;
 
-export const WhiteButton = styled(Button)`
-  background-color: white;
+export const CustomButton = styled(Button)`
+  background-color: ${({ color }) => color && `${color}`};
   transition: 0.3s;
   &:hover {
+    background-color: ${({ hoverColor }) => (hoverColor ? `${hoverColor}` : 'black')};
   }
 `;
