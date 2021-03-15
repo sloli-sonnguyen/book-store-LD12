@@ -1,12 +1,11 @@
 import React from 'react';
-import { BWrapper } from '../../Layout/Base';
-import { Title } from './Style';
+import { Wrapper, Title } from './Style';
 
 function NewArrival() {
   return (
-    <BWrapper>
+    <Wrapper>
       <Title>New Arrivals</Title>
-    </BWrapper>
+    </Wrapper>
   );
 }
 

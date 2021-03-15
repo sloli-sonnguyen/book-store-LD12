@@ -4,7 +4,7 @@ import { IntroWrapper, IntroContainer, MediumText, BigText, SmallText, IntroButt
 function Intro() {
   return (
     <IntroWrapper>
-      <IntroContainer p={0} column="true">
+      <IntroContainer p={18} column="true">
         <MediumText>Year end sale</MediumText>
         <BigText>Get 70% off for all design books</BigText>
         <SmallText>

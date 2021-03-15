@@ -21,9 +21,6 @@ export const IntroWrapper = styled.div`
   background-position: center;
   background-size: cover;
   min-height: 46rem;
-
-  padding-left: 15%;
-  padding-right: 15%;
 `;
 
 export const IntroContainer = styled(BContainer)`
