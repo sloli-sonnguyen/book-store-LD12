@@ -24,8 +24,9 @@ export const IntroWrapper = styled.div`
 `;
 
 export const IntroContainer = styled(BContainer)`
-  @media (max-width: 768px) {
+  @media (max-width: 1060px) {
     padding: 4rem;
+    margin: 0 4rem;
     background-color: rgba(255, 255, 255, 0.8);
   }
 `;
