@@ -19,9 +19,10 @@ export const Button = styled.button`
   }
 `;
 
-export const WhiteButton = styled(Button)`
-  background-color: white;
+export const CustomButton = styled(Button)`
+  background-color: ${({ color }) => color && `${color}`};
   transition: 0.3s;
   &:hover {
+    background-color: ${({ hoverColor }) => (HoverColor ? `${HoverColor}` : 'black')};
   }
 `;
