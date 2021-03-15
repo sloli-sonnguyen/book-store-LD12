@@ -5,6 +5,7 @@ import NewArrivals from '../components/HomePage/NewArrivals/NewArrival';
 import Header from '../components/commons/Header/Header';
 import Footer from '../components/commons/Footer/Footer';
 import Intro from '../components/HomePage/Intro/Intro';
+import SupportTypes from '../components/HomePage/SupportTypes/SupportTypes';
 
 function HomePage() {
   return (
@@ -14,7 +15,10 @@ function HomePage() {
       </BFluidContainer>
       <BFluidContainer column="true">
         <Intro />
-        <NewArrivals />
+        <BContainer p={10} column="true">
+          <SupportTypes />
+          <NewArrivals />
+        </BContainer>
       </BFluidContainer>
       <BFluidContainer>
         <Footer />
