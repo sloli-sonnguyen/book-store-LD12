@@ -16,7 +16,7 @@
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "object-curly-newline": [
-      "error",
+      "off",
       {
         "ObjectExpression": "always",
         "ObjectPattern": { "multiline": true },
@@ -32,7 +32,7 @@
         "linebreak-style": 0
       }
     ],
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": ["off", "never"],
     "react/state-in-constructor": "off",
     "linebreak-style": ["off", "windows"],
     "consistent-return": "off",
