@@ -34,7 +34,7 @@
     ],
     "comma-dangle": ["error", "never"],
     "react/state-in-constructor": "off",
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": ["off", "windows"],
     "consistent-return": "off",
     "no-unused-vars": "warn",
     "import/prefer-default-export": "off"
