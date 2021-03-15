@@ -18,3 +18,10 @@ export const Button = styled.button`
     background-color: black;
   }
 `;
+
+export const WhiteButton = styled(Button)`
+  background-color: white;
+  transition: 0.3s;
+  &:hover {
+  }
+`;

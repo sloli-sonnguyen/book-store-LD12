@@ -1,16 +1,18 @@
 import React from 'react';
 import { BWrapper, BContainer, BFluidContainer, BColumn } from '../../Layout/Base';
-import { HeaderWrapper,
+import {
+  HeaderWrapper,
   LogoWrapper,
   Logo,
   SearchButton,
   SearchInput,
-  SearchWrapper } from './Style';
+  SearchWrapper,
+} from './Style';
 
 function Header() {
   return (
     <BWrapper>
-      <HeaderWrapper>
+      <HeaderWrapper p={18} between="true">
         <SearchWrapper>
           <SearchInput placeholder="Search..." />
           <SearchButton>

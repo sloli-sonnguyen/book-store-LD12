@@ -1,15 +1,10 @@
 import styled from 'styled-components';
 import { Button } from '../../Buttons/Buttons';
+import { BContainer } from '../../Layout/Base';
 
-export const HeaderWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+export const HeaderWrapper = styled(BContainer)`
   height: 4.5rem;
-
-  padding-left: 15%;
-  padding-right: 15%;
+  align-items: center;
 `;
 
 export const Logo = styled.img`
@@ -17,7 +12,7 @@ export const Logo = styled.img`
 `;
 
 export const LogoWrapper = styled.div`
-  width: 15%;
+  width: 20%;
 `;
 
 export const SearchWrapper = styled.div`
@@ -26,6 +21,8 @@ export const SearchWrapper = styled.div`
 
 export const SearchButton = styled(Button)`
   padding: 10px;
+  display: flex;
+  align-items: center;
 `;
 
 export const SearchInput = styled.input`
