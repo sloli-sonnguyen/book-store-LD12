@@ -13,12 +13,13 @@ export const BWrapper = styled.div`
 
 export const BContainer = styled.div`
   display: flex;
+  flex-direction: ${({ column }) => column && 'column'};
   justify-content: ${({ center }) => center && 'center'};
   justify-content: ${({ between }) => between && 'space-between'};
   width: 100%;
   margin: auto;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: ${({ p = 4 }) => `${p}rem`};
+  padding-right: ${({ p = 4 }) => `${p}rem`};
 
   @media (min-width: 576px) {
     .container {
@@ -47,6 +48,7 @@ export const BContainer = styled.div`
 
 export const BFluidContainer = styled.div`
   display: flex;
+  flex-direction: ${({ column }) => column && 'column'};
   justify-content: ${({ center }) => center && 'center'};
   justify-content: ${({ between }) => between && 'space-between'};
   width: 100%;
