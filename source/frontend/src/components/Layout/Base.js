@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const getWidthString = (span) => {
   if (!span) return;
 
-  const width = (span / 12) * 100;
-  return `width: ${width}%;`;
+  const number = 12 / span;
+  return `width: calc(92% / ${number})`;
 };
 
 export const BWrapper = styled.div`
@@ -13,6 +13,7 @@ export const BWrapper = styled.div`
 
 export const BContainer = styled.div`
   display: flex;
+  flex-wrap: ${({ wrap }) => wrap && 'wrap'};
   flex-direction: ${({ column }) => column && 'column'};
   justify-content: ${({ center }) => center && 'center'};
   justify-content: ${({ between }) => between && 'space-between'};
@@ -57,6 +58,7 @@ export const BFluidContainer = styled.div`
 `;
 
 export const BRow = styled.div`
+  width: 100%;
   &::after {
     content: '';
     clear: both;
@@ -65,7 +67,6 @@ export const BRow = styled.div`
 `;
 
 export const BColumn = styled.div`
-  float: left;
   ${({ xs }) => (xs ? getWidthString(xs) : 'width: 100%')}; // Từ 0px -> 767px thì xs sẽ kích hoạt
 
   @media only screen and (min-width: 768px) {
