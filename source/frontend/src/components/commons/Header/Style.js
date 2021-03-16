@@ -7,12 +7,10 @@ export const HeaderWrapper = styled(BContainer)`
   align-items: center;
 `;
 
-export const Logo = styled.img`
-  width: 100%;
-`;
+export const Logo = styled.img``;
 
 export const LogoWrapper = styled.div`
-  width: 20%;
+  width: 15%;
 `;
 
 export const SearchWrapper = styled.div`
@@ -21,6 +19,7 @@ export const SearchWrapper = styled.div`
 
 export const SearchButton = styled(Button)`
   padding: 10px;
+  height: 2.5rem;
   display: flex;
   align-items: center;
 `;

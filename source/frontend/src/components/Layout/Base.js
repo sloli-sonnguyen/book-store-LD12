@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const getWidthString = (span) => {
   if (!span) return;
 
-  const width = (span / 12) * 100;
-  return `width: ${width}%;`;
+  const number = 12 / span;
+  return `width: calc(92% / ${number})`;
 };
 
 export const BWrapper = styled.div`
@@ -13,36 +13,37 @@ export const BWrapper = styled.div`
 
 export const BContainer = styled.div`
   display: flex;
+  flex-wrap: ${({ wrap }) => wrap && 'wrap'};
   flex-direction: ${({ column }) => column && 'column'};
-  justify-content: ${({ center }) => center && 'center'};
-  justify-content: ${({ between }) => between && 'space-between'};
   width: 100%;
   margin: auto;
-  padding-left: ${({ p = 4 }) => `${p}rem`};
-  padding-right: ${({ p = 4 }) => `${p}rem`};
 
-  @media (min-width: 576px) {
-    .container {
-      max-width: 540px;
-    }
+  @media (max-width: 576px) {
+    max-width: 540px;
+    justify-content: center;
   }
 
   @media (min-width: 768px) {
-    .container {
-      max-width: 720px;
-    }
+    max-width: 720px;
+    justify-content: ${({ center }) => center && 'center'};
+    justify-content: ${({ between }) => between && 'space-between'};
   }
 
   @media (min-width: 992px) {
-    .container {
-      max-width: 960px;
-    }
+    max-width: 960px;
+    padding-left: 0rem;
+    padding-right: 0rem;
   }
 
   @media (min-width: 1200px) {
-    .container {
-      max-width: 1140px;
-    }
+    max-width: 100%;
+    padding-left: ${({ p = 4 }) => `${p / 2}rem`};
+    padding-right: ${({ p = 4 }) => `${p / 2}rem`};
+  }
+
+  @media (min-width: 1660px) {
+    padding-left: ${({ p = 4 }) => `${p}rem`};
+    padding-right: ${({ p = 4 }) => `${p}rem`};
   }
 `;
 
@@ -57,6 +58,7 @@ export const BFluidContainer = styled.div`
 `;
 
 export const BRow = styled.div`
+  width: 100%;
   &::after {
     content: '';
     clear: both;
@@ -65,7 +67,6 @@ export const BRow = styled.div`
 `;
 
 export const BColumn = styled.div`
-  float: left;
   ${({ xs }) => (xs ? getWidthString(xs) : 'width: 100%')}; // Từ 0px -> 767px thì xs sẽ kích hoạt
 
   @media only screen and (min-width: 768px) {

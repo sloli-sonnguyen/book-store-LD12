@@ -1,13 +1,5 @@
 import React from 'react';
-import { BWrapper, BContainer, BFluidContainer, BColumn } from '../../Layout/Base';
-import {
-  HeaderWrapper,
-  LogoWrapper,
-  Logo,
-  SearchButton,
-  SearchInput,
-  SearchWrapper,
-} from './Style';
+import { BWrapper } from '../../Layout/Base';
 
 function Header() {
   return (
