@@ -2,7 +2,7 @@ import React from 'react';
 import { Wrapper, Title, Menu } from './Style';
 import { CustomButton } from '../../Buttons/Buttons';
 import { BContainer } from '../../Layout/Base';
-import { Card, CardImage, ImageWrap } from '../../Base/Card/Style';
+import { Card, CardImage, ImageWrap, ImageWrapOverLay } from '../../Base/Card/Style';
 
 function NewArrival() {
   return (
@@ -62,16 +62,23 @@ function NewArrival() {
         <Card xs={12} sm={6} md={3}>
           <ImageWrap>
             <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-101_grande.jpg?v=1587115881" />
+            <ImageWrapOverLay />
           </ImageWrap>
         </Card>
         <Card xs={12} sm={6} md={3}>
-          Xin chao
+          <ImageWrap>
+            <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-102_grande.jpg?v=1587120877" />
+          </ImageWrap>
         </Card>
         <Card xs={12} sm={6} md={3}>
-          Xin chao
+          <ImageWrap>
+            <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-44_grande.jpg?v=1587117561" />
+          </ImageWrap>
         </Card>
         <Card xs={12} sm={6} md={3}>
-          Xin chao
+          <ImageWrap>
+            <CardImage src="http://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-34_grande.jpg?v=1587116925" />
+          </ImageWrap>
         </Card>
       </BContainer>
     </Wrapper>

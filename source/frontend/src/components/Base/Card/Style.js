@@ -14,22 +14,49 @@ export const CardText = styled.p``;
 
 export const CardLink = styled.a``;
 
+export const ImageWrapOverLay = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 120%;
+  top: -20%;
+  z-index: 100000;
+  transition: 0.6s;
+  cursor: pointer;
+`;
+
 export const ImageWrap = styled.div`
   width: 100%;
-  max-height: 400px;
   position: relative;
-  object-fit: fit;
-  &::before {
-    content: ${({ children }) => children.props.src && `url(${children.props.src})`};
+  overflow: hidden;
+  cursor: pointer;
+  &::after {
+    content: '';
+    background-image: ${({ children }) =>
+      Array.isArray(children) ? `url(${children[0].props.src})` : `url(${children.props.src})`};
+    background-position: center;
+    background-size: cover;
     width: 100%;
     height: 100%;
     position: absolute;
+    left: 120%;
+    top: -20%;
     z-index: 100000;
+    transition: 0.6s;
+
+    transform: rotate(180deg);
+  }
+
+  &:hover::after {
+    left: 0%;
+    top: 0%;
+    transform: rotate(0deg);
   }
 `;
 
 export const CardImage = styled.img`
-  width: 100%;
+  display: block; // note
+  max-width: 100%;
 `;
 
 export const CardLabel = styled.label``;
