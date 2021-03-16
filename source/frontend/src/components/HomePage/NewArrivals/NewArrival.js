@@ -1,8 +1,8 @@
 import React from 'react';
 import { Wrapper, Title, Menu } from './Style';
 import { CustomButton } from '../../Buttons/Buttons';
-import { BColumn, BContainer, BRow } from '../../Layout/Base';
-import { BCard } from '../../Base/Card/Style';
+import { BContainer } from '../../Layout/Base';
+import { Card, CardImage, ImageWrap } from '../../Base/Card/Style';
 
 function NewArrival() {
   return (
@@ -59,18 +59,20 @@ function NewArrival() {
         </CustomButton>
       </Menu>
       <BContainer p={10} between="true" wrap="true">
-        <BCard xs={12} sm={6} md={3}>
+        <Card xs={12} sm={6} md={3}>
+          <ImageWrap>
+            <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-101_grande.jpg?v=1587115881" />
+          </ImageWrap>
+        </Card>
+        <Card xs={12} sm={6} md={3}>
           Xin chao
-        </BCard>
-        <BCard xs={12} sm={6} md={3}>
+        </Card>
+        <Card xs={12} sm={6} md={3}>
           Xin chao
-        </BCard>
-        <BCard xs={12} sm={6} md={3}>
+        </Card>
+        <Card xs={12} sm={6} md={3}>
           Xin chao
-        </BCard>
-        <BCard xs={12} sm={6} md={3}>
-          Xin chao
-        </BCard>
+        </Card>
       </BContainer>
     </Wrapper>
   );

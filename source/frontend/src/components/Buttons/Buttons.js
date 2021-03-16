@@ -32,3 +32,12 @@ export const CustomButton = styled(Button)`
     color: ${({ textHoverColor }) => textHoverColor && `${textHoverColor}`};
   }
 `;
+
+export const CircleButton = styled(Button)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+`;

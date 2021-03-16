@@ -18,7 +18,7 @@ export const BContainer = styled.div`
   width: 100%;
   margin: auto;
 
-  @media (min-width: 576px) {
+  @media (max-width: 576px) {
     max-width: 540px;
     justify-content: center;
   }
