@@ -37,6 +37,9 @@
     "linebreak-style": ["off", "windows"],
     "consistent-return": "off",
     "no-unused-vars": "warn",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-confusing-arrow": "off",
+    "indent": "off",
+    "implicit-arrow-linebreak": "off"
   }
 }
