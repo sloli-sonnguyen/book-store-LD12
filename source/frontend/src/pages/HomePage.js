@@ -6,6 +6,7 @@ import Header from '../components/commons/Header/Header';
 import Footer from '../components/commons/Footer/Footer';
 import Intro from '../components/HomePage/Intro/Intro';
 import SupportTypes from '../components/HomePage/SupportTypes/SupportTypes';
+import FestivalBanner from '../components/HomePage/FestivalBanner/FestivalBanner';
 
 function HomePage() {
   return (
@@ -17,6 +18,7 @@ function HomePage() {
         <Intro />
         <SupportTypes />
         <NewArrivals />
+        <FestivalBanner />
       </BFluidContainer>
       <BFluidContainer>
         <Footer />

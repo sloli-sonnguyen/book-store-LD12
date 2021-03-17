@@ -1,8 +1,16 @@
 import React from 'react';
-import {} from './Style.js';
+import { Wrapper, Title, SubTitle, Text } from './Style';
+import { Button } from '../../Buttons/Buttons';
 
 function FestivalBanner() {
-  return <div></div>;
+  return (
+    <Wrapper>
+      <SubTitle>Shop wide range of collections</SubTitle>
+      <Title>BOOK FESTIVAL</Title>
+      <Text>ALL BOOKS ARE FLAT 50% OFF</Text>
+      <Button>Shop Now</Button>
+    </Wrapper>
+  );
 }
 
 export default FestivalBanner;
