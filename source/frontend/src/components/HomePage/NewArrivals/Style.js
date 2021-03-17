@@ -29,5 +29,5 @@ export const Menu = styled.div`
   margin: auto;
   max-width: 700px;
   width: 60%;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 `;

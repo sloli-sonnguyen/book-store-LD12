@@ -26,16 +26,16 @@ export const IntroWrapper = styled.div`
 export const IntroContainer = styled(BContainer)`
   @media (max-width: 1060px) {
     padding: 4rem;
-    margin: 0 4rem;
     background-color: rgba(255, 255, 255, 0.8);
   }
 `;
 
 export const MediumText = styled.h3`
   font-weight: lighter;
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   margin-bottom: 1.2rem;
   font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
   animation: ${RightMove} 1400ms ease;
 `;
 
