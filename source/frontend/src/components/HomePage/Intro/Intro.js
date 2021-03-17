@@ -1,16 +1,23 @@
 import React from 'react';
-import { IntroWrapper, IntroContainer, MediumText, BigText, SmallText, IntroButton } from './Style';
+import {
+  IntroWrapper,
+  IntroContainer,
+  MediumIntroText,
+  BigIntroText,
+  SmallIntroText,
+  IntroButton,
+} from './Style';
 
 function Intro() {
   return (
     <IntroWrapper>
       <IntroContainer p={18} column="true">
-        <MediumText>Year end sale</MediumText>
-        <BigText>Get 70% off for all design books</BigText>
-        <SmallText>
+        <MediumIntroText>Year end sale</MediumIntroText>
+        <BigIntroText>Get 70% off for all design books</BigIntroText>
+        <SmallIntroText>
           Donec sodales sagittis magna. SedMaecenas nec odio et ante tincidunt tempus. Donec vitae
           sapien ut libero venenatis faucibus. Nullam quis ante.
-        </SmallText>
+        </SmallIntroText>
         <IntroButton>Shop now</IntroButton>
       </IntroContainer>
     </IntroWrapper>

@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { SmallText, MediumText, BigText } from '../../Base/Text/Style';
 import { Button } from '../../Buttons/Buttons';
 import { BContainer } from '../../Layout/Base';
 
@@ -30,33 +31,16 @@ export const IntroContainer = styled(BContainer)`
   }
 `;
 
-export const MediumText = styled.h3`
-  font-weight: lighter;
-  font-size: 2.5rem;
-  margin-bottom: 1.2rem;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: bold;
+export const MediumIntroText = styled(MediumText)`
   animation: ${RightMove} 1400ms ease;
 `;
 
-export const BigText = styled.h1`
-  max-width: 600px;
-  color: #d14031;
-  font-size: 3.8rem;
-  font-family: Garamond, Baskerville, Caslon, serif;
-  text-transform: capitalize;
+export const BigIntroText = styled(BigText)`
   animation: ${RightMove} 1800ms ease;
 `;
 
-export const SmallText = styled.p`
-  max-width: 510px;
-  margin-top: 1.2rem;
-  line-height: 1.8rem;
-  font-weight: bold;
-  font-size: 1rem;
-  font-family: Josefin Sans;
+export const SmallIntroText = styled(SmallText)`
   animation: ${RightMove} 1400ms ease;
-  color: #545352;
 `;
 
 export const IntroButton = styled(Button)`
