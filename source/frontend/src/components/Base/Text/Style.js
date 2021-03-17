@@ -25,3 +25,21 @@ export const SmallText = styled.p`
   font-family: Josefin Sans;
   color: #545352;
 `;
+
+export const SecondTitle = styled.h1`
+  position: relative;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 5rem 0rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0.28rem;
+    width: 4.5rem;
+    background-color: #d14031;
+  }
+`;
