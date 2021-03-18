@@ -23,6 +23,7 @@ export const CardText = styled.p`
   font-weight: 600;
   font-family: Open Sans, Helvetica, Sans-Serif;
   font-size: 16px;
+  margin-bottom: 1rem;
 `;
 
 export const CardLink = styled.a``;
@@ -95,7 +96,9 @@ export const CenterCardHoverLabel = styled(DefaultCardLabel)`
 export const Card = styled(BColumn)`
   position: relative;
   min-height: 280px;
+  margin: ${({ margin }) => margin && `${margin}rem`};
   margin-bottom: 5rem;
+  margin-top: 0;
 
   @media (max-width: 778px) {
     max-width: fit-content;
@@ -128,6 +131,7 @@ export const ImageWrap = styled.div`
     top: 10%;
     z-index: 100;
     transition: 0.4s;
+    display: ${({ NoneEffect }) => NoneEffect && 'none'};
   }
 
   &:hover::after {
