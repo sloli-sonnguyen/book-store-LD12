@@ -9,7 +9,7 @@ export const Wrapper = styled(BWrapper)`
 export const ContainerFooter = styled(BContainer)`
   width: 100%;
   padding-top: 5rem;
-  color:white;
+  color: white;
 `;
 // export const BRowFooter = styled.div`
 //   color: white;
@@ -25,6 +25,12 @@ export const Link = styled.div`
   :hover {
     color: red;
     transition: 0.9s;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 992px) {
+    font-size: 1.2rem;
   }
 `;
 export const Title = styled.div`
@@ -49,6 +55,7 @@ export const Copyright = styled.div`
   color: white;
   height: 4rem;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
   border-top: solid 0.5px white;
