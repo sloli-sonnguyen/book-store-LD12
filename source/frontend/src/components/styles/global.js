@@ -28,6 +28,11 @@ const GlobalStyle = styled.createGlobalStyle`
       font-size: 16px;
     }
   }
+
+  body,
+  html {
+    overflow-x: hidden;
+  }
 `;
 
 export default GlobalStyle;
