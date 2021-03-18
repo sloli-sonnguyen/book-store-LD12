@@ -6,7 +6,7 @@ export const Wrapper = styled(BWrapper)`
   background-position: center;
   background-size: cover;
 `;
-export const ContainerFooter = styled(BContainer)`
+export const FooterContainer = styled(BContainer)`
   width: 100%;
   padding-top: 5rem;
   color: white;
@@ -36,18 +36,21 @@ export const Link = styled.div`
 export const Title = styled.div`
   font-size: 1.6rem;
   margin-bottom: 1.5rem;
+  font-family: Garamond, Baskerville, Caslon, serif;
+  font-weight: bold;
 `;
 
 export const Icons = styled.div`
   height: 3rem;
-  width: 23rem;
+  width: 20rem;
 
   color: white;
   font-size: 1.2rem;
-  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
 `;
 
 export const Copyright = styled.div`
@@ -61,7 +64,7 @@ export const Copyright = styled.div`
   border-top: solid 0.5px white;
 `;
 
-export const ColumnFooter = styled(BColumn)`
+export const FooterColumn = styled(BColumn)`
   margin-bottom: 2rem;
   /* @media (max-width: 500px) {
     min-width: 11rem;
@@ -76,6 +79,8 @@ export const ColumnFooter = styled(BColumn)`
   } */
 `;
 
-export const TitleSpecial = styled(Title)`
-  color: red;
+export const SpecialTitle = styled(Title)`
+  color: #d14031;
+  font-family: Garamond, Baskerville, Caslon, serif;
+  font-size: 2.5rem;
 `;
