@@ -10,6 +10,7 @@ import FestivalBanner from '../components/HomePage/FestivalBanner/FestivalBanner
 import DailyDeals from '../components/HomePage/DailyDeals/DailyDeals';
 import SpecialBanner from '../components/HomePage/SpecialBanner/SpecialBanner';
 import LatestNews from '../components/HomePage/LatestNews/LatestNews';
+import Subcribe from '../components/HomePage/Subcribe/Subcribe';
 
 function HomePage() {
   return (
@@ -25,6 +26,7 @@ function HomePage() {
         <DailyDeals />
         <SpecialBanner />
         <LatestNews />
+        <Subcribe />
       </BFluidContainer>
       <BFluidContainer>
         <Footer />
