@@ -62,4 +62,9 @@ export const Input = styled.input`
   min-width: 380px;
   width: 30rem;
   margin-bottom: 1.2rem;
+
+  @media (max-width: 668px) {
+    max-width: 200px;
+    min-width: 0px;
+  }
 `;
