@@ -61,4 +61,5 @@ export const Input = styled.input`
   outline: none;
   min-width: 380px;
   width: 30rem;
+  margin-bottom: 1.2rem;
 `;
