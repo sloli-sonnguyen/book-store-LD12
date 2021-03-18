@@ -11,6 +11,7 @@ import DailyDeals from '../components/HomePage/DailyDeals/DailyDeals';
 import SpecialBanner from '../components/HomePage/SpecialBanner/SpecialBanner';
 import LatestNews from '../components/HomePage/LatestNews/LatestNews';
 import Subcribe from '../components/HomePage/Subcribe/Subcribe';
+import GiftsBanner from '../components/HomePage/GIftsBanner/GiftsBanner';
 
 function HomePage() {
   return (
@@ -26,6 +27,7 @@ function HomePage() {
         <DailyDeals />
         <SpecialBanner />
         <LatestNews />
+        <GiftsBanner />
         <Subcribe />
       </BFluidContainer>
       <BFluidContainer>

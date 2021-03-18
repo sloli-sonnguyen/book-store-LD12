@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
   width: 100%;
   background-color: #f7f7f7;
   padding: 6rem 0rem;
-  margin-top: 2rem;
 `;
 
 export const Container = styled(BContainer)`
