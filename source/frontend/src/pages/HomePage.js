@@ -9,6 +9,7 @@ import SupportTypes from '../components/HomePage/SupportTypes/SupportTypes';
 import FestivalBanner from '../components/HomePage/FestivalBanner/FestivalBanner';
 import DailyDeals from '../components/HomePage/DailyDeals/DailyDeals';
 import SpecialBanner from '../components/HomePage/SpecialBanner/SpecialBanner';
+import LatestNews from '../components/HomePage/LatestNews/LatestNews';
 
 function HomePage() {
   return (
@@ -23,6 +24,7 @@ function HomePage() {
         <FestivalBanner />
         <DailyDeals />
         <SpecialBanner />
+        <LatestNews />
       </BFluidContainer>
       <BFluidContainer>
         <Footer />

@@ -5,13 +5,14 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: #fafafa;
 `;
 
 export const TypeBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 0rem;
+  padding: 1.5rem 0rem;
 
   width: calc(100% / 4 - 1rem);
 
@@ -28,7 +29,7 @@ export const BigText = styled.p`
   text-transform: uppercase;
   font-weight: bolder;
   font-size: 1.1rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.7rem;
 `;
 
 export const SmallText = styled.p`
@@ -38,5 +39,5 @@ export const SmallText = styled.p`
 
 export const Icon = styled.i`
   font-size: 2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.7rem;
 `;

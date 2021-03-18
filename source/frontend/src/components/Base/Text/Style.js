@@ -31,6 +31,8 @@ export const SecondTitle = styled.h1`
   text-transform: uppercase;
   text-align: center;
   margin: 5rem 0rem;
+  font-family: Cormorant Garamond, Baskerville, Caslon, serif;
+  font-size: 2.2rem;
 
   &::after {
     content: '';
