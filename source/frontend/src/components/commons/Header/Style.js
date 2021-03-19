@@ -15,20 +15,31 @@ export const HeaderWrapper = styled(BContainer)`
   flex-wrap: wrap;
   @media (max-width: 550px) {
     flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
+    align-items: center;
     height: 115px;
   }
 `;
 
 export const LogoWrapper = styled.div`
   cursor: pointer;
+  width: calc(100% / 3);
+  text-align: center;
   @media (max-width: 767px) {
     margin-left: 15px;
+  }
+
+  @media (max-width: 550px) {
+    width: 200px;
+    justify-content: center;
   }
 `;
 
 export const SearchWrapper = styled.div`
   display: flex;
+  width: calc(100% / 3);
+
   @media (max-width: 767px) {
     display: none;
   }
@@ -48,6 +59,7 @@ export const SearchInput = styled.input`
   outline: none;
   background-color: #ebebeb;
   width: 15rem;
+  font-size: 16px;
   @media (max-width: 992px) {
     width: 10rem;
   }
@@ -56,8 +68,13 @@ export const SearchInput = styled.input`
 export const CartWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   color: #676767;
+  width: calc(100% / 3);
+  @media (max-width: 550px) {
+    width: 200px;
+    justify-content: center;
+  }
 `;
 
 export const Icon = styled.i`
@@ -70,10 +87,10 @@ export const Icon = styled.i`
   }
 `;
 
-export const DetailCardWrapper = styled.div`
+export const DetailCartWrapper = styled.div`
   line-height: 1.5rem;
   font-weight: bold;
-  font-size: small;
+  font-size: 16px;
   transition: 0.3s;
   cursor: pointer;
   &:hover {

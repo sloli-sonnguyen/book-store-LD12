@@ -9,7 +9,7 @@ import {
   IconWrapperRes,
   SearchButton,
   CartWrapper,
-  DetailCardWrapper,
+  DetailCartWrapper,
   NavBarWrapper,
   NavItem,
   ListWrapper,
@@ -36,10 +36,10 @@ function Header() {
           </LogoWrapper>
           <CartWrapper>
             <Icon className="bx bxs-shopping-bag" />
-            <DetailCardWrapper>
+            <DetailCartWrapper>
               <p>Shopping Cart</p>
               <p>0 item - 0.00</p>
-            </DetailCardWrapper>
+            </DetailCartWrapper>
             <IconWrapperRes>
               <Icon className="bx bx-menu" />
               <Icon className="bx bx-search" />
