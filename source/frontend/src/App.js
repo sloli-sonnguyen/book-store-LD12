@@ -14,6 +14,7 @@ function App() {
           <Switch>
             {routes.map((route) => (
               <Route
+                key={route.id}
                 exact={route.exact && true}
                 path={route.path}
                 name={route.name}

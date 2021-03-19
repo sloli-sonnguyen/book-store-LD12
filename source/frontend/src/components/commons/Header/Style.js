@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../../Buttons/Buttons';
-import { BContainer, BFluidContainer, BWrapper } from '../../Layout/Base';
+import { BContainer, BWrapper } from '../../Layout/Base';
 
 export const HeaderFixed = styled(BWrapper)`
   position: fixed;

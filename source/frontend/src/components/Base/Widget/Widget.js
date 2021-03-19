@@ -4,7 +4,7 @@ import { Wrapper, Container } from './Style';
 function Widget() {
   return (
     <Wrapper>
-      <Container>Filter</Container>
+      <Container>Widget</Container>
     </Wrapper>
   );
 }
