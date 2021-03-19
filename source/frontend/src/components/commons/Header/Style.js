@@ -131,8 +131,8 @@ export const NavItem = styled.a`
 `;
 
 export const FakeHeader = styled.div`
-  height: 90px;
-  @media (max-width: 550px) {
-    height: 115px;
+  height: 154px;
+  @media (max-width: 967px) {
+    height: 90px !important;
   }
 `;
