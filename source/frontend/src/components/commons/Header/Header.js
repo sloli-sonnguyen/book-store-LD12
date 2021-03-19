@@ -49,10 +49,10 @@ function Header() {
         <NavBarWrapper>
           <ListWrapper p={18} center="true">
             <NavItem>Home</NavItem>
-            <NavItem>Categories</NavItem>
-            <NavItem>Brands</NavItem>
-            <NavItem>Best Sellers</NavItem>
-            <NavItem>Pages</NavItem>
+            <NavItem>Products</NavItem>
+            <NavItem>Blogs</NavItem>
+            <NavItem>About</NavItem>
+            <NavItem>Contact</NavItem>
           </ListWrapper>
         </NavBarWrapper>
       </HeaderFixed>
