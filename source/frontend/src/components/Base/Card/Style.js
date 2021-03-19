@@ -26,6 +26,12 @@ export const CardText = styled.p`
   margin-bottom: 1rem;
 `;
 
+export const Span = styled.span`
+  margin-left: 0.5rem;
+  text-decoration: line-through;
+  font-size: 0.9em;
+`;
+
 export const CardLink = styled.a``;
 
 export const ImageWrapOverLay = styled.div`

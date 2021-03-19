@@ -8,6 +8,7 @@ import {
   CardSubTitle,
   CardText,
   CardTitle,
+  Span,
   CenterCardHoverLabel,
   ImageWrap,
   ImageWrapOverLay,
@@ -80,7 +81,10 @@ function NewArrival() {
           </ImageWrap>
           <CardSubTitle>DONALD WILLIAM</CardSubTitle>
           <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00 $700.00</CardText>
+          <CardText>
+            $120.00
+            <Span>$700.00</Span>
+          </CardText>
         </Card>
         <Card xs={12} sm={6} md={3}>
           <ImageWrap>
@@ -90,7 +94,7 @@ function NewArrival() {
           </ImageWrap>
           <CardSubTitle>DONALD WILLIAM</CardSubTitle>
           <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00 $700.00</CardText>
+          <CardText>$120.00</CardText>
         </Card>
         <Card xs={12} sm={6} md={3}>
           <ImageWrap>
@@ -100,7 +104,7 @@ function NewArrival() {
           </ImageWrap>
           <CardSubTitle>DONALD WILLIAM</CardSubTitle>
           <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00 $700.00</CardText>
+          <CardText>$120.00</CardText>
         </Card>
         <Card xs={12} sm={6} md={3}>
           <ImageWrap>
@@ -110,7 +114,7 @@ function NewArrival() {
           </ImageWrap>
           <CardSubTitle>DONALD WILLIAM</CardSubTitle>
           <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00 $700.00</CardText>
+          <CardText>$120.00</CardText>
         </Card>
         <Card xs={12} sm={6} md={3}>
           <ImageWrap>
@@ -120,7 +124,7 @@ function NewArrival() {
           </ImageWrap>
           <CardSubTitle>DONALD WILLIAM</CardSubTitle>
           <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00 $700.00</CardText>
+          <CardText>$120.00</CardText>
         </Card>
         <Card xs={12} sm={6} md={3}>
           <ImageWrap>
@@ -130,7 +134,7 @@ function NewArrival() {
           </ImageWrap>
           <CardSubTitle>DONALD WILLIAM</CardSubTitle>
           <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00 $700.00</CardText>
+          <CardText>$120.00</CardText>
         </Card>
         <Card xs={12} sm={6} md={3}>
           <ImageWrap>
@@ -140,7 +144,10 @@ function NewArrival() {
           </ImageWrap>
           <CardSubTitle>DONALD WILLIAM</CardSubTitle>
           <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00 $700.00</CardText>
+          <CardText>
+            $120.00
+            <Span>$200.00</Span>
+          </CardText>
         </Card>
         <Card xs={12} sm={6} md={3}>
           <ImageWrap>
@@ -150,7 +157,10 @@ function NewArrival() {
           </ImageWrap>
           <CardSubTitle>DONALD WILLIAM</CardSubTitle>
           <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00 $700.00</CardText>
+          <CardText>
+            $120.00
+            <Span>$400.00</Span>
+          </CardText>
         </Card>
       </BContainer>
     </Wrapper>
