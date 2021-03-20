@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { BContainer, BColumn } from '../../Layout/Base';
-import { BigText, MediumText, SmallText } from '../../Base/Text/Style';
+import { BigText, MediumText, SmallText } from '../../Base/Text/Text';
 import { Button } from '../../Buttons/Buttons';
 
 export const Wrapper = styled.div`

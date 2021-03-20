@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BigText, MediumText, SmallText } from '../../Base/Text/Style';
+import { BigText, MediumText, SmallText } from '../../Base/Text/Text';
 
 export const Title = styled(BigText)`
   margin: auto;

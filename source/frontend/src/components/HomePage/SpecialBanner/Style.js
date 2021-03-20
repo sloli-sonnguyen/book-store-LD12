@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { BContainer } from '../../Layout/Base';
-import { BigText, MediumText, SmallText } from '../../Base/Text/Style';
+import { BigText, MediumText, SmallText } from '../../Base/Text/Text';
 
 export const Wrapper = styled.div`
   width: 100%;
