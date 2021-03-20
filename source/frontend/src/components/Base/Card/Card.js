@@ -14,9 +14,9 @@ import {
 } from './Style';
 
 function Card(props) {
-  const { xs, sm, md, lg, src, subTitle, title, text1, text2 } = props;
+  const { src, subTitle, title, text1, text2, ...restProps } = props;
   return (
-    <CardWrapper xs={xs} sm={sm} md={md} lg={lg}>
+    <CardWrapper {...restProps}>
       <ImageWrap>
         <ImageWrapOverLay />
         <CardImage src={src} />

@@ -41,6 +41,7 @@
     "no-confusing-arrow": "off",
     "indent": "off",
     "implicit-arrow-linebreak": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off"
   }
 }

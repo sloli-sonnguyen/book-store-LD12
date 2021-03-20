@@ -3,18 +3,32 @@ import { BContainer, BColumn } from '../../Layout/Base';
 
 export const Wrapper = styled.div`
   width: 100%;
+  margin-top: 7rem;
 `;
 
-export const Container = styled(BContainer)``;
+export const Container = styled(BContainer)`
+  @media (max-width: 991px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 export const WidgetWrapper = styled.div`
   width: 20%;
+
+  @media (max-width: 991px) {
+    width: 0%;
+  }
 `;
 
 export const ProductListWrapper = styled.div`
   width: 78%;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
 `;
 
-export const Column = styled(BColumn)``;
-
-export const ProductList = styled(BContainer)``;
+export const ProductList = styled(BContainer)`
+  padding: 0;
+  justify-content: flex-end;
+`;

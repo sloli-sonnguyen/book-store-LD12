@@ -102,9 +102,12 @@ export const CenterCardHoverLabel = styled(DefaultCardLabel)`
 export const CardWrapper = styled(BColumn)`
   position: relative;
   min-height: 280px;
-  margin: ${({ margin }) => margin && `${margin}rem`};
   margin-bottom: 5rem;
   margin-top: 0;
+  margin-top: ${({ marginTop }) => marginTop && `${marginTop}rem`};
+  margin-bottom: ${({ marginBottom }) => marginBottom && `${marginBottom}rem`};
+  margin-left: ${({ marginLeft }) => marginLeft && `${marginLeft}rem`};
+  margin-right: ${({ marginRight }) => marginRight && `${marginRight}rem`};
 
   @media (max-width: 778px) {
     max-width: fit-content;
