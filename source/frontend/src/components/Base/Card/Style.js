@@ -99,7 +99,7 @@ export const CenterCardHoverLabel = styled(DefaultCardLabel)`
 `;
 
 //
-export const Card = styled(BColumn)`
+export const CardWrapper = styled(BColumn)`
   position: relative;
   min-height: 280px;
   margin: ${({ margin }) => margin && `${margin}rem`};

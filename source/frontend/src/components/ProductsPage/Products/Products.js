@@ -1,16 +1,18 @@
 import React from 'react';
-import { Wrapper, Container, Column } from './Style';
+import { Wrapper, Container, ProductList, WidgetWrapper, ProductListWrapper } from './Style';
 import Widget from '../../Base/Widget/Widget';
 import Filter from '../../Base/Filter/Filter';
 
 function Products() {
   return (
     <Wrapper>
-      <Container p={10} wrap="true" between="true">
-        <Column>
+      <Container p={10} between="true">
+        <WidgetWrapper>
           <Widget />
-        </Column>
-        <Column>Products here</Column>
+        </WidgetWrapper>
+        <ProductListWrapper>
+          <ProductList>xin chao nhe</ProductList>
+        </ProductListWrapper>
       </Container>
       <Filter />
     </Wrapper>

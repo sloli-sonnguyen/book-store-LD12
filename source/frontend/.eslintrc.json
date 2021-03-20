@@ -40,6 +40,7 @@
     "import/prefer-default-export": "off",
     "no-confusing-arrow": "off",
     "indent": "off",
-    "implicit-arrow-linebreak": "off"
+    "implicit-arrow-linebreak": "off",
+    "react/prop-types": "off"
   }
 }

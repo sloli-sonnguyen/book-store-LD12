@@ -2,7 +2,7 @@ import React from 'react';
 import { Wrapper, Container, Title } from './Style';
 import { Button } from '../../Buttons/Buttons';
 import {
-  Card,
+  CardWrapper,
   CardSubTitle,
   CardTitle,
   CardText,
@@ -17,7 +17,7 @@ function LatestNews() {
     <Wrapper>
       <Title>LATEST NEWS</Title>
       <Container p={18} between="true">
-        <Card xs={12} md={4}>
+        <CardWrapper xs={12} md={4}>
           <ImageWrap NoneEffect="true">
             <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-1.jpg?v=1585546169" />
             <ImageWrapOverLay />
@@ -29,8 +29,8 @@ function LatestNews() {
             The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...
           </CardText>
           <Button>Show Now</Button>
-        </Card>
-        <Card xs={12} md={4}>
+        </CardWrapper>
+        <CardWrapper xs={12} md={4}>
           <ImageWrap NoneEffect="true">
             <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-2.jpg?v=1585546218" />
             <ImageWrapOverLay />
@@ -42,8 +42,8 @@ function LatestNews() {
             The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...
           </CardText>
           <Button>Show Now</Button>
-        </Card>
-        <Card xs={12} md={4}>
+        </CardWrapper>
+        <CardWrapper xs={12} md={4}>
           <ImageWrap NoneEffect="true">
             <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-3.jpg?v=1585546251" />
             <ImageWrapOverLay />
@@ -55,7 +55,7 @@ function LatestNews() {
             The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...
           </CardText>
           <Button>Show Now</Button>
-        </Card>
+        </CardWrapper>
       </Container>
     </Wrapper>
   );

@@ -2,19 +2,7 @@ import React from 'react';
 import { Wrapper, Title, Menu } from './Style';
 import { CustomButton } from '../../Buttons/Buttons';
 import { BContainer } from '../../Layout/Base';
-import {
-  Card,
-  CardImage,
-  CardSubTitle,
-  CardText,
-  CardTitle,
-  Span,
-  CenterCardHoverLabel,
-  ImageWrap,
-  ImageWrapOverLay,
-  TopLeftCardLabel,
-  TopRightCardLabel,
-} from '../../Base/Card/Style';
+import Card from '../../Base/Card/Card';
 
 function NewArrival() {
   return (
@@ -71,97 +59,86 @@ function NewArrival() {
         </CustomButton>
       </Menu>
       <BContainer p={10} between="true" wrap="true">
-        <Card xs={12} sm={6} md={3}>
-          <ImageWrap>
-            <ImageWrapOverLay />
-            <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-101_grande.jpg?v=1587115881" />
-            <TopLeftCardLabel>Sale</TopLeftCardLabel>
-            <TopRightCardLabel>Save 80%</TopRightCardLabel>
-            <CenterCardHoverLabel>View</CenterCardHoverLabel>
-          </ImageWrap>
-          <CardSubTitle>DONALD WILLIAM</CardSubTitle>
-          <CardTitle>Donate A Book</CardTitle>
-          <CardText>
-            $120.00
-            <Span>$700.00</Span>
-          </CardText>
-        </Card>
-        <Card xs={12} sm={6} md={3}>
-          <ImageWrap>
-            <ImageWrapOverLay />
-            <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-102_grande.jpg?v=1587120877" />
-            <CenterCardHoverLabel>View</CenterCardHoverLabel>
-          </ImageWrap>
-          <CardSubTitle>DONALD WILLIAM</CardSubTitle>
-          <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00</CardText>
-        </Card>
-        <Card xs={12} sm={6} md={3}>
-          <ImageWrap>
-            <ImageWrapOverLay />
-            <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-44_grande.jpg?v=1587117561" />
-            <CenterCardHoverLabel>View</CenterCardHoverLabel>
-          </ImageWrap>
-          <CardSubTitle>DONALD WILLIAM</CardSubTitle>
-          <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00</CardText>
-        </Card>
-        <Card xs={12} sm={6} md={3}>
-          <ImageWrap>
-            <ImageWrapOverLay />
-            <CardImage src="http://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-34_grande.jpg?v=1587116925" />
-            <CenterCardHoverLabel>View</CenterCardHoverLabel>
-          </ImageWrap>
-          <CardSubTitle>DONALD WILLIAM</CardSubTitle>
-          <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00</CardText>
-        </Card>
-        <Card xs={12} sm={6} md={3}>
-          <ImageWrap>
-            <ImageWrapOverLay />
-            <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-57_grande.jpg?v=1587119315" />
-            <CenterCardHoverLabel>View</CenterCardHoverLabel>
-          </ImageWrap>
-          <CardSubTitle>DONALD WILLIAM</CardSubTitle>
-          <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00</CardText>
-        </Card>
-        <Card xs={12} sm={6} md={3}>
-          <ImageWrap>
-            <ImageWrapOverLay />
-            <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-95_b0b53360-a171-427b-9dc6-0bf965bcfdae_grande.jpg?v=1587120117" />
-            <CenterCardHoverLabel>View</CenterCardHoverLabel>
-          </ImageWrap>
-          <CardSubTitle>DONALD WILLIAM</CardSubTitle>
-          <CardTitle>Donate A Book</CardTitle>
-          <CardText>$120.00</CardText>
-        </Card>
-        <Card xs={12} sm={6} md={3}>
-          <ImageWrap>
-            <ImageWrapOverLay />
-            <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-25_grande.jpg?v=1587117046" />
-            <CenterCardHoverLabel>View</CenterCardHoverLabel>
-          </ImageWrap>
-          <CardSubTitle>DONALD WILLIAM</CardSubTitle>
-          <CardTitle>Donate A Book</CardTitle>
-          <CardText>
-            $120.00
-            <Span>$200.00</Span>
-          </CardText>
-        </Card>
-        <Card xs={12} sm={6} md={3}>
-          <ImageWrap>
-            <ImageWrapOverLay />
-            <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-89_grande.jpg?v=1587115559" />
-            <CenterCardHoverLabel>View</CenterCardHoverLabel>
-          </ImageWrap>
-          <CardSubTitle>DONALD WILLIAM</CardSubTitle>
-          <CardTitle>Donate A Book</CardTitle>
-          <CardText>
-            $120.00
-            <Span>$400.00</Span>
-          </CardText>
-        </Card>
+        <Card
+          xs={12}
+          sm={6}
+          md={3}
+          src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-101_grande.jpg?v=1587115881"
+          subTitle="DONALD WILLIAM"
+          title="Donate A Book"
+          text1="$120.00"
+          text2="$700.00"
+        />
+        <Card
+          xs={12}
+          sm={6}
+          md={3}
+          src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-16_grande.jpg?v=1587117190"
+          subTitle="DONALD WILLIAM"
+          title="Donate A Book"
+          text1="$120.00"
+          text2="$700.00"
+        />
+        <Card
+          xs={12}
+          sm={6}
+          md={3}
+          src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-46_grande.jpg?v=1587118513"
+          subTitle="DONALD WILLIAM"
+          title="Donate A Book"
+          text1="$120.00"
+          text2="$700.00"
+        />
+        <Card
+          xs={12}
+          sm={6}
+          md={3}
+          src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-65_grande.jpg?v=1587118346"
+          subTitle="DONALD WILLIAM"
+          title="Donate A Book"
+          text1="$120.00"
+          text2="$700.00"
+        />
+        <Card
+          xs={12}
+          sm={6}
+          md={3}
+          src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-4_grande.jpg?v=1587113962"
+          subTitle="DONALD WILLIAM"
+          title="Donate A Book"
+          text1="$120.00"
+          text2="$700.00"
+        />
+        <Card
+          xs={12}
+          sm={6}
+          md={3}
+          src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-71_grande.jpg?v=1587117773"
+          subTitle="DONALD WILLIAM"
+          title="Donate A Book"
+          text1="$120.00"
+          text2="$700.00"
+        />
+        <Card
+          xs={12}
+          sm={6}
+          md={3}
+          src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-102_grande.jpg?v=1587120877"
+          subTitle="DONALD WILLIAM"
+          title="Donate A Book"
+          text1="$120.00"
+          text2="$700.00"
+        />
+        <Card
+          xs={12}
+          sm={6}
+          md={3}
+          src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-30_grande.jpg?v=1587116432"
+          subTitle="DONALD WILLIAM"
+          title="Donate A Book"
+          text1="$120.00"
+          text2="$700.00"
+        />
       </BContainer>
     </Wrapper>
   );
