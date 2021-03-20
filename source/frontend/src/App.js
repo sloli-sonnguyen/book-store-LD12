@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import GlobalStyle from './components/styles/global';
 import routes from './routes';
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <HashRouter>
+      <BrowserRouter>
         <React.Suspense fallback={loading}>
           <Switch>
             {routes.map((route) => (
@@ -23,7 +23,7 @@ function App() {
             ))}
           </Switch>
         </React.Suspense>
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }
