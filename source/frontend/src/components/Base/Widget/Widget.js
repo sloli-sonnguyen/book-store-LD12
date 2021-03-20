@@ -15,11 +15,15 @@ import {
   WidgetShopByFormat,
   ShopByFormat,
   ButtonFormat,
+  ClearDisplay,
 } from './Style';
 
 function Widget() {
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
+  const [shouldBeFormatActive, setshouldBeFormatActive] = useState(false);
+  const handleClickFormat = () => setshouldBeFormatActive(!shouldBeFormatActive);
+
+  const [shouldBePriceActive, setshouldBePriceActive] = useState(false);
+  const handleClickPrice = () => setshouldBePriceActive(!shouldBePriceActive);
 
   return (
     <Wrapper>
@@ -37,8 +41,12 @@ function Widget() {
           <WidgetShopByPrice>
             <h1>Container</h1>
             <ShopByPrice>
-              <ButtonPrice onClick={handleClick}>
-                {click ? <i className="bx bxs-up-arrow" /> : <i className="bx bxs-down-arrow" />}
+              <ButtonPrice onClick={handleClickPrice}>
+                {shouldBePriceActive ? (
+                  <i className="bx bxs-up-arrow" />
+                ) : (
+                  <i className="bx bxs-down-arrow" />
+                )}
               </ButtonPrice>
               Shop By Price
             </ShopByPrice>
@@ -50,10 +58,10 @@ function Widget() {
               <ProductPrice>$400 - $500</ProductPrice>
               <ProductPrice>$500 - $700</ProductPrice>
 
-              <WidgetShopByFormat click={click}>
+              <WidgetShopByFormat click={shouldBePriceActive}>
                 <ShopByFormat>
-                  <ButtonFormat onClick={handleClick}>
-                    {click ? (
+                  <ButtonFormat onClick={handleClickFormat}>
+                    {shouldBeFormatActive ? (
                       <i className="bx bxs-up-arrow" />
                     ) : (
                       <i className="bx bxs-down-arrow" />
@@ -68,6 +76,7 @@ function Widget() {
                   <ProductPrice>Kindle Edition</ProductPrice>
                   <ProductPrice>Large Print</ProductPrice>
                   <ProductPrice>Audible Audiobook</ProductPrice>
+                  <ClearDisplay click={shouldBeFormatActive}>a</ClearDisplay>
                 </WidgetContentFormat>
               </WidgetShopByFormat>
             </WidgetContentPrice>

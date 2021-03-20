@@ -6,13 +6,12 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   max-width: 400px;
-  width: 400px;
+  width: 100%;
   height: 1000px;
 `;
 export const Category = styled.h3`
   border-bottom: 1px solid #d7cbcb;
   height: 3rem;
-  width: 19rem;
 
   padding-top: 1.2rem;
   margin-top: 1rem;
@@ -30,7 +29,7 @@ export const ProductItem = styled.li`
 
 export const WidgetShopByPrice = styled.div`
   max-width: 400px;
-  width: 400px;
+  width: 100%;
   height: 200px;
   margin-bottom: 3rem;
   /* background-color:pink; */
@@ -39,7 +38,7 @@ export const WidgetShopByPrice = styled.div`
 export const ShopByPrice = styled.h3`
   border-bottom: 1px solid #d7cbcb;
   height: 3rem;
-  width: 19rem;
+  width: 100%;
   /* background-color:pink; */
   padding-top: 1.2rem;
 `;
@@ -48,7 +47,7 @@ export const ShopByFormat = styled(ShopByPrice)``;
 
 export const WidgetContentPrice = styled.ul`
   max-width: 400px;
-  width: 400px;
+  width: 100%;
   height: 600px;
   position: relative;
   position: absolute;
@@ -69,7 +68,7 @@ export const ButtonPrice = styled.button`
 export const ButtonFormat = styled(ButtonPrice)``;
 export const WidgetContentFormat = styled.div`
   max-width: 400px;
-  width: 400px;
+  width: 100%;
   height: 400px;
   position: relative;
   position: absolute;
@@ -79,7 +78,7 @@ export const WidgetContentFormat = styled.div`
 
 export const WidgetContainer = styled.div`
   max-width: 400px;
-  width: 400px;
+  width: 100%;
   height: 600px;
   background-color: lightblue;
   position: relative;
@@ -93,12 +92,13 @@ export const WidgetShopByFormat = styled(WidgetShopByPrice)`
   transition: 1s;
   top: ${({ click }) => (click ? 0 : '37%')};
 `;
-
+// export const ShopByFormat = styled(ShopByPrice)``;
 export const ClearDisplay = styled.div`
-  width: 400px;
+  width:100%;
   height: 400px;
-  background-color: green;
+  background-color: white;
   position: absolute;
   transition: 1s;
-  /* top: ${({ click }) => (click ? '60%' : '100%')}; */
+  color:white;
+  top: ${({ click }) => (click ? '0%' : '100%')};
 `;
