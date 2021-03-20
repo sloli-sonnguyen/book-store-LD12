@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondTitle } from '../../Base/Text/Style';
+import { SecondTitle } from '../../Base/Text/Text';
 
 export const Wrapper = styled.div`
   width: 100%;

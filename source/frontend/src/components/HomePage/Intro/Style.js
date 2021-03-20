@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { SmallText, MediumText, BigText } from '../../Base/Text/Style';
+import { SmallText, MediumText, BigText } from '../../Base/Text/Text';
 import { Button } from '../../Buttons/Buttons';
 import { BContainer } from '../../Layout/Base';
 

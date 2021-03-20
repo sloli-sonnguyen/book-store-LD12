@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BigText, SmallText } from '../../Base/Text/Style';
+import { BigText, SmallText } from '../../Base/Text/Text';
 
 export const Wrapper = styled.div`
   width: 100%;
