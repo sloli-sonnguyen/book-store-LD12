@@ -16,7 +16,7 @@ function DailyDeals() {
   return (
     <Wrapper>
       <Title>DAILY DEALS</Title>
-      <BContainer p={10} between="true" wrap="true">
+      <BContainer p={10} between="true">
         <Card xs={12} sm={6} md={3}>
           <ImageWrap>
             <ImageWrapOverLay />

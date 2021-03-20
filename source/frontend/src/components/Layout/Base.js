@@ -13,7 +13,7 @@ export const BWrapper = styled.div`
 
 export const BContainer = styled.div`
   display: flex;
-  flex-wrap: ${({ wrap }) => wrap && 'wrap'};
+  flex-wrap: wrap;
   flex-direction: ${({ column }) => column && 'column'};
   width: 100%;
   margin: auto;

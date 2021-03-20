@@ -14,7 +14,7 @@ import {
 function Footer() {
   return (
     <Wrapper>
-      <FooterContainer wrap="true" p={10}>
+      <FooterContainer p={10}>
         <FooterColumn xs={12} sm={6} md={3}>
           <SpecialTitle>BOOK SHOP</SpecialTitle>
           <Link href="https://www.google.com.vn/?hl=vi">1203 Town Center</Link>

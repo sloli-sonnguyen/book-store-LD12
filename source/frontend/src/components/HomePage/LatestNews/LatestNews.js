@@ -16,7 +16,7 @@ function LatestNews() {
   return (
     <Wrapper>
       <Title>LATEST NEWS</Title>
-      <Container p={18} between="true" wrap="true">
+      <Container p={18} between="true">
         <Card xs={12} md={4}>
           <ImageWrap NoneEffect="true">
             <CardImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-1.jpg?v=1585546169" />
