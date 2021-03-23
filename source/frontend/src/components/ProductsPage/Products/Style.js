@@ -39,3 +39,5 @@ export const ToolbarWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 2rem;
 `;
+
+export const DisplaySelect = styled.div``;
