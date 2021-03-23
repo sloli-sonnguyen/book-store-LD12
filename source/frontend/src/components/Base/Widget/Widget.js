@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { Wrapper } from './Style';
+import React from 'react';
 
 function Widget() {
-  return <Wrapper>xin chao</Wrapper>;
+  return <div>xin chao</div>;
 }
 
 export default Widget;
