@@ -30,5 +30,12 @@ export const ProductListWrapper = styled.div`
 
 export const ProductList = styled(BContainer)`
   padding: 0;
-  justify-content: flex-end;
+  justify-content: space-between;
+`;
+
+export const ToolbarWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 `;

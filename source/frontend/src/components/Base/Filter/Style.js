@@ -17,6 +17,7 @@ export const OptionWrapper = styled.div`
   width: 15rem;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
 `;
 
 export const Option = styled.div`
@@ -36,10 +37,11 @@ export const SelectWrapper = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  z-index: 900;
 `;
 
 export const Title = styled.p`
-  margin-right: 10px;
+  margin-right: 30px;
 `;
 
 export const Icon = styled.i`
