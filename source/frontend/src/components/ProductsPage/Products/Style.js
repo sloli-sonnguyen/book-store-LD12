@@ -37,7 +37,30 @@ export const ToolbarWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 2rem;
 `;
 
-export const DisplaySelect = styled.div``;
+export const DisplaySelect = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  min-width: 80px;
+`;
+
+export const GridSelect = styled.i`
+  background-color: #e12503;
+  color: white;
+  transition: 0.3s;
+  font-size: 1.8rem;
+  padding: 0.2rem;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: black;
+  }
+`;
+
+export const ListSelect = styled(GridSelect)``;

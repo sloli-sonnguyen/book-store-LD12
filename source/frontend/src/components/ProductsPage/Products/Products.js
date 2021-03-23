@@ -6,6 +6,9 @@ import {
   WidgetWrapper,
   ProductListWrapper,
   ToolbarWrapper,
+  DisplaySelect,
+  GridSelect,
+  ListSelect,
 } from './Style';
 import Card from '../../Base/Card/Card';
 
@@ -21,7 +24,10 @@ function Products() {
         </WidgetWrapper>
         <ProductListWrapper>
           <ToolbarWrapper>
-            <h1>DisplaySelect</h1>
+            <DisplaySelect>
+              <GridSelect className="bx bxs-grid-alt" />
+              <ListSelect className="bx bx-list-ul" />
+            </DisplaySelect>
             <Filter />
           </ToolbarWrapper>
           <ProductList>
