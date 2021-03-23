@@ -1,5 +1,15 @@
 import React from 'react';
-import { Wrapper, Container, ProductList, WidgetWrapper, ProductListWrapper } from './Style';
+import {
+  Wrapper,
+  Container,
+  ProductList,
+  WidgetWrapper,
+  ProductListWrapper,
+  ToolbarWrapper,
+  DisplaySelect,
+  GridSelect,
+  ListSelect,
+} from './Style';
 import Card from '../../Base/Card/Card';
 
 import Widget from '../../Base/Widget/Widget';
@@ -13,9 +23,15 @@ function Products() {
           <Widget />
         </WidgetWrapper>
         <ProductListWrapper>
+          <ToolbarWrapper>
+            <DisplaySelect>
+              <GridSelect className="bx bxs-grid-alt" />
+              <ListSelect className="bx bx-list-ul" />
+            </DisplaySelect>
+            <Filter />
+          </ToolbarWrapper>
           <ProductList>
             <Card
-              marginLeft={1.2}
               xs={6}
               sm={4}
               src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-46_grande.jpg?v=1587118513"
@@ -25,7 +41,6 @@ function Products() {
               text2="$700.00"
             />
             <Card
-              marginLeft={1.2}
               xs={6}
               sm={4}
               src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-104_grande.jpg?v=1587120877"
@@ -35,7 +50,6 @@ function Products() {
               text2="$700.00"
             />
             <Card
-              marginLeft={1.2}
               xs={6}
               sm={4}
               src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-67_grande.jpg?v=1587117773"
@@ -45,27 +59,15 @@ function Products() {
               text2="$700.00"
             />
             <Card
-              marginLeft={1.2}
               xs={6}
               sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-65_350X.jpg?v=1587118346"
+              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-46_grande.jpg?v=1587118513"
               subTitle="DONALD WILLIAM"
               title="Donate A Book"
               text1="$120.00"
               text2="$700.00"
             />
             <Card
-              marginLeft={1.2}
-              xs={6}
-              sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-16_350X.jpg?v=1587117190"
-              subTitle="DONALD WILLIAM"
-              title="Donate A Book"
-              text1="$120.00"
-              text2="$700.00"
-            />
-            <Card
-              marginLeft={1.2}
               xs={6}
               sm={4}
               src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-104_grande.jpg?v=1587120877"
@@ -75,17 +77,6 @@ function Products() {
               text2="$700.00"
             />
             <Card
-              marginLeft={1.2}
-              xs={6}
-              sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-104_grande.jpg?v=1587120877"
-              subTitle="DONALD WILLIAM"
-              title="Donate A Book"
-              text1="$120.00"
-              text2="$700.00"
-            />
-            <Card
-              marginLeft={1.2}
               xs={6}
               sm={4}
               src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-67_grande.jpg?v=1587117773"
@@ -95,10 +86,27 @@ function Products() {
               text2="$700.00"
             />
             <Card
-              marginLeft={1.2}
               xs={6}
               sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-65_350X.jpg?v=1587118346"
+              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-46_grande.jpg?v=1587118513"
+              subTitle="DONALD WILLIAM"
+              title="Donate A Book"
+              text1="$120.00"
+              text2="$700.00"
+            />
+            <Card
+              xs={6}
+              sm={4}
+              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-104_grande.jpg?v=1587120877"
+              subTitle="DONALD WILLIAM"
+              title="Donate A Book"
+              text1="$120.00"
+              text2="$700.00"
+            />
+            <Card
+              xs={6}
+              sm={4}
+              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-67_grande.jpg?v=1587117773"
               subTitle="DONALD WILLIAM"
               title="Donate A Book"
               text1="$120.00"
@@ -107,7 +115,6 @@ function Products() {
           </ProductList>
         </ProductListWrapper>
       </Container>
-      <Filter />
     </Wrapper>
   );
 }

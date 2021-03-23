@@ -1,12 +1,13 @@
 import React from 'react';
 import { Wrapper, Container, Title, SubTitle } from './Style';
 
-function Breadcrumb() {
+function Breadcrumb(props) {
+  const { title, subTitle } = props;
   return (
     <Wrapper>
       <Container>
-        <Title>Fiction</Title>
-        <SubTitle>Products - Fiction</SubTitle>
+        <Title>{title}</Title>
+        <SubTitle>{subTitle}</SubTitle>
       </Container>
     </Wrapper>
   );
