@@ -50,7 +50,7 @@ export const DisplaySelect = styled.div`
 `;
 
 export const GridSelect = styled.i`
-  background-color: #e12503;
+  background-color: #d14031;
   color: white;
   transition: 0.3s;
   font-size: 1.8rem;
