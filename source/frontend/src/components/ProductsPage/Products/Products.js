@@ -23,7 +23,7 @@ function Products() {
           <Widget />
         </WidgetWrapper>
         <ProductListWrapper>
-          <ToolbarWrapper>
+          <ToolbarWrapper p={0}>
             <DisplaySelect>
               <GridSelect className="bx bxs-grid-alt" />
               <ListSelect className="bx bx-list-ul" />

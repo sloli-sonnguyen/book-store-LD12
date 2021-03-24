@@ -33,7 +33,7 @@ export const ProductList = styled(BContainer)`
   justify-content: space-between;
 `;
 
-export const ToolbarWrapper = styled.div`
+export const ToolbarWrapper = styled(BContainer)`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -44,7 +44,6 @@ export const ToolbarWrapper = styled.div`
 export const DisplaySelect = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: fit-content;
   min-width: 80px;
 `;
@@ -56,6 +55,7 @@ export const GridSelect = styled.i`
   font-size: 1.8rem;
   padding: 0.2rem;
   text-align: center;
+  margin-right: 0.5rem;
   cursor: pointer;
 
   &:hover {
