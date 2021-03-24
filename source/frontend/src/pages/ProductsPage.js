@@ -12,7 +12,7 @@ function ProductsPage() {
         <Header p={18} />
       </BFluidContainer>
       <BFluidContainer column="true">
-        <Breadcrumb />
+        <Breadcrumb title="Products" />
         <Products />
       </BFluidContainer>
       <BFluidContainer>
