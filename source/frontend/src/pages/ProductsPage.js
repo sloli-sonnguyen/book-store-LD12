@@ -9,7 +9,7 @@ function ProductsPage() {
   return (
     <BWrapper>
       <BFluidContainer>
-        <Header />
+        <Header p={18} />
       </BFluidContainer>
       <BFluidContainer column="true">
         <Breadcrumb />

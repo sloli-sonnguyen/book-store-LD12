@@ -17,11 +17,12 @@ import {
   FakeHeader,
 } from './Style';
 
-function Header() {
+function Header(props) {
+  const { p } = props;
   return (
     <BWrapper>
       <HeaderFixed>
-        <HeaderWrapper p={18}>
+        <HeaderWrapper p={p}>
           <SearchWrapper>
             <SearchInput placeholder="Search..." />
             <SearchButton>

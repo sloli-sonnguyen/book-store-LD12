@@ -10,7 +10,7 @@ function ContactPage() {
   return (
     <BWrapper>
       <BFluidContainer>
-        <Header />
+        <Header p={10} />
       </BFluidContainer>
       <BFluidContainer column="true">
         <Breadcrumb title="Contact Us" subTitle="Home - Contact Us" />
