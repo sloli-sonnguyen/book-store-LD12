@@ -8,6 +8,7 @@ export const CardTitle = styled.h2`
   font-size: 26px;
   font-weight: bold;
   transition: 0.5s;
+  cursor: pointer;
 `;
 
 export const CardSubTitle = styled.h6`
