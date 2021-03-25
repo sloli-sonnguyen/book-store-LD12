@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   width: 100%;
   padding-right: 1.2rem;
   min-width: 200px;
+  background-color: white;
 `;
 
 export const Title = styled.h2`

@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled(BContainer)`
+  position: relative;
   @media (max-width: 991px) {
     flex-direction: column;
     align-items: center;
@@ -15,9 +16,19 @@ export const Container = styled(BContainer)`
 
 export const WidgetWrapper = styled.div`
   width: 20%;
-
   @media (max-width: 991px) {
-    width: 0%;
+    position: absolute;
+    top: 4%;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    display: ${({ shouldBeShowWidget }) => (shouldBeShowWidget ? 'flex' : 'none')};
+    flex-direction: column;
+  }
+
+  @media (max-width: 767px) {
+    top: 1%;
+    padding: 0.3rem;
   }
 `;
 
@@ -36,9 +47,12 @@ export const ProductList = styled(BContainer)`
 export const ToolbarWrapper = styled(BContainer)`
   width: 100%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   margin-bottom: 2rem;
+  justify-content: space-between;
+  @media (max-width: 991px) {
+    padding: 0rem 1rem;
+  }
 `;
 
 export const DisplaySelect = styled.div`
@@ -64,3 +78,13 @@ export const GridSelect = styled.i`
 `;
 
 export const ListSelect = styled(GridSelect)``;
+
+export const Icon = styled.i`
+  justify-self: flex-start;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+  @media (max-width: 991px) {
+    display: block;
+  }
+`;
