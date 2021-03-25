@@ -1,17 +1,25 @@
-import React from 'react';
-import { Wrapper, Title, WidgetText, WidgetSelectWrapper } from './Style';
+import React, { useState } from 'react';
+import { Wrapper, Title, WidgetText, WidgetSelectWrapper, Icon } from './Style';
 
-function Widget() {
+const UpIcon = 'bx bx-caret-up';
+const DownIcon = 'bx bx-caret-down';
+
+function Widget(props) {
+  const { title, selects } = props;
+  const [WidgetState, setWidgetState] = useState(true);
+
+  const handleTitleClick = () => {
+    setWidgetState(!WidgetState);
+  };
+
   return (
     <Wrapper>
-      <Title>Category</Title>
-      <WidgetSelectWrapper>
-        <WidgetText>History</WidgetText>
-        <WidgetText>Fiction</WidgetText>
-        <WidgetText>Business</WidgetText>
-        <WidgetText>Literature</WidgetText>
-        <WidgetText>Religion</WidgetText>
-        <WidgetText>Stories</WidgetText>
+      <Title onClick={handleTitleClick}>
+        <Icon className={WidgetState ? DownIcon : UpIcon} />
+        {title}
+      </Title>
+      <WidgetSelectWrapper shouldBeShow={WidgetState}>
+        {selects && selects.map((item) => <WidgetText key={item.id}>{item.content}</WidgetText>)}
       </WidgetSelectWrapper>
     </Wrapper>
   );
