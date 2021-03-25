@@ -53,10 +53,6 @@ function Products() {
         </WidgetWrapper>
         <ProductListWrapper>
           <ToolbarWrapper p={0}>
-            <DisplaySelect>
-              <GridSelect className="bx bxs-grid-alt" />
-              <ListSelect className="bx bx-list-ul" />
-            </DisplaySelect>
             <Filter />
           </ToolbarWrapper>
           <ProductList>

@@ -36,7 +36,7 @@ export const ProductList = styled(BContainer)`
 export const ToolbarWrapper = styled(BContainer)`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 2rem;
 `;
