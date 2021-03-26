@@ -1,19 +1,19 @@
 import React from 'react';
-import { BWrapper, BFluidContainer } from '../components/Layout/Base';
 import Header from '../components/commons/Header/Header';
 import Footer from '../components/commons/Footer/Footer';
-import Products from '../components/ProductsPage/Products/Products';
+import { BWrapper, BFluidContainer } from '../components/Layout/Base';
 import Breadcrumb from '../components/Base/Breadcrumb/Breadcrumb';
+import CartTable from '../components/CartPage/CartTable/CartTable';
 
-function ProductsPage() {
+function CartPage() {
   return (
     <BWrapper>
       <BFluidContainer>
-        <Header p={18} />
+        <Header p={10} />
       </BFluidContainer>
       <BFluidContainer column="true">
-        <Breadcrumb title="Products" />
-        <Products />
+        <Breadcrumb title="Your Shopping Cart" subTitle="Home - Your Shopping Cart" />
+        <CartTable />
       </BFluidContainer>
       <BFluidContainer>
         <Footer />
@@ -22,4 +22,4 @@ function ProductsPage() {
   );
 }
 
-export default ProductsPage;
+export default CartPage;

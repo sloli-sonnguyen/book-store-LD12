@@ -17,11 +17,12 @@ import {
   FakeHeader,
 } from './Style';
 
-function Header() {
+function Header(props) {
+  const { p } = props;
   return (
     <BWrapper>
       <HeaderFixed>
-        <HeaderWrapper p={18}>
+        <HeaderWrapper p={p}>
           <SearchWrapper>
             <SearchInput placeholder="Search..." />
             <SearchButton>
@@ -48,11 +49,21 @@ function Header() {
         </HeaderWrapper>
         <NavBarWrapper>
           <ListWrapper p={18} center="true">
-            <NavItem>Home</NavItem>
-            <NavItem>Products</NavItem>
-            <NavItem>Blogs</NavItem>
-            <NavItem>About</NavItem>
-            <NavItem>Contact</NavItem>
+            <NavItem as="a" href="/">
+              Home
+            </NavItem>
+            <NavItem as="a" href="/products">
+              Products
+            </NavItem>
+            <NavItem as="a" href="/blogs">
+              Blogs
+            </NavItem>
+            <NavItem as="a" href="/about">
+              About
+            </NavItem>
+            <NavItem as="a" href="/contact">
+              Contact
+            </NavItem>
           </ListWrapper>
         </NavBarWrapper>
       </HeaderFixed>

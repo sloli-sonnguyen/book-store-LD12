@@ -1,17 +1,20 @@
 import styled from 'styled-components';
 import { Button } from '../../Buttons/Buttons';
+import { BContainer } from '../../Layout/Base';
 
-export const Wrapper = styled.div`
-  width: 72%;
+export const Wrapper = styled(BContainer)`
   margin: auto;
   height: 28rem;
-  /* background-color: pink; */
   padding-top: 3rem;
+
+  @media (max-width: 767px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
 export const SendUsAMessage = styled.h1`
   text-align: center;
   margin-bottom: 0.5rem;
-  top: 10%;
   font-family: Cormorant Garamond, Baskerville, Caslon, serif;
 `;
 export const HeaderBorder = styled.div`
@@ -19,7 +22,8 @@ export const HeaderBorder = styled.div`
   height: 0.25rem;
   background-color: #d14031;
   margin: auto;
-  margin-bottom: 1.5rem;
+  margin-top: 1.3rem;
+  margin-bottom: 2rem;
 `;
 export const TypeContact = styled.div`
   width: 100%;
@@ -82,5 +86,5 @@ export const ContactButton = styled(Button)`
     max-width: 1000px;
   }
 
-  float: right;
+  align-self: flex-end;
 `;

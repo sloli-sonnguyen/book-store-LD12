@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Wrapper,
   Container,
@@ -6,28 +6,69 @@ import {
   WidgetWrapper,
   ProductListWrapper,
   ToolbarWrapper,
-  DisplaySelect,
-  GridSelect,
-  ListSelect,
+  Icon,
 } from './Style';
 import Card from '../../Base/Card/Card';
 
 import Widget from '../../Base/Widget/Widget';
 import Filter from '../../Base/Filter/Filter';
 
+const WidgetData = [
+  {
+    id: 1,
+    title: 'Category',
+    selects: [
+      { id: 1, content: 'History' },
+      { id: 2, content: 'Fiction' },
+      { id: 3, content: 'Business' },
+      { id: 4, content: 'Literature' },
+      { id: 5, content: 'Religion' },
+      { id: 6, content: 'Stories' },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Shop By Language',
+    selects: [
+      { id: 1, content: 'English' },
+      { id: 2, content: 'Spanish' },
+      { id: 3, content: 'Japanese' },
+      { id: 4, content: 'Korean' },
+      { id: 5, content: 'Vietnamese' },
+      { id: 6, content: 'Italia' },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Shop By Language',
+    selects: [
+      { id: 1, content: 'English' },
+      { id: 2, content: 'Spanish' },
+      { id: 3, content: 'Japanese' },
+      { id: 4, content: 'Korean' },
+      { id: 5, content: 'Vietnamese' },
+      { id: 6, content: 'Italia' },
+    ],
+  },
+];
+
 function Products() {
+  const [shouldBeShowWidget, setShouldBeShowWidget] = useState(false);
+
+  const handleLeftFilterIconClick = () => {
+    setShouldBeShowWidget(!shouldBeShowWidget);
+  };
   return (
     <Wrapper>
       <Container p={10} between="true">
-        <WidgetWrapper>
-          <Widget />
+        <WidgetWrapper shouldBeShowWidget={shouldBeShowWidget}>
+          {WidgetData.map((item) => (
+            <Widget key={item.id} title={item.title} selects={item.selects} />
+          ))}
         </WidgetWrapper>
         <ProductListWrapper>
-          <ToolbarWrapper>
-            <DisplaySelect>
-              <GridSelect className="bx bxs-grid-alt" />
-              <ListSelect className="bx bx-list-ul" />
-            </DisplaySelect>
+          <ToolbarWrapper p={0}>
+            <Icon className="bx bx-filter" onClick={handleLeftFilterIconClick} />
             <Filter />
           </ToolbarWrapper>
           <ProductList>
