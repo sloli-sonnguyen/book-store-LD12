@@ -9,6 +9,13 @@ export const Wrapper = styled.div`
 
 export const Column = styled(BColumn)`
   text-align: center;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 `;
 
 export const Container = styled(BContainer)``;
@@ -24,6 +31,13 @@ export const TableHeader = styled.div`
   display: flex;
   justify-content: space-around;
   color: white;
+  @media (max-width: 500px) {
+    display: block;
+    max-height: 40px;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+  }
 `;
 
 export const TableHeaderTitle = styled.h2`
@@ -47,19 +61,38 @@ export const CartItem = styled.div`
   margin-top: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid #ddd;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 2rem;
+  }
 `;
 
 export const CartItemInfo = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const CartItemImage = styled.img`
   max-width: 180px;
   margin-right: 2rem;
+
+  @media (max-width: 640px) {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
 `;
 
-export const TextWrap = styled.div``;
+export const TextWrap = styled.div`
+  padding-bottom: 1rem;
+`;
 
 export const CartItemTitle = styled.h4`
   margin-bottom: 0.6rem;
@@ -72,6 +105,9 @@ export const CartItemSubTitle = styled.p`
 export const Icon = styled.i`
   font-size: 1.6rem;
   font-weight: bold;
+  @media (max-width: 500px) {
+    width: 60px;
+  }
   cursor: pointer;
 `;
 
@@ -79,6 +115,9 @@ export const BoldText = styled.p`
   color: #676767;
   font-weight: bold;
   font-size: 1.2rem;
+  @media (max-width: 500px) {
+    width: 60px;
+  }
 `;
 
 export const PriceInput = styled.input`
@@ -93,6 +132,8 @@ export const PriceInput = styled.input`
 export const NormalText = styled.p`
   margin-bottom: 1rem;
   text-decoration: underline;
+  cursor: pointer;
+  user-select: none;
 `;
 
 export const CartPageButton = styled(Button)`
@@ -103,11 +144,22 @@ export const CartPageButton = styled(Button)`
 export const LastRowWrap = styled.div`
   width: 100%;
   padding: 3rem 1rem;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const Note = styled.textarea`
-  height: 160px;
-  width: 500px;
+  height: 10rem;
+  width: 40%;
+  margin-bottom: 2rem;
+
+  @media (max-width: 600px) {
+    width: 80%;
+  }
 `;
 
 export const LeftBlock = styled.div`
@@ -127,4 +179,17 @@ export const LeftBlockNormalText = styled.p`
 export const SpanText = styled.span`
   color: #676767;
   margin-left: 1rem;
+`;
+
+export const HiddenTitle = styled(TableHeaderTitle)`
+  display: none;
+  font-size: 1.2rem;
+  text-align: left;
+  width: 10px;
+  @media (max-width: 500px) {
+    display: block;
+    font-size: 1.2rem;
+    padding: 0;
+    width: 60px;
+  }
 `;
