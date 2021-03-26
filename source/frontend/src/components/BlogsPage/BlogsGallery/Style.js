@@ -11,3 +11,8 @@ export const Container = styled(BContainer)`
     justify-content: center;
   }
 `;
+
+export const PaginationWrapper = styled.div`
+  width: 100%;
+  margin-bottom: 5rem;
+`;

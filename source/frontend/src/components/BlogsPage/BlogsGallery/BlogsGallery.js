@@ -1,6 +1,7 @@
 import React from 'react';
-import { Wrapper, Container } from './Style';
+import { Wrapper, Container, PaginationWrapper } from './Style';
 import { Button } from '../../Buttons/Buttons';
+import Pagination from '../../Base/Pagination/Pagination';
 import {
   CardWrapper,
   CardSubTitle,
@@ -96,6 +97,9 @@ function BlogsGallery() {
           </CardWrapper>
         ))}
       </Container>
+      <PaginationWrapper>
+        <Pagination />
+      </PaginationWrapper>
     </Wrapper>
   );
 }
