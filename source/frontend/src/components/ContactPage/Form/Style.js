@@ -44,7 +44,7 @@ export const ContactForMessage = styled.textarea`
   padding-top: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  border:1px solid #eeeeee;
+  border: 1px solid #eeeeee;
 
   /* box-shadow: 0px 0px 0.5px gray; */
 
@@ -59,11 +59,11 @@ export const ContactForName = styled.input`
   width: 100%;
   font-size: 1rem;
   background-color: #fafafa;
-  border:none;
+  border: none;
   padding-left: 1rem;
   outline: none;
   /* box-shadow: 0px 0px 0.5px gray; */
-  border:1px solid #eeeeee;
+  border: 1px solid #eeeeee;
 
   ::placeholder {
     color: black;
@@ -79,7 +79,7 @@ export const ContactButton = styled(Button)`
   }
   @media screen and (max-width: 767px) {
     width: 100%;
-    max-width:1000px;
+    max-width: 1000px;
   }
 
   float: right;
