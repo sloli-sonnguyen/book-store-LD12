@@ -29,6 +29,8 @@ import {
   TotalPrice,
   Scrollable,
   EmptyCart,
+  CartTotalWrapper,
+  IconBag,
 } from './Style';
 
 const productCart = [
@@ -106,10 +108,16 @@ function Header(props) {
                   ))}
                 </Scrollable>
                 {quantity ? (
-                  <CartTotal>
-                    CART TOTAL :
-                    <TotalPrice> $520.00</TotalPrice>
-                  </CartTotal>
+                  <CartTotalWrapper>
+                    <CartTotal shouldScroll={shouldScroll}>
+                      CART TOTAL :
+                      <TotalPrice> $520.00</TotalPrice>
+                    </CartTotal>
+                    <Button>
+                      <IconBag className="bx bxs-shopping-bag" />
+                      View cart
+                    </Button>
+                  </CartTotalWrapper>
                 ) : (
                   <EmptyCart>Your cart is currently empty!</EmptyCart>
                 )}

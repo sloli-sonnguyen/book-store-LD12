@@ -142,6 +142,7 @@ export const Tooltip = styled.div`
   top: 100%;
   right: 0;
   height: 0px;
+  max-height: 550px;
   width: 25rem;
   transition: all 0.4s ease;
   background-color: white;
@@ -154,7 +155,6 @@ export const CartWrapper = styled.div`
   display: flex;
   &:hover ${Tooltip} {
     height: ${({ height }) => `${height}rem`};
-    max-height: 550px;
   }
   @media (max-width: 767px) {
     &:hover ${Tooltip} {
@@ -210,8 +210,8 @@ export const CloseIcon = styled.i`
 `;
 
 export const CartTotal = styled.p`
-  margin-top: 2rem;
-  text-align: center;
+  margin-top: ${({ shouldScroll }) => (shouldScroll ? '2.5rem' : '1rem')};
+  margin-bottom: 1rem;
   font-size: 1.25rem;
   color: black;
 `;
@@ -233,4 +233,14 @@ export const EmptyCart = styled.div`
   align-items: center;
   font-size: 1.2rem;
   height: 100%;
+`;
+
+export const CartTotalWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const IconBag = styled.div`
+  margin-right: 5px;
 `;
