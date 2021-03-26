@@ -9,6 +9,7 @@ export const Select = styled.div`
   padding: 10px;
   transition: 0.3s;
   cursor: pointer;
+  user-select: none;
 `;
 
 export const OptionWrapper = styled.div`

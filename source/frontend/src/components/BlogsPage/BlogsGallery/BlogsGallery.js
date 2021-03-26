@@ -83,7 +83,7 @@ function BlogsGallery() {
     <Wrapper>
       <Container p={18} between="true">
         {blogs.map((blog) => (
-          <CardWrapper xs={12} md={4}>
+          <CardWrapper xs={12} md={4} key={blog.id}>
             <ImageWrap NoneEffect="true">
               <CardImage src={blog.img} />
               <ImageWrapOverLay />
