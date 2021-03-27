@@ -65,7 +65,7 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const CartWrapper = styled.div`
+export const ListIconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -135,4 +135,112 @@ export const FakeHeader = styled.div`
   @media (max-width: 967px) {
     height: 90px !important;
   }
+`;
+
+export const Tooltip = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  height: 0px;
+  max-height: 550px;
+  width: 25rem;
+  transition: all 0.4s ease;
+  background-color: white;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+`;
+
+export const CartWrapper = styled.div`
+  position: relative;
+  display: flex;
+  &:hover ${Tooltip} {
+    height: ${({ height }) => `${height}rem`};
+  }
+  @media (max-width: 767px) {
+    &:hover ${Tooltip} {
+      height: 0rem;
+    }
+  }
+`;
+
+export const ProductWrapper = styled.div`
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid #e4e4e4;
+  position: relative;
+`;
+
+export const ProductImageWrapper = styled.div`
+  margin-right: 15px;
+  width: 20%;
+  cursor: pointer;
+`;
+
+export const BookImage = styled.img`
+  width: 100%;
+  height: 7rem;
+  object-fit: cover;
+`;
+
+export const ProductInfoWrapper = styled.div`
+  width: 50%;
+`;
+
+export const TitleText = styled.a`
+  line-height: 1.6rem;
+  color: black;
+  cursor: pointer;
+  font-size: 1.15rem;
+`;
+
+export const PriceText = styled.p`
+  line-height: 1.5rem;
+  color: #a7b3ab;
+  font-size: 1.1rem;
+`;
+
+export const CloseIcon = styled.i`
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: black;
+  float: right;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+`;
+
+export const CartTotal = styled.p`
+  margin-top: ${({ shouldScroll }) => (shouldScroll ? '2.5rem' : '1rem')};
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: black;
+`;
+
+export const TotalPrice = styled.span`
+  color: #a7b3ab;
+  font-size: 1.2rem;
+`;
+
+export const Scrollable = styled.div`
+  overflow: ${({ shouldScroll }) => (shouldScroll ? 'scroll' : 'none')};
+  overflow-x: ${({ shouldScroll }) => (shouldScroll ? 'hidden' : 'none')};
+  height: ${({ shouldScroll }) => (shouldScroll ? '25rem' : 'none')};
+`;
+
+export const EmptyCart = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  height: 100%;
+`;
+
+export const CartTotalWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const IconBag = styled.div`
+  margin-right: 5px;
 `;

@@ -14,7 +14,7 @@ import {
 } from './Style';
 
 function Card(props) {
-  const { src, subTitle, title, text1, text2, ...restProps } = props;
+  const { id, src, subTitle, title, text1, text2, ...restProps } = props;
   return (
     <CardWrapper {...restProps}>
       <ImageWrap>
@@ -22,7 +22,9 @@ function Card(props) {
         <CardImage src={src} />
         <TopLeftCardLabel>Sale</TopLeftCardLabel>
         <TopRightCardLabel>Save 80%</TopRightCardLabel>
-        <CenterCardHoverLabel>View</CenterCardHoverLabel>
+        <CenterCardHoverLabel as="a" href={`/products/${id}`}>
+          View
+        </CenterCardHoverLabel>
       </ImageWrap>
       <CardSubTitle>{subTitle}</CardSubTitle>
       <CardTitle>{title}</CardTitle>

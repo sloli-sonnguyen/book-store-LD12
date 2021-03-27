@@ -15,6 +15,7 @@ const GlobalStyle = styled.createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: black;
   }
 
   :root {
