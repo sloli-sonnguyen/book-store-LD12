@@ -6,11 +6,7 @@ export const Wrapper = styled.div`
   margin-top: 2rem;
 `;
 
-export const Container = styled(BContainer)`
-  @media (max-width: 991px) {
-    justify-content: center;
-  }
-`;
+export const Container = styled(BContainer)``;
 
 export const PaginationWrapper = styled.div`
   width: 100%;

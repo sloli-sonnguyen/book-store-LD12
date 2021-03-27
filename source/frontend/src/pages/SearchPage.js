@@ -4,16 +4,18 @@ import Header from '../components/commons/Header/Header';
 import Footer from '../components/commons/Footer/Footer';
 import Breadcrumb from '../components/Base/Breadcrumb/Breadcrumb';
 import Gallery from '../components/Base/Gallery/Gallery';
+import SearchBox from '../components/SearchPage/SearchBox/SearchBox';
 
-function BlogsPage() {
+function SearchPage() {
   return (
     <BWrapper>
       <BFluidContainer>
-        <Header p={18} />
+        <Header p={10} />
       </BFluidContainer>
       <BFluidContainer column="true">
-        <Breadcrumb title="Blogs" />
-        <Gallery type="blogs" />
+        <Breadcrumb title="Search" />
+        <SearchBox />
+        <Gallery type="products" />
       </BFluidContainer>
       <BFluidContainer>
         <Footer />
@@ -22,4 +24,4 @@ function BlogsPage() {
   );
 }
 
-export default BlogsPage;
+export default SearchPage;

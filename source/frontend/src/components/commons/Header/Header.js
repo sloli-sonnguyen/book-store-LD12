@@ -79,7 +79,7 @@ function Header(props) {
               <i className="bx bx-search" />
             </SearchButton>
           </SearchWrapper>
-          <LogoWrapper>
+          <LogoWrapper as="a" href="/">
             <img
               src="https://cdn.shopify.com/s/files/1/0359/5979/9852/t/2/assets/logo.png?v=1833458243843515159"
               alt="logo"
@@ -97,10 +97,8 @@ function Header(props) {
                       <ProductInfoWrapper>
                         <TitleText>{product.title}</TitleText>
                         <PriceText>
-                          $
-                          {product.price}
-                          .00 x
-                          {product.quantity}
+                          ${product.price}
+                          .00 x{product.quantity}
                         </PriceText>
                       </ProductInfoWrapper>
                       <CloseIcon className="bx bx-x" />
@@ -110,10 +108,9 @@ function Header(props) {
                 {quantity ? (
                   <CartTotalWrapper>
                     <CartTotal shouldScroll={shouldScroll}>
-                      CART TOTAL :
-                      <TotalPrice> $520.00</TotalPrice>
+                      CART TOTAL :<TotalPrice> $520.00</TotalPrice>
                     </CartTotal>
-                    <Button>
+                    <Button as="a" href="/cart">
                       <IconBag className="bx bxs-shopping-bag" />
                       View cart
                     </Button>
@@ -122,8 +119,8 @@ function Header(props) {
                   <EmptyCart>Your cart is currently empty!</EmptyCart>
                 )}
               </Tooltip>
-              <Icon className="bx bxs-shopping-bag" />
-              <DetailCartWrapper>
+              <Icon className="bx bxs-shopping-bag" as="a" href="/cart" />
+              <DetailCartWrapper as="a" href="/cart">
                 <p>Shopping Cart</p>
                 <p>0 item - 0.00</p>
               </DetailCartWrapper>

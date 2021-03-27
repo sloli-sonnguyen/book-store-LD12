@@ -6,6 +6,7 @@ const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const ProductDetailPage = React.lazy(() => import('./pages/ProductDetailPage'));
 const BlogsPage = React.lazy(() => import('./pages/BlogsPage'));
 const CartPage = React.lazy(() => import('./pages/CartPage'));
+const SearchPage = React.lazy(() => import('./pages/SearchPage'));
 
 const routes = [
   { id: 1, path: '/', exact: true, name: 'HomePage', component: HomePage },
@@ -14,6 +15,7 @@ const routes = [
   { id: 4, path: '/products/:id', name: 'ProductDetailPage', component: ProductDetailPage },
   { id: 5, path: '/blogs', exact: true, name: 'BlogsPage', component: BlogsPage },
   { id: 6, path: '/cart', exact: true, name: 'CartPage', component: CartPage },
+  { id: 6, path: '/search', exact: true, name: 'SearchPage', component: SearchPage },
 ];
 
 export default routes;

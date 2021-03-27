@@ -72,3 +72,69 @@ export const books = [
       'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-4_grande.jpg?v=1587113962',
   },
 ];
+
+export const blogs = [
+  {
+    id: 0,
+    imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-1.jpg?v=1585546169',
+    subTitle: 'Ramamoorthi M',
+    title: 'Books changed my ideology',
+    text: 'The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...',
+  },
+  {
+    id: 1,
+    imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-2.jpg?v=1585546218',
+    subTitle: 'Ramamoorthi M',
+    title: 'Books changed my ideology',
+    text: 'The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...',
+  },
+  {
+    id: 2,
+    imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-3.jpg?v=1585546251',
+    subTitle: 'Ramamoorthi M',
+    title: 'Books changed my ideology',
+    text: 'The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-7.JPG?v=1585981240',
+    subTitle: 'Ramamoorthi M',
+    title: 'Books changed my ideology',
+    text: 'The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...',
+  },
+  {
+    id: 4,
+    imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-6.JPG?v=1585981209',
+    subTitle: 'Ramamoorthi M',
+    title: 'Books changed my ideology',
+    text: 'The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...',
+  },
+  {
+    id: 5,
+    imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-10.JPG?v=1585981370',
+    subTitle: 'Ramamoorthi M',
+    title: 'Books changed my ideology',
+    text: 'The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...',
+  },
+  {
+    id: 6,
+    imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-9.JPG?v=1585981316',
+    subTitle: 'Ramamoorthi M',
+    title: 'Books changed my ideology',
+    text: 'The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...',
+  },
+  {
+    id: 7,
+    imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-11.JPG?v=1585981380',
+    subTitle: 'Ramamoorthi M',
+    title: 'Books changed my ideology',
+    text: 'The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...',
+  },
+  {
+    id: 8,
+    imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/articles/blog-8.JPG?v=1585981274',
+    subTitle: 'Ramamoorthi M',
+    title: 'Books changed my ideology',
+    text: 'The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...',
+  },
+];
