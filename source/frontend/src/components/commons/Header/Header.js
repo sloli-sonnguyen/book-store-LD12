@@ -75,7 +75,7 @@ function Header(props) {
         <HeaderWrapper p={p}>
           <SearchWrapper>
             <SearchInput placeholder="Search..." />
-            <SearchButton>
+            <SearchButton as="a" href="/search">
               <i className="bx bx-search" />
             </SearchButton>
           </SearchWrapper>
