@@ -65,7 +65,6 @@ function MainContent() {
             <Label>Total :</Label>
             <PriceText>$300.00</PriceText>
           </NormalText>
-
           <AddToCartButton>
             <Icon className="bx bxs-cart-add" /> Add To Cart
           </AddToCartButton>

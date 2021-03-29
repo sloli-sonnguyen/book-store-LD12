@@ -35,7 +35,7 @@ export const Title = styled.h1`
 
 export const InfoWrap = styled.div`
   margin-top: 3.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 `;
 
 export const SelectWrap = styled.div`
