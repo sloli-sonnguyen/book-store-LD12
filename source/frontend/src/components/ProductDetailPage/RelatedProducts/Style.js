@@ -17,3 +17,9 @@ export const SlideButton = styled(Button)`
   max-height: 40px;
   display: none;
 `;
+
+export const Title = styled.h1`
+  text-align: center;
+  margin-bottom: 4rem;
+  font-family: Cormorant Garamond, Baskerville, Caslon, serif;
+`;

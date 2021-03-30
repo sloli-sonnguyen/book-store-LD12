@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
-import { Wrapper, Container, SlideButton } from './Style';
+import { Wrapper, Container, SlideButton, Title } from './Style';
 import Card from '../../Base/Card/Card';
 import { books } from '../../../FakeData/FakeData';
 
@@ -20,6 +20,7 @@ function RelatedProducts() {
   return (
     <Wrapper>
       <Container p={18}>
+        <Title>Related Products</Title>
         <Carousel
           breakPoints={breakPoints}
           renderArrow={myArrow}
