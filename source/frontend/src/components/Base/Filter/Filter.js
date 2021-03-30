@@ -19,8 +19,8 @@ function Filter() {
   };
   const outsideClick = (event) => {
     const { target } = event;
-    if (!selectElement.current.contains(target)) {
-      setShoulFilter(false);
+    if (selectElement && selectElement.current) {
+      if (!selectElement.current.contains(target)) setShoulFilter(false);
     }
   };
 

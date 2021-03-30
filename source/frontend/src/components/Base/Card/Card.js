@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   CardWrapper,
   CardImage,
@@ -22,7 +23,7 @@ function Card(props) {
         <CardImage src={src} />
         <TopLeftCardLabel>Sale</TopLeftCardLabel>
         <TopRightCardLabel>Save 80%</TopRightCardLabel>
-        <CenterCardHoverLabel as="a" href={`/products/${id}`}>
+        <CenterCardHoverLabel as={Link} to={`/products/${id}`}>
           View
         </CenterCardHoverLabel>
       </ImageWrap>

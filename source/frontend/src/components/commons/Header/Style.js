@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Button } from '../../Buttons/Buttons';
 import { BContainer, BWrapper } from '../../Layout/Base';
 
@@ -120,7 +121,7 @@ export const ListWrapper = styled(BContainer)`
   align-items: center;
 `;
 
-export const NavItem = styled.a`
+export const NavItem = styled(Link)`
   padding: 1.5rem;
   color: white;
   cursor: pointer;
