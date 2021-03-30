@@ -49,11 +49,10 @@ export const SelectWrap = styled.div`
   }
 `;
 
-export const PriceText = styled.h3`
+export const PriceText = styled.span`
   font-size: 1.6rem;
   font-weight: 400;
   color: #676767;
-  margin-bottom: 1.5rem;
 `;
 
 export const NormalText = styled.p`
@@ -72,6 +71,7 @@ export const Label = styled.label`
 
 export const StarsWrap = styled.div`
   margin-bottom: 2rem;
+  margin-top: 1rem;
   font-size: 1.5rem;
 `;
 
