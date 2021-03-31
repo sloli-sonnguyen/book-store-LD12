@@ -188,10 +188,10 @@ export const ProductInfoWrapper = styled.div`
 `;
 
 export const TitleText = styled.a`
+  display: block;
   line-height: 1.6rem;
   color: black;
   cursor: pointer;
-  font-size: 1.15rem;
 `;
 
 export const PriceText = styled.p`
