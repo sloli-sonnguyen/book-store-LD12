@@ -33,32 +33,7 @@ import {
   IconBag,
 } from './Style';
 
-const productCart = [
-  {
-    id: 0,
-    img:
-      'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-34_small.jpg?v=1587116925',
-    title: 'Endless Summer Hardcover / Spanish',
-    price: 210,
-    quantity: 1,
-  },
-  {
-    id: 1,
-    img:
-      'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-101_grande.jpg?v=1587115881',
-    title: 'Endless Summer Hardcover / Spanish',
-    price: 210,
-    quantity: 1,
-  },
-  {
-    id: 2,
-    img:
-      'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-46_grande.jpg?v=1587118513',
-    title: 'Endless Summer Hardcover / Spanish',
-    price: 320,
-    quantity: 1,
-  },
-];
+import { productCart } from '../../../FakeData/FakeData';
 
 function Header(props) {
   const { p } = props;
@@ -96,6 +71,9 @@ function Header(props) {
                       </ProductImageWrapper>
                       <ProductInfoWrapper>
                         <TitleText>{product.title}</TitleText>
+                        <TitleText>
+                          {product.type} / {product.language}
+                        </TitleText>
                         <PriceText>
                           ${product.price}
                           .00 x{product.quantity}
