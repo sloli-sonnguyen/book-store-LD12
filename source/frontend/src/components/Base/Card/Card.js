@@ -23,7 +23,7 @@ function Card(props) {
         <CardImage src={src} />
         <TopLeftCardLabel>Sale</TopLeftCardLabel>
         <TopRightCardLabel>Save 80%</TopRightCardLabel>
-        <CenterCardHoverLabel as={Link} to={`/products/${id}`}>
+        <CenterCardHoverLabel as="a" href={`/products/${id}`}>
           View
         </CenterCardHoverLabel>
       </ImageWrap>

@@ -133,21 +133,11 @@ function Header(props) {
         </HeaderWrapper>
         <NavBarWrapper>
           <ListWrapper p={18} center="true">
-            <NavItem as="a" href="/">
-              Home
-            </NavItem>
-            <NavItem as="a" href="/products">
-              Products
-            </NavItem>
-            <NavItem as="a" href="/blogs">
-              Blogs
-            </NavItem>
-            <NavItem as="a" href="/about">
-              About
-            </NavItem>
-            <NavItem as="a" href="/contact">
-              Contact
-            </NavItem>
+            <NavItem to="/">Home</NavItem>
+            <NavItem to="/products">Products</NavItem>
+            <NavItem to="/blogs">Blogs</NavItem>
+            <NavItem to="/about">About</NavItem>
+            <NavItem to="/contact">Contact</NavItem>
           </ListWrapper>
         </NavBarWrapper>
       </HeaderFixed>
