@@ -6,6 +6,8 @@ import routes from './routes';
 const loading = <h1>Loading ....</h1>;
 
 function App() {
+  const booksApiUrl = process.env.REACT_APP_BOOKS_API_URL;
+  console.log(booksApiUrl);
   return (
     <>
       <GlobalStyle />
