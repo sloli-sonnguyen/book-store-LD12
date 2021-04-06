@@ -1,19 +1,19 @@
 const initialState = {
   languages: [
-    { id: 1, content: 'English' },
-    { id: 2, content: 'Spanish' },
-    { id: 3, content: 'Japanese' },
-    { id: 4, content: 'Korean' },
-    { id: 5, content: 'Vietnamese' },
-    { id: 6, content: 'Italia' },
+    { id: 1, content: 'english' },
+    { id: 2, content: 'spanish' },
+    { id: 3, content: 'japanese' },
+    { id: 4, content: 'korean' },
+    { id: 5, content: 'vietnamese' },
+    { id: 6, content: 'italia' },
   ],
   category: [
-    { id: 1, content: 'All' },
-    { id: 2, content: 'Cook Book' },
-    { id: 3, content: 'History' },
-    { id: 4, content: 'Fantancy' },
-    { id: 5, content: 'Romance' },
-    { id: 6, content: 'Science' },
+    { id: 1, content: 'all' },
+    { id: 2, content: 'fiction' },
+    { id: 3, content: 'history' },
+    { id: 4, content: 'religion' },
+    { id: 5, content: 'business' },
+    { id: 6, content: 'science' },
   ],
   data: [
     {
