@@ -3,7 +3,7 @@ import Header from '../components/commons/Header/Header';
 import Footer from '../components/commons/Footer/Footer';
 import { BWrapper, BFluidContainer } from '../components/Layout/Base';
 import Form from '../components/ContactPage/Form/Form';
-import Breadcrumb from '../components/Base/Breadcrumb/Breadcrumb';
+import BreadcrumbContainer from '../containers/BreadcrumbContainer';
 import Map from '../components/ContactPage/Map/Map';
 
 function ContactPage() {
@@ -13,7 +13,7 @@ function ContactPage() {
         <Header p={10} />
       </BFluidContainer>
       <BFluidContainer column="true">
-        <Breadcrumb title="Contact Us" subTitle="Home - Contact Us" />
+        <BreadcrumbContainer />
         <Map />
         <Form />
       </BFluidContainer>

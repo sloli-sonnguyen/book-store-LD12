@@ -3,7 +3,7 @@ import { BWrapper, BFluidContainer } from '../components/Layout/Base';
 import Header from '../components/commons/Header/Header';
 import Footer from '../components/commons/Footer/Footer';
 import Products from '../components/ProductsPage/Products/Products';
-import Breadcrumb from '../components/Base/Breadcrumb/Breadcrumb';
+import BreadcrumbContainer from '../containers/BreadcrumbContainer';
 
 function ProductsPage() {
   return (
@@ -12,7 +12,7 @@ function ProductsPage() {
         <Header p={18} />
       </BFluidContainer>
       <BFluidContainer column="true">
-        <Breadcrumb title="Products" />
+        <BreadcrumbContainer />
         <Products />
       </BFluidContainer>
       <BFluidContainer>
