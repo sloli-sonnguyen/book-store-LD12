@@ -39,7 +39,7 @@ const WidgetData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: 'Shop By Language',
     selects: [
       { id: 1, content: 'English' },
