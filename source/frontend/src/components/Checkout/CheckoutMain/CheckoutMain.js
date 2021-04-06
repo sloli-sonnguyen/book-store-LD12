@@ -3,20 +3,7 @@ import {
   Wrapper,
   Container,
   Logo,
-  Title,
-  Input,
-  SmallInput,
-  SmallInputWrapper,
-  CheckboxWrapper,
-  Checkbox,
-  CheckboxLabel,
-  InputWrapper,
-  Select,
-  ConfirmWrapper,
-  Button,
-  ReturnTitle,
   Footer,
-  ReturnIcon,
   LogoContainer,
   OrdersContainer,
   OrdersSummaryTitleWrapper,
@@ -44,10 +31,15 @@ import {
   SmallUSD,
 } from '../Orders/Style';
 
-import { countries, productCart } from '../../../FakeData/FakeData';
+import Information from './Information/Information';
+import Shipping from './Shipping/Shipping';
+import Payment from './Payment/Payment';
+
+import { productCart } from '../../../FakeData/FakeData';
 
 function CheckoutMain() {
   const [shouldOrders, setShouldOrders] = useState(false);
+  const [currentMain, setCurrentMain] = useState(2);
   const handleClick = () => {
     setShouldOrders(!shouldOrders);
   };
@@ -116,45 +108,9 @@ function CheckoutMain() {
         </Dropdown>
       </OrdersContainer>
       <Container>
-        <Title>Contact information</Title>
-        <InputWrapper>
-          <Input placeholder="Email or mobile phone number" type="email" />
-        </InputWrapper>
-        <CheckboxWrapper>
-          <Checkbox type="checkbox" id="update" />
-          <CheckboxLabel htmlFor="update">
-            Keep me up to date on news and exclusive offers
-          </CheckboxLabel>
-        </CheckboxWrapper>
-        <Title>Shipping address</Title>
-        <SmallInputWrapper>
-          <SmallInput placeholder="First name (optional)" name="fname" />
-          <SmallInput placeholder="Last name" name="lname" />
-        </SmallInputWrapper>
-        <Input placeholder="Address" name="address" />
-        <Input placeholder="Apartment, suite, etc. (optional)" name="address" />
-        <Input placeholder="City" name="address" />
-        <SmallInputWrapper>
-          <Select placeholder="Country">
-            {countries.map((country) => (
-              <option key={country.id} value={country.value}>
-                {country.value}
-              </option>
-            ))}
-          </Select>
-          <SmallInput placeholder="Postal code" name="postcode" />
-        </SmallInputWrapper>
-        <CheckboxWrapper>
-          <Checkbox type="checkbox" id="save" />
-          <CheckboxLabel htmlFor="save">Save this information for next time</CheckboxLabel>
-        </CheckboxWrapper>
-        <ConfirmWrapper>
-          <Button>Contiune to shipping</Button>
-          <ReturnTitle>
-            <ReturnIcon className="bx bxs-chevron-left" />
-            Return to cart
-          </ReturnTitle>
-        </ConfirmWrapper>
+        {currentMain === 0 && <Information />}
+        {currentMain === 1 && <Shipping />}
+        {currentMain === 2 && <Payment />}
         <Footer>All rights reserved Bookly-theme</Footer>
       </Container>
     </Wrapper>
