@@ -54,6 +54,7 @@ export const CheckboxLabel = styled.label`
 export const Container = styled.div`
   padding: 0 4rem;
   padding-left: 25%;
+  flex-direction: column;
   @media (max-width: 1100px) {
     padding: 2rem 20%;
     padding-bottom: 0;
@@ -202,4 +203,24 @@ export const Dropdown = styled.div`
   height: ${({ height, shouldOrders }) => (shouldOrders ? `${height}rem` : 0)};
   transition: 0.5s;
   overflow: hidden;
+`;
+
+export const NavWrapper = styled.div`
+  display: flex;
+  margin: 2rem 0rem;
+`;
+
+export const NavItem = styled.div`
+  transition: 0.3s;
+  padding-right: 0.4rem;
+  padding-bottom: 0.4rem;
+  margin-right: 0.4rem;
+  border-bottom: 6px solid #ddd;
+  cursor: pointer;
+
+  border-bottom: 6px solid ${({ active }) => active && '#f06d20'};
+
+  &:hover {
+    color: tomato;
+  }
 `;

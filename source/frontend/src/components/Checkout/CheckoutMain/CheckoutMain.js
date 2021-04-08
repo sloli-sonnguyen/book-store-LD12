@@ -10,6 +10,8 @@ import {
   OrdersSummaryWrapper,
   Icon,
   Dropdown,
+  NavWrapper,
+  NavItem,
 } from './Style';
 
 import {
@@ -37,11 +39,20 @@ import Payment from './Payment/Payment';
 
 import { productCart } from '../../../FakeData/FakeData';
 
+const navigations = [
+  { id: 0, title: 'Information' },
+  { id: 1, title: 'Shipping' },
+  { id: 2, title: 'Payment' },
+];
+
 function CheckoutMain() {
   const [shouldOrders, setShouldOrders] = useState(false);
-  const [currentMain, setCurrentMain] = useState(2);
+  const [currentMain, setCurrentMain] = useState(0);
   const handleClick = () => {
     setShouldOrders(!shouldOrders);
+  };
+  const handleNavigationItemClick = (number) => {
+    setCurrentMain(number);
   };
 
   const quantity = productCart.length;
@@ -108,6 +119,17 @@ function CheckoutMain() {
         </Dropdown>
       </OrdersContainer>
       <Container>
+        <NavWrapper>
+          {navigations.map((item) => (
+            <NavItem
+              onClick={() => handleNavigationItemClick(item.id)}
+              active={item.id <= currentMain}
+              key={item.id}
+            >
+              {item.title}
+            </NavItem>
+          ))}
+        </NavWrapper>
         {currentMain === 0 && <Information />}
         {currentMain === 1 && <Shipping />}
         {currentMain === 2 && <Payment />}
