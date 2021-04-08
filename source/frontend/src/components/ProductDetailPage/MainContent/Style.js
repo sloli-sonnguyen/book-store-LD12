@@ -60,6 +60,7 @@ export const NormalText = styled.p`
   font-size: 1.1rem;
   margin-bottom: 1rem;
   margin-top: 1.5rem;
+  text-transform: capitalize;
 `;
 
 export const Label = styled.label`

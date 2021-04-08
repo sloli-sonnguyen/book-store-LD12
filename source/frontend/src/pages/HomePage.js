@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { BWrapper, BFluidContainer } from '../components/Layout/Base';
 import NewArrivals from '../components/HomePage/NewArrivals/NewArrival';
 import Header from '../components/commons/Header/Header';
