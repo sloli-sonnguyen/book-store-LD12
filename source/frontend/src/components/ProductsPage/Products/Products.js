@@ -17,8 +17,8 @@ const WidgetData = [
   {
     id: 1,
     title: 'Category',
+    type: 'category',
     selects: [
-      { id: 1, content: 'all' },
       { id: 2, content: 'fiction' },
       { id: 3, content: 'history' },
       { id: 4, content: 'religion' },
@@ -29,6 +29,7 @@ const WidgetData = [
   {
     id: 2,
     title: 'Shop By Language',
+    type: 'language',
     selects: [
       { id: 1, content: 'english' },
       { id: 2, content: 'spanish' },
@@ -40,9 +41,30 @@ const WidgetData = [
   },
 ];
 
-const renderProducts = (products, ...options) => {
+const renderProducts = (products, categoryId, languageId) => {
+  const checkInclude = (array, id) => {
+    const mapArray = array.map((item) => item.id);
+    console.log(mapArray.includes(id));
+    return mapArray.includes(id);
+  };
   if (products) {
-    return products.map((item) => (
+    let filterProducts = [...products];
+
+    if (categoryId) {
+      filterProducts = filterProducts.filter((item) => {
+        const result = checkInclude(item.category, categoryId);
+        return result;
+      });
+    }
+
+    if (languageId) {
+      filterProducts = filterProducts.filter((item) => {
+        const result = checkInclude(item.language, languageId);
+        return result;
+      });
+    }
+
+    return filterProducts.map((item) => (
       <Card
         key={item.id}
         xs={6}
@@ -60,16 +82,34 @@ const renderProducts = (products, ...options) => {
 
 function Products({ data }) {
   const [shouldBeShowWidget, setShouldBeShowWidget] = useState(false);
+  const [filterOptions, setFilterOptions] = useState({ category: undefined, language: undefined });
 
   const handleLeftFilterIconClick = () => {
     setShouldBeShowWidget(!shouldBeShowWidget);
   };
+
+  const changeFilterOptions = (type, id) => {
+    setFilterOptions({
+      ...filterOptions,
+      [type]: id,
+    });
+  };
+
+  const { category, language } = filterOptions;
+
   return (
     <Wrapper>
       <Container p={10} between="true">
         <WidgetWrapper shouldBeShowWidget={shouldBeShowWidget}>
           {WidgetData.map((item) => (
-            <Widget key={item.id} title={item.title} selects={item.selects} />
+            <Widget
+              changeFilterOptions={changeFilterOptions}
+              key={item.id}
+              title={item.title}
+              type={item.type}
+              selects={item.selects}
+              activeId={item.type === 'category' ? category : language}
+            />
           ))}
         </WidgetWrapper>
         <ProductListWrapper>
@@ -77,7 +117,7 @@ function Products({ data }) {
             <Icon className="bx bx-filter" onClick={handleLeftFilterIconClick} />
             <Filter />
           </ToolbarWrapper>
-          <ProductList>{renderProducts(data)}</ProductList>
+          <ProductList>{renderProducts(data, category, language)}</ProductList>
         </ProductListWrapper>
       </Container>
     </Wrapper>

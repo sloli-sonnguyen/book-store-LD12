@@ -2,7 +2,6 @@ import React from 'react';
 import { BWrapper, BFluidContainer } from '../components/Layout/Base';
 import Header from '../components/commons/Header/Header';
 import Footer from '../components/commons/Footer/Footer';
-import BreadcrumbContainer from '../containers/BreadcrumbContainer';
 import MainContent from '../components/BlogDetailPage/MainContent/MainContent';
 import Comment from '../components/BlogDetailPage/Comment/Comment';
 import Form from '../components/BlogDetailPage/Form/Form';
@@ -14,7 +13,6 @@ function BlogDetailPage() {
         <Header p={10} />
       </BFluidContainer>
       <BFluidContainer column="true">
-        <BreadcrumbContainer />
         <MainContent />
         <Comment />
         <Form />

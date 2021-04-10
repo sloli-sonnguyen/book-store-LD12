@@ -36,6 +36,8 @@ export const WidgetText = styled(SmallText)`
   font-size: 1rem;
   letter-spacing: 0.03rem;
   text-transform: capitalize;
+  color: ${({ isActive }) => isActive && '#d14031'};
+  font-weight: ${({ isActive }) => isActive && 'bold'};
   &:hover {
     color: #d14031;
   }
