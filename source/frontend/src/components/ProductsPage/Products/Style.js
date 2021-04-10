@@ -17,18 +17,9 @@ export const Container = styled(BContainer)`
 export const WidgetWrapper = styled.div`
   width: 20%;
   @media (max-width: 991px) {
-    position: absolute;
-    top: 4%;
-    left: 0;
-    z-index: 1000;
-    width: 100%;
+    width: 70%;
     display: ${({ shouldBeShowWidget }) => (shouldBeShowWidget ? 'flex' : 'none')};
     flex-direction: column;
-  }
-
-  @media (max-width: 767px) {
-    top: 1%;
-    padding: 0.3rem;
   }
 `;
 
@@ -39,9 +30,10 @@ export const ProductListWrapper = styled.div`
   }
 `;
 
-export const ProductList = styled(BContainer)`
-  padding: 0;
-  justify-content: space-between;
+export const ProductList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 `;
 
 export const ToolbarWrapper = styled(BContainer)`

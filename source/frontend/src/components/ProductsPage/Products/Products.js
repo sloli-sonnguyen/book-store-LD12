@@ -12,6 +12,7 @@ import Card from '../../Base/Card/Card';
 
 import Widget from '../../Base/Widget/Widget';
 import Filter from '../../Base/Filter/Filter';
+import { PrimaryLoading } from '../../Base/Loading/Loading';
 
 const WidgetData = [
   {
@@ -67,8 +68,9 @@ const renderProducts = (products, categoryId, languageId) => {
     return filterProducts.map((item) => (
       <Card
         key={item.id}
-        xs={6}
-        sm={4}
+        xs={12}
+        sm={6}
+        md={4}
         src={item.imageUrl}
         subTitle={item.author}
         title={item.title}
@@ -112,6 +114,7 @@ function Products({ data }) {
             />
           ))}
         </WidgetWrapper>
+
         <ProductListWrapper>
           <ToolbarWrapper p={0}>
             <Icon className="bx bx-filter" onClick={handleLeftFilterIconClick} />
