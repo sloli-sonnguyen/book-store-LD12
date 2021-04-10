@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Wrapper,
   Container,
@@ -20,13 +20,22 @@ import {
 
 const categoryRender = (category) => {
   if (category) {
-    return category.map((item) => item).join(' - ');
+    let result = category[0].content;
+    for (let i = 1; i < category.length; i += 1) {
+      result += ` - ${category[i].content}`;
+    }
+    return result;
   }
 };
 
-const languageRender = (language) => {
-  if (language) {
-    return language.map((item) => <SelectTypeButton>{item}</SelectTypeButton>);
+const ratingRender = (rating) => {
+  if (rating) {
+    const countStar = Math.round(rating);
+    const result = [];
+    for (let i = 0; i < countStar; i += 1) {
+      result.push(<Icon className="bx bxs-star" />);
+    }
+    return result;
   }
 };
 
@@ -45,6 +54,7 @@ function MainContent(props) {
   } = props;
 
   const [quantityInput, setQuantityInput] = useState(1);
+  const [selectLanguage, setSelectLanguage] = useState(0);
 
   const handleQuantityInput = (event) => {
     let { value } = event.target;
@@ -52,7 +62,24 @@ function MainContent(props) {
     setQuantityInput(value);
   };
 
-  if (quantityInput < 1) {
+  const handleSelectLanguageClick = (number) => {
+    setSelectLanguage(number);
+  };
+
+  const languageRender = (array) => {
+    if (array) {
+      return array.map((item, index) => (
+        <SelectTypeButton
+          isActive={item.id === selectLanguage}
+          onClick={() => handleSelectLanguageClick(item.id)}
+        >
+          {item.content}
+        </SelectTypeButton>
+      ));
+    }
+  };
+
+  if (quantityInput < 0) {
     setQuantityInput(1);
   }
   return (
@@ -64,13 +91,7 @@ function MainContent(props) {
         <ProductDetailWrap xs={12} md={6}>
           <Title>{title}</Title>
           <PriceText>{Math.floor(price * salePercent)}$</PriceText>
-          <StarsWrap>
-            <Icon className="bx bxs-star" />
-            <Icon className="bx bxs-star" />
-            <Icon className="bx bxs-star" />
-            <Icon className="bx bxs-star" />
-            <Icon className="bx bxs-star" />
-          </StarsWrap>
+          <StarsWrap>{ratingRender(rating)}</StarsWrap>
           <NormalText>{description}</NormalText>
           <InfoWrap>
             <NormalText>
@@ -89,7 +110,6 @@ function MainContent(props) {
           <SelectWrap>
             <Label>Language :</Label>
             {languageRender(language)}
-            {/* <SelectTypeButton isActive="true">English</SelectTypeButton> */}
           </SelectWrap>
           <SelectWrap>
             <Label>Quantity :</Label>

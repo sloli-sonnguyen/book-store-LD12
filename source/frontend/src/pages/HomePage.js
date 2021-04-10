@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { BWrapper, BFluidContainer } from '../components/Layout/Base';
 import NewArrivals from '../components/HomePage/NewArrivals/NewArrival';
 import Header from '../components/commons/Header/Header';
@@ -12,7 +14,26 @@ import LatestNews from '../components/HomePage/LatestNews/LatestNews';
 import Subcribe from '../components/HomePage/Subcribe/Subcribe';
 import GiftsBanner from '../components/HomePage/GIftsBanner/GiftsBanner';
 
+import { loadProducts } from '../redux/actions/productsAction';
+
 function HomePage() {
+  const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  /**
+   * dispatch is a function have "action" parameter.
+   * structure dispatch function:
+   *  function(action) {
+        if (typeof action === 'function') {
+          return action(dispatch, getState, extraArgument);
+        }
+        return next(action);
+      }
+   */
+
+  useEffect(() => {
+    dispatch(loadProducts());
+  }, []);
+
   return (
     <BWrapper>
       <BFluidContainer>
@@ -21,9 +42,9 @@ function HomePage() {
       <BFluidContainer column="true">
         <Intro />
         <SupportTypes />
-        <NewArrivals />
+        <NewArrivals category={products.category} data={products.data} />
         <FestivalBanner />
-        <DailyDeals />
+        <DailyDeals data={products.data} />
         <SpecialBanner />
         <LatestNews />
         <GiftsBanner />
