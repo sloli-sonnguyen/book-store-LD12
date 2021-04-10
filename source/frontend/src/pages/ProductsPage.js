@@ -5,7 +5,7 @@ import { BWrapper, BFluidContainer } from '../components/Layout/Base';
 import Header from '../components/commons/Header/Header';
 import Footer from '../components/commons/Footer/Footer';
 import Products from '../components/ProductsPage/Products/Products';
-import BreadcrumbContainer from '../containers/BreadcrumbContainer';
+import Breadcrumb from '../components/Base/Breadcrumb/Breadcrumb';
 import { PrimaryLoading } from '../components/Base/Loading/Loading';
 import { loadProducts } from '../redux/actions/productsAction';
 
@@ -29,7 +29,7 @@ function ProductsPage() {
       {success && (
         <>
           <BFluidContainer column="true">
-            <BreadcrumbContainer />
+            <Breadcrumb title="Products" />
             <Products {...products} />
           </BFluidContainer>
           <BFluidContainer>

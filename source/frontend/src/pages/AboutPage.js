@@ -3,7 +3,7 @@ import React from 'react';
 import { BWrapper, BFluidContainer } from '../components/Layout/Base';
 import Header from '../components/commons/Header/Header';
 import Footer from '../components/commons/Footer/Footer';
-import BreadcrumbContainer from '../containers/BreadcrumbContainer';
+import Breadcrumb from '../components/Base/Breadcrumb/Breadcrumb';
 import About from '../components/AboutPage/About';
 
 function AboutPage() {
@@ -13,7 +13,7 @@ function AboutPage() {
         <Header p={10} />
       </BFluidContainer>
       <BFluidContainer column="true">
-        <BreadcrumbContainer />
+        <Breadcrumb title="About" />
         <About />
       </BFluidContainer>
       <BFluidContainer>
