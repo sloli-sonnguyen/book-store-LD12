@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import GlobalStyle from './components/styles/global';
 import routes from './routes';
+import { PrimaryLoading } from './components/Base/Loading/Loading';
 
-const loading = <h1>Loading ....</h1>;
+const loading = <PrimaryLoading type="spin" color="#d14031" />;
 
 function App() {
   const booksApiUrl = process.env.REACT_APP_BOOKS_API_URL;
