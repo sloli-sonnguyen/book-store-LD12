@@ -17,7 +17,6 @@ export const loadProducts = () => async (dispatch) => {
       data: response.data,
     });
   } catch (error) {
-    console.error(error);
     dispatch({
       type: FETCH_PRODUCTS_ERROR,
       message: error,

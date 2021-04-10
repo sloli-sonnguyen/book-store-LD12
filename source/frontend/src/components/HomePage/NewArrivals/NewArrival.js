@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Wrapper, Title, Menu } from './Style';
 import { CustomButton } from '../../Buttons/Buttons';
 import { BContainer } from '../../Layout/Base';

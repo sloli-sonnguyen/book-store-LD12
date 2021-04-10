@@ -33,7 +33,7 @@ const ratingRender = (rating) => {
     const countStar = Math.round(rating);
     const result = [];
     for (let i = 0; i < countStar; i += 1) {
-      result.push(<Icon className="bx bxs-star" />);
+      result.push(<Icon key={i} className="bx bxs-star" />);
     }
     return result;
   }
@@ -68,8 +68,9 @@ function MainContent(props) {
 
   const languageRender = (array) => {
     if (array) {
-      return array.map((item, index) => (
+      return array.map((item) => (
         <SelectTypeButton
+          key={item.id}
           isActive={item.id === selectLanguage}
           onClick={() => handleSelectLanguageClick(item.id)}
         >

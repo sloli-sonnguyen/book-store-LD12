@@ -18,41 +18,47 @@ const WidgetData = [
     id: 1,
     title: 'Category',
     selects: [
-      { id: 1, content: 'History' },
-      { id: 2, content: 'Fiction' },
-      { id: 3, content: 'Business' },
-      { id: 4, content: 'Literature' },
-      { id: 5, content: 'Religion' },
-      { id: 6, content: 'Stories' },
+      { id: 1, content: 'all' },
+      { id: 2, content: 'fiction' },
+      { id: 3, content: 'history' },
+      { id: 4, content: 'religion' },
+      { id: 5, content: 'business' },
+      { id: 6, content: 'science' },
     ],
   },
   {
     id: 2,
     title: 'Shop By Language',
     selects: [
-      { id: 1, content: 'English' },
-      { id: 2, content: 'Spanish' },
-      { id: 3, content: 'Japanese' },
-      { id: 4, content: 'Korean' },
-      { id: 5, content: 'Vietnamese' },
-      { id: 6, content: 'Italia' },
-    ],
-  },
-  {
-    id: 3,
-    title: 'Shop By Language',
-    selects: [
-      { id: 1, content: 'English' },
-      { id: 2, content: 'Spanish' },
-      { id: 3, content: 'Japanese' },
-      { id: 4, content: 'Korean' },
-      { id: 5, content: 'Vietnamese' },
-      { id: 6, content: 'Italia' },
+      { id: 1, content: 'english' },
+      { id: 2, content: 'spanish' },
+      { id: 3, content: 'japanese' },
+      { id: 4, content: 'korean' },
+      { id: 5, content: 'vietnamese' },
+      { id: 6, content: 'chinese' },
     ],
   },
 ];
 
-function Products() {
+const renderProducts = (products, ...options) => {
+  if (products) {
+    return products.map((item) => (
+      <Card
+        key={item.id}
+        xs={6}
+        sm={4}
+        src={item.imageUrl}
+        subTitle={item.author}
+        title={item.title}
+        text1={`${Math.floor(item.price * item.salePercent)}.00$`}
+        text2={`${item.price}$`}
+        id={item.id}
+      />
+    ));
+  }
+};
+
+function Products({ data }) {
   const [shouldBeShowWidget, setShouldBeShowWidget] = useState(false);
 
   const handleLeftFilterIconClick = () => {
@@ -71,89 +77,7 @@ function Products() {
             <Icon className="bx bx-filter" onClick={handleLeftFilterIconClick} />
             <Filter />
           </ToolbarWrapper>
-          <ProductList>
-            <Card
-              xs={6}
-              sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-46_grande.jpg?v=1587118513"
-              subTitle="DONALD WILLIAM"
-              title="Donate A Book"
-              text1="$120.00"
-              text2="$700.00"
-            />
-            <Card
-              xs={6}
-              sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-104_grande.jpg?v=1587120877"
-              subTitle="DONALD WILLIAM"
-              title="Donate A Book"
-              text1="$120.00"
-              text2="$700.00"
-            />
-            <Card
-              xs={6}
-              sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-67_grande.jpg?v=1587117773"
-              subTitle="DONALD WILLIAM"
-              title="Donate A Book"
-              text1="$120.00"
-              text2="$700.00"
-            />
-            <Card
-              xs={6}
-              sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-46_grande.jpg?v=1587118513"
-              subTitle="DONALD WILLIAM"
-              title="Donate A Book"
-              text1="$120.00"
-              text2="$700.00"
-            />
-            <Card
-              xs={6}
-              sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-104_grande.jpg?v=1587120877"
-              subTitle="DONALD WILLIAM"
-              title="Donate A Book"
-              text1="$120.00"
-              text2="$700.00"
-            />
-            <Card
-              xs={6}
-              sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-67_grande.jpg?v=1587117773"
-              subTitle="DONALD WILLIAM"
-              title="Donate A Book"
-              text1="$120.00"
-              text2="$700.00"
-            />
-            <Card
-              xs={6}
-              sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-46_grande.jpg?v=1587118513"
-              subTitle="DONALD WILLIAM"
-              title="Donate A Book"
-              text1="$120.00"
-              text2="$700.00"
-            />
-            <Card
-              xs={6}
-              sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-104_grande.jpg?v=1587120877"
-              subTitle="DONALD WILLIAM"
-              title="Donate A Book"
-              text1="$120.00"
-              text2="$700.00"
-            />
-            <Card
-              xs={6}
-              sm={4}
-              src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-67_grande.jpg?v=1587117773"
-              subTitle="DONALD WILLIAM"
-              title="Donate A Book"
-              text1="$120.00"
-              text2="$700.00"
-            />
-          </ProductList>
+          <ProductList>{renderProducts(data)}</ProductList>
         </ProductListWrapper>
       </Container>
     </Wrapper>

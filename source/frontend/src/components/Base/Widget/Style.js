@@ -35,6 +35,7 @@ export const WidgetText = styled(SmallText)`
   font-weight: normal;
   font-size: 1rem;
   letter-spacing: 0.03rem;
+  text-transform: capitalize;
   &:hover {
     color: #d14031;
   }

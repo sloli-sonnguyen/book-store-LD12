@@ -7,8 +7,7 @@ import { PrimaryLoading } from './components/Base/Loading/Loading';
 const loading = <PrimaryLoading type="spin" color="#d14031" />;
 
 function App() {
-  const booksApiUrl = process.env.REACT_APP_BOOKS_API_URL;
-  console.log(booksApiUrl);
+  // const booksApiUrl = process.env.REACT_APP_BOOKS_API_URL;
   return (
     <>
       <GlobalStyle />
