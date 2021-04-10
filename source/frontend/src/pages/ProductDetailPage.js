@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { BWrapper, BFluidContainer } from '../components/Layout/Base';
 import Header from '../components/commons/Header/Header';
@@ -9,15 +8,18 @@ import BreadcrumbContainer from '../containers/BreadcrumbContainer';
 import MainContent from '../components/ProductDetailPage/MainContent/MainContent';
 import RelatedProducts from '../components/ProductDetailPage/RelatedProducts/RelatedProducts';
 import TabsContainer from '../components/ProductDetailPage/TabsContainer/TabsContainer';
+import { PrimaryLoading } from '../components/Base/Loading/Loading';
 
 function ProductDetailPage() {
   const history = useHistory();
   const productId = history.location.pathname.split('/')[2];
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState(null);
+  const [loadProductStatus, setLoadProductStatus] = useState(false);
   useEffect(() => {
     const baseUrl = process.env.REACT_APP_BOOKS_API_URL;
     axios.get(`${baseUrl}/${productId}`).then((res) => {
       setProduct(res.data);
+      setLoadProductStatus(true);
     });
     // const findProduct = products.find((item) => item.id === productId);
     // setProduct(findProduct);
@@ -28,15 +30,20 @@ function ProductDetailPage() {
       <BFluidContainer>
         <Header p={18} />
       </BFluidContainer>
-      <BFluidContainer column="true">
-        <BreadcrumbContainer />
-        <MainContent {...product} />
-        <TabsContainer {...product} />
-        <RelatedProducts {...product} />
-      </BFluidContainer>
-      <BFluidContainer>
-        <Footer />
-      </BFluidContainer>
+      {loadProductStatus && (
+        <>
+          <BFluidContainer column="true">
+            <BreadcrumbContainer />
+            <MainContent {...product} />
+            <TabsContainer {...product} />
+            <RelatedProducts {...product} />
+          </BFluidContainer>
+          <BFluidContainer>
+            <Footer />
+          </BFluidContainer>
+        </>
+      )}
+      {loadProductStatus || <PrimaryLoading type="bubbles" color="#d14031" />}
     </BWrapper>
   );
 }

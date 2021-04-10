@@ -8,7 +8,9 @@ function FestivalBanner() {
       <SubTitle>Shop wide range of collections</SubTitle>
       <Title>BOOK FESTIVAL</Title>
       <Text>ALL BOOKS ARE FLAT 50% OFF</Text>
-      <Button>Shop Now</Button>
+      <Button as="a" href="/products" target="_blank">
+        Shop Now
+      </Button>
     </Wrapper>
   );
 }

@@ -18,7 +18,9 @@ function Intro() {
           Donec sodales sagittis magna. SedMaecenas nec odio et ante tincidunt tempus. Donec vitae
           sapien ut libero venenatis faucibus. Nullam quis ante.
         </SmallIntroText>
-        <IntroButton>Shop now</IntroButton>
+        <IntroButton as="a" href="/products" target="_blank">
+          Shop now
+        </IntroButton>
       </IntroContainer>
     </IntroWrapper>
   );

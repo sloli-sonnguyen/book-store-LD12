@@ -28,7 +28,9 @@ function LatestNews() {
           <CardText>
             The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...
           </CardText>
-          <Button>Show Now</Button>
+          <Button as="a" href="/products" target="_blank">
+            Show Now
+          </Button>
         </CardWrapper>
         <CardWrapper xs={12} md={4}>
           <ImageWrap NoneEffect="true">
@@ -41,7 +43,9 @@ function LatestNews() {
           <CardText>
             The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...
           </CardText>
-          <Button>Show Now</Button>
+          <Button as="a" href="/products" target="_blank">
+            Show Now
+          </Button>
         </CardWrapper>
         <CardWrapper xs={12} md={4}>
           <ImageWrap NoneEffect="true">
@@ -54,7 +58,9 @@ function LatestNews() {
           <CardText>
             The standard Lorem Ipsum passage, used since the 1500s &quot;Lorem ipsum...
           </CardText>
-          <Button>Show Now</Button>
+          <Button as="a" href="/products" target="_blank">
+            Show Now
+          </Button>
         </CardWrapper>
       </Container>
     </Wrapper>

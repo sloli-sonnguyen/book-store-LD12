@@ -8,7 +8,9 @@ function GiftsBanner() {
       <Content>
         <Title>Wonderful Gifts</Title>
         <Text>Give your family and friends a book</Text>
-        <Button>Show Now</Button>
+        <Button as="a" href="/products" target="_blank">
+          Show Now
+        </Button>
       </Content>
     </Wrapper>
   );

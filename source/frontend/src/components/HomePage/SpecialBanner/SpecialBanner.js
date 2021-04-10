@@ -13,7 +13,7 @@ function SpecialBanner() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
           </Text>
-          <CustomButton color="black" hoverColor="#d14031">
+          <CustomButton color="black" hoverColor="#d14031" as="a" href="/products" target="_blank">
             Shop Now
           </CustomButton>
         </Content>
