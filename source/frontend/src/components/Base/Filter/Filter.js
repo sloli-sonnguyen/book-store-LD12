@@ -10,7 +10,8 @@ import {
   IconCaret,
 } from './Style';
 
-function Filter() {
+function Filter(props) {
+  const { changeFilterOptions } = props;
   const [filterValue, setFilterValue] = useState('Feature');
   const [shouldFilter, setShoulFilter] = useState(false);
   const selectElement = useRef(null);
@@ -29,16 +30,14 @@ function Filter() {
   }, []);
 
   const options = [
-    { id: 0, value: 'Feature' },
     { id: 1, value: 'Price, low to high' },
-    { id: 2, value: 'A-Z' },
-    { id: 3, value: 'Z-A' },
-    { id: 4, value: 'Date, old to new' },
-    { id: 5, value: 'Date, new to old' },
-    { id: 6, value: 'Best Selling' },
+    { id: 2, value: 'Price, high to low' },
+    { id: 3, value: 'A-Z' },
+    { id: 4, value: 'Z-A' },
   ];
 
-  const handleValue = (value) => {
+  const handleValue = (value, id) => {
+    changeFilterOptions(undefined, undefined, id);
     setFilterValue(value);
     setShoulFilter(false);
   };
@@ -54,8 +53,9 @@ function Filter() {
             {filterValue}
           </Select>
           <OptionWrapper>
+            <Option onClick={() => handleValue('Feature')}>Feature</Option>
             {options.map((option) => (
-              <Option key={option.id} onClick={() => handleValue(option.value)}>
+              <Option key={option.id} onClick={() => handleValue(option.value, option.id)}>
                 {option.value}
               </Option>
             ))}

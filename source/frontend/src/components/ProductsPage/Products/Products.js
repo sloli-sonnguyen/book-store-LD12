@@ -12,7 +12,6 @@ import Card from '../../Base/Card/Card';
 
 import Widget from '../../Base/Widget/Widget';
 import Filter from '../../Base/Filter/Filter';
-import { PrimaryLoading } from '../../Base/Loading/Loading';
 
 const WidgetData = [
   {
@@ -42,10 +41,42 @@ const WidgetData = [
   },
 ];
 
-const renderProducts = (products, categoryId, languageId) => {
+const productsSort = (data, sortBy) => {
+  let result = data;
+  if (result) {
+    if (sortBy === 1) {
+      result = result.sort((a, b) => a.price * a.salePercent - b.price * b.salePercent);
+    }
+
+    if (sortBy === 2) {
+      result = result.sort((a, b) => b.price * b.salePercent - a.price * a.salePercent);
+    }
+
+    if (sortBy === 3) {
+      result = result.sort((a, b) => {
+        const titleA = a.title.toUpperCase(); // bỏ qua hoa thường
+        const titleB = b.title.toUpperCase(); // bỏ qua hoa thường
+        if (titleA < titleB) return -1;
+        return titleA > titleB ? 1 : 0;
+      });
+    }
+
+    if (sortBy === 4) {
+      result = result.sort((a, b) => {
+        const titleA = a.title.toUpperCase(); // bỏ qua hoa thường
+        const titleB = b.title.toUpperCase(); // bỏ qua hoa thường
+        if (titleA < titleB) return 1;
+        return titleA > titleB ? -1 : 0;
+      });
+    }
+
+    return result;
+  }
+};
+
+const renderProducts = (products, categoryId, languageId, sortBy) => {
   const checkInclude = (array, id) => {
     const mapArray = array.map((item) => item.id);
-    console.log(mapArray.includes(id));
     return mapArray.includes(id);
   };
   if (products) {
@@ -63,6 +94,10 @@ const renderProducts = (products, categoryId, languageId) => {
         const result = checkInclude(item.language, languageId);
         return result;
       });
+    }
+
+    if (sortBy) {
+      filterProducts = productsSort(filterProducts, sortBy);
     }
 
     return filterProducts.map((item) => (
@@ -84,20 +119,31 @@ const renderProducts = (products, categoryId, languageId) => {
 
 function Products({ data }) {
   const [shouldBeShowWidget, setShouldBeShowWidget] = useState(false);
-  const [filterOptions, setFilterOptions] = useState({ category: undefined, language: undefined });
+  const [filterOptions, setFilterOptions] = useState({
+    category: undefined,
+    language: undefined,
+    sortBy: null,
+  });
 
   const handleLeftFilterIconClick = () => {
     setShouldBeShowWidget(!shouldBeShowWidget);
   };
 
-  const changeFilterOptions = (type, id) => {
+  const changeFilterOptions = (type, id, sortValue) => {
     setFilterOptions({
       ...filterOptions,
       [type]: id,
     });
+
+    if (sortValue) {
+      setFilterOptions({
+        ...filterOptions,
+        sortBy: sortValue,
+      });
+    }
   };
 
-  const { category, language } = filterOptions;
+  const { category, language, sortBy } = filterOptions;
 
   return (
     <Wrapper>
@@ -114,13 +160,12 @@ function Products({ data }) {
             />
           ))}
         </WidgetWrapper>
-
         <ProductListWrapper>
           <ToolbarWrapper p={0}>
             <Icon className="bx bx-filter" onClick={handleLeftFilterIconClick} />
-            <Filter />
+            <Filter changeFilterOptions={changeFilterOptions} />
           </ToolbarWrapper>
-          <ProductList>{renderProducts(data, category, language)}</ProductList>
+          <ProductList>{renderProducts(data, category, language, sortBy)}</ProductList>
         </ProductListWrapper>
       </Container>
     </Wrapper>
