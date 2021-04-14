@@ -34,7 +34,7 @@ function HomeScreen() {
             onPress={() => console.log('Pressed')}
             contentStyle={styles.button}
           >
-            <Text style={styles.buttonText}>START READING</Text>
+            START READING
           </Button>
         </ImageBackground>
         <View style={styles.recommendWrapper}>
@@ -170,9 +170,6 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 50,
-  },
-  buttonText: {
-    color: 'white',
   },
   recommendWrapper: {
     paddingHorizontal: 18,
