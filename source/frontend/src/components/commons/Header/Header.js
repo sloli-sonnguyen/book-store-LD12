@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { BWrapper } from '../../Layout/Base';
 import { Button } from '../../Buttons/Buttons';
 import {
@@ -36,6 +37,8 @@ import {
 import { productCart } from '../../../FakeData/FakeData';
 
 function Header(props) {
+  const cart = useSelector((state) => state.cart);
+  console.log(cart);
   const { p } = props;
   const quantity = productCart.length;
   const shouldScroll = quantity >= 3;

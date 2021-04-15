@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../../redux/actions/cartAction';
 import {
   Wrapper,
   Container,
@@ -41,6 +43,7 @@ const ratingRender = (rating) => {
 
 function MainContent(props) {
   const {
+    id,
     title,
     author,
     description,
@@ -55,24 +58,46 @@ function MainContent(props) {
 
   const [quantityInput, setQuantityInput] = useState(1);
   const [selectLanguage, setSelectLanguage] = useState(0);
+  const dispatch = useDispatch();
 
   const handleQuantityInput = (event) => {
     let { value } = event.target;
     value = value.replace(/[^0-9]/g, '');
-    setQuantityInput(value);
+    setQuantityInput(parseInt(value, 10));
   };
 
   const handleSelectLanguageClick = (number) => {
     setSelectLanguage(number);
   };
 
+  const handleAddToCartClick = () => {
+    const cartItem = {
+      id,
+      imageUrl,
+      title,
+      category,
+      price,
+      salePercent,
+      languageType: language[selectLanguage],
+      quantity: quantityInput,
+      total: Math.floor(price * salePercent * quantityInput),
+    };
+
+    if (quantityInput) {
+      dispatch(addToCart(cartItem));
+      alert('Success');
+    } else {
+      alert('Please enter quantity !');
+    }
+  };
+
   const languageRender = (array) => {
     if (array) {
-      return array.map((item) => (
+      return array.map((item, index) => (
         <SelectTypeButton
           key={item.id}
-          isActive={item.id === selectLanguage}
-          onClick={() => handleSelectLanguageClick(item.id)}
+          isActive={index === selectLanguage}
+          onClick={() => handleSelectLanguageClick(index)}
         >
           {item.content}
         </SelectTypeButton>
@@ -120,14 +145,14 @@ function MainContent(props) {
               type="text"
               min="1"
               pattern="\d*"
-              value={quantityInput}
+              value={Number.isNaN(quantityInput) ? '' : quantityInput}
             />
           </SelectWrap>
           <NormalText>
             <Label>Total :</Label>
             <PriceText>${Math.floor(price * salePercent * quantityInput)}</PriceText>
           </NormalText>
-          <AddToCartButton>
+          <AddToCartButton onClick={handleAddToCartClick}>
             <Icon className="bx bxs-cart-add" /> Add To Cart
           </AddToCartButton>
         </ProductDetailWrap>

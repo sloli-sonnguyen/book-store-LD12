@@ -1,44 +1,23 @@
+import { ADD_TO_CART, REMOVE_FROM_CART } from '../constants/cartContants';
+
 const initialState = {
-  products: [
-    {
-      id: '1',
-      title: 'Corporate Infrastructure Associate',
-      price: '449.00',
-      salePercent: 0.3,
-      quantity: 71647,
-      totalPrice: 1000,
-      category: 'history',
-      language: 'japanese',
-      imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-1.jpg',
-    },
-    {
-      id: '2',
-      title: 'Dynamic Security Orchestrator',
-      price: '843.00',
-      salePercent: 0.7,
-      quantity: 36367,
-      totalPrice: 1000,
-      category: 'history',
-      language: 'japanese',
-      imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-100.jpg',
-    },
-    {
-      id: '3',
-      title: 'National Accountability Director',
-      price: '170.00',
-      salePercent: 0.5,
-      quantity: 64556,
-      totalPrice: 1000,
-      category: 'history',
-      language: 'japanese',
-      imageUrl: 'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-34.jpg',
-    },
-  ],
+  cartId: '2983xDs999',
   note: '',
+  totalPrice: 0,
+  data: [],
 };
 
 const cart = (state = initialState, action) => {
   switch (action.type) {
+    case ADD_TO_CART:
+      return {
+        ...state,
+        data: [...state.data, action.data],
+        totalPrice: state.totalPrice + action.data.total,
+      };
+
+    case REMOVE_FROM_CART:
+      return state;
     default:
       return state;
   }
