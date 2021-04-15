@@ -45,6 +45,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/jsx-one-expression-per-line": "off",
     "operator-linebreak": "off",
-    "react/jsx-indent": "off"
+    "react/jsx-indent": "off",
+    "arrow-body-style": "off"
   }
 }
