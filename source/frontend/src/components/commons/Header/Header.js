@@ -39,8 +39,19 @@ import { createEmptyCart } from '../../../redux/actions/cartAction';
 function Header() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-  const productCart = cart.data;
-  const { totalPrice } = cart;
+  let productCart;
+  let totalPrice;
+  let quantity;
+
+  try {
+    productCart = productCart.data;
+    totalPrice = productCart.totalPrice;
+    quantity = productCart.length;
+  } catch (error) {
+    productCart = [];
+    totalPrice = 0;
+    quantity = 0;
+  }
 
   useEffect(() => {
     if (!cart) {
@@ -48,7 +59,6 @@ function Header() {
     }
   }, []);
 
-  const quantity = productCart.length;
   const shouldScroll = quantity >= 3;
   const calcHeight = () => {
     const height = 12 * quantity + 4;
@@ -112,7 +122,7 @@ function Header() {
               <DetailCartWrapper as="a" href="/cart">
                 <p>Shopping Cart</p>
                 <p>
-                  {productCart.length} item - {totalPrice} $
+                  {quantity} item - {totalPrice} $
                 </p>
               </DetailCartWrapper>
             </CartWrapper>
