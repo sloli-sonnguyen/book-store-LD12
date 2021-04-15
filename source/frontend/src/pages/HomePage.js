@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BWrapper, BFluidContainer } from '../components/Layout/Base';
 import NewArrivals from '../components/HomePage/NewArrivals/NewArrival';
-import Header from '../components/commons/Header/Header';
-import Footer from '../components/commons/Footer/Footer';
 import Intro from '../components/HomePage/Intro/Intro';
 import SupportTypes from '../components/HomePage/SupportTypes/SupportTypes';
 import FestivalBanner from '../components/HomePage/FestivalBanner/FestivalBanner';
@@ -36,26 +34,18 @@ function HomePage() {
 
   return (
     <BWrapper>
-      <BFluidContainer>
-        <Header p={18} />
-      </BFluidContainer>
       {success && (
-        <>
-          <BFluidContainer column="true">
-            <Intro />
-            <SupportTypes />
-            <NewArrivals category={products.category} data={products.data} />
-            <FestivalBanner />
-            <DailyDeals data={products.data} />
-            <SpecialBanner />
-            <LatestNews />
-            <GiftsBanner />
-            <Subcribe />
-          </BFluidContainer>
-          <BFluidContainer>
-            <Footer />
-          </BFluidContainer>
-        </>
+        <BFluidContainer column="true">
+          <Intro />
+          <SupportTypes />
+          <NewArrivals category={products.category} data={products.data} />
+          <FestivalBanner />
+          <DailyDeals data={products.data} />
+          <SpecialBanner />
+          <LatestNews />
+          <GiftsBanner />
+          <Subcribe />
+        </BFluidContainer>
       )}
       {success || <PrimaryLoading type="bubbles" color="#d14031" />}
     </BWrapper>

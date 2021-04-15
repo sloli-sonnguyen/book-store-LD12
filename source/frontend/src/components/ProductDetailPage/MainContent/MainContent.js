@@ -72,7 +72,7 @@ function MainContent(props) {
 
   const handleAddToCartClick = () => {
     const cartItem = {
-      id,
+      id: `${id}-${language[selectLanguage].content}`,
       imageUrl,
       title,
       category,
@@ -85,7 +85,6 @@ function MainContent(props) {
 
     if (quantityInput) {
       dispatch(addToCart(cartItem));
-      alert('Success');
     } else {
       alert('Please enter quantity !');
     }

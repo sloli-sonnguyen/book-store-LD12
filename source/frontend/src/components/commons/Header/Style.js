@@ -192,6 +192,7 @@ export const TitleText = styled.a`
   line-height: 1.6rem;
   color: black;
   cursor: pointer;
+  text-transform: capitalize;
 `;
 
 export const PriceText = styled.p`

@@ -46,6 +46,7 @@
     "react/jsx-one-expression-per-line": "off",
     "operator-linebreak": "off",
     "react/jsx-indent": "off",
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "no-case-declarations": "off"
   }
 }

@@ -4,6 +4,9 @@ import GlobalStyle from './components/styles/global';
 import routes from './routes';
 import { PrimaryLoading } from './components/Base/Loading/Loading';
 
+import Header from './components/commons/Header/Header';
+import Footer from './components/commons/Footer/Footer';
+
 const loading = <PrimaryLoading type="spin" color="#d14031" />;
 
 function App() {
@@ -13,6 +16,7 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <React.Suspense fallback={loading}>
+          <Header p={18} />
           <Switch>
             {routes.map((route) => (
               <Route
@@ -24,6 +28,7 @@ function App() {
               />
             ))}
           </Switch>
+          <Footer />
         </React.Suspense>
       </BrowserRouter>
     </>

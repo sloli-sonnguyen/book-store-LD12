@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { BWrapper, BFluidContainer } from '../components/Layout/Base';
-import Header from '../components/commons/Header/Header';
-import Footer from '../components/commons/Footer/Footer';
 import Products from '../components/ProductsPage/Products/Products';
 import Breadcrumb from '../components/Base/Breadcrumb/Breadcrumb';
 import { PrimaryLoading } from '../components/Base/Loading/Loading';
@@ -23,21 +21,12 @@ function ProductsPage() {
 
   return (
     <BWrapper>
-      <BFluidContainer>
-        <Header p={18} />
-      </BFluidContainer>
       {success && (
-        <>
-          <BFluidContainer column="true">
-            <Breadcrumb title="Products" />
-            <Products {...products} />
-          </BFluidContainer>
-          <BFluidContainer>
-            <Footer />
-          </BFluidContainer>
-        </>
+        <BFluidContainer column="true">
+          <Breadcrumb title="Products" />
+          <Products {...products} />
+        </BFluidContainer>
       )}
-
       {success || <PrimaryLoading type="bubbles" color="#d14031" />}
     </BWrapper>
   );

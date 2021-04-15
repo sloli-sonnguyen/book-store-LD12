@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { BWrapper, BFluidContainer } from '../components/Layout/Base';
-import Header from '../components/commons/Header/Header';
-import Footer from '../components/commons/Footer/Footer';
 import Breadcrumb from '../components/Base/Breadcrumb/Breadcrumb';
 import MainContent from '../components/ProductDetailPage/MainContent/MainContent';
 import RelatedProducts from '../components/ProductDetailPage/RelatedProducts/RelatedProducts';
@@ -27,21 +25,13 @@ function ProductDetailPage() {
 
   return (
     <BWrapper>
-      <BFluidContainer>
-        <Header p={18} />
-      </BFluidContainer>
       {loadProductStatus && (
-        <>
-          <BFluidContainer column="true">
-            <Breadcrumb title="Product Detail" />
-            <MainContent {...product} />
-            <TabsContainer {...product} />
-            <RelatedProducts {...product} />
-          </BFluidContainer>
-          <BFluidContainer>
-            <Footer />
-          </BFluidContainer>
-        </>
+        <BFluidContainer column="true">
+          <Breadcrumb title="Product Detail" />
+          <MainContent {...product} />
+          <TabsContainer {...product} />
+          <RelatedProducts {...product} />
+        </BFluidContainer>
       )}
       {loadProductStatus || <PrimaryLoading type="bubbles" color="#d14031" />}
     </BWrapper>

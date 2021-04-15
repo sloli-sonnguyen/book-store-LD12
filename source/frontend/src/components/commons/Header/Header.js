@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { BWrapper } from '../../Layout/Base';
 import { Button } from '../../Buttons/Buttons';
 import {
@@ -34,12 +34,20 @@ import {
   IconBag,
 } from './Style';
 
-import { productCart } from '../../../FakeData/FakeData';
+import { createEmptyCart } from '../../../redux/actions/cartAction';
 
-function Header(props) {
+function Header() {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-  console.log(cart);
-  const { p } = props;
+  const productCart = cart.data;
+  const { totalPrice } = cart;
+
+  useEffect(() => {
+    if (!cart) {
+      dispatch(createEmptyCart());
+    }
+  }, []);
+
   const quantity = productCart.length;
   const shouldScroll = quantity >= 3;
   const calcHeight = () => {
@@ -50,7 +58,7 @@ function Header(props) {
   return (
     <BWrapper>
       <HeaderFixed>
-        <HeaderWrapper p={p}>
+        <HeaderWrapper p={18}>
           <SearchWrapper>
             <SearchInput placeholder="Search..." />
             <SearchButton as="a" href="/search">
@@ -70,15 +78,15 @@ function Header(props) {
                   {productCart.map((product) => (
                     <ProductWrapper key={product.id}>
                       <ProductImageWrapper>
-                        <BookImage src={product.img} alt="book" />
+                        <BookImage src={product.imageUrl} alt="book" />
                       </ProductImageWrapper>
                       <ProductInfoWrapper>
                         <TitleText>{product.title}</TitleText>
                         <TitleText>
-                          {product.type} / {product.language}
+                          {product.category[0].content} / {product.languageType.content}
                         </TitleText>
                         <PriceText>
-                          ${product.price}
+                          ${product.total}
                           .00 x{product.quantity}
                         </PriceText>
                       </ProductInfoWrapper>
@@ -89,7 +97,7 @@ function Header(props) {
                 {quantity ? (
                   <CartTotalWrapper>
                     <CartTotal shouldScroll={shouldScroll}>
-                      CART TOTAL :<TotalPrice> $520.00</TotalPrice>
+                      CART TOTAL :<TotalPrice> {totalPrice} $</TotalPrice>
                     </CartTotal>
                     <Button as="a" href="/cart">
                       <IconBag className="bx bxs-shopping-bag" />
@@ -103,7 +111,9 @@ function Header(props) {
               <Icon className="bx bxs-shopping-bag" as="a" href="/cart" />
               <DetailCartWrapper as="a" href="/cart">
                 <p>Shopping Cart</p>
-                <p>0 item - 0.00</p>
+                <p>
+                  {productCart.length} item - {totalPrice} $
+                </p>
               </DetailCartWrapper>
             </CartWrapper>
             <IconWrapperRes>
