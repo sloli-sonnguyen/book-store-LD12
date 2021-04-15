@@ -122,7 +122,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   card: {
-    marginBottom: 10,
     width: `${95 / 2}%`,
     marginBottom: 20,
   },
