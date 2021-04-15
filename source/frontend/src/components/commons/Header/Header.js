@@ -34,7 +34,7 @@ import {
   IconBag,
 } from './Style';
 
-import { createEmptyCart } from '../../../redux/actions/cartAction';
+import { createEmptyCart, deleteCartItem } from '../../../redux/actions/cartAction';
 
 function Header() {
   const dispatch = useDispatch();
@@ -65,6 +65,10 @@ function Header() {
     return height;
   };
 
+  const handleDeleteButton = (itemIndex) => {
+    dispatch(deleteCartItem(itemIndex));
+  };
+
   return (
     <BWrapper>
       <HeaderFixed>
@@ -85,7 +89,7 @@ function Header() {
             <CartWrapper height={calcHeight()}>
               <Tooltip>
                 <Scrollable shouldScroll={shouldScroll}>
-                  {productCart.map((product) => (
+                  {productCart.map((product, index) => (
                     <ProductWrapper key={product.id}>
                       <ProductImageWrapper>
                         <BookImage src={product.imageUrl} alt="book" />
@@ -100,7 +104,7 @@ function Header() {
                           .00 x{product.quantity}
                         </PriceText>
                       </ProductInfoWrapper>
-                      <CloseIcon className="bx bx-x" />
+                      <CloseIcon className="bx bx-x" onClick={() => handleDeleteButton(index)} />
                     </ProductWrapper>
                   ))}
                 </Scrollable>

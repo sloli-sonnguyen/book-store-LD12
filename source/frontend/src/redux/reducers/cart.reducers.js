@@ -51,7 +51,13 @@ const cart = (state = initialState, action) => {
       return state;
     // Xóa 1 sản phầm trong giỏ hàng
     case REMOVE_FROM_CART:
-      return state;
+      state.data.splice(action.data, 1);
+      state.cartItemIdList.splice(action.data, 1);
+      localStorage.setItem('cart', JSON.stringify(state));
+      alert('Xoa thanh cong');
+      return {
+        ...state,
+      };
     //  Mặc định
     default:
       return state;
