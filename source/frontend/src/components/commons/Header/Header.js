@@ -44,8 +44,8 @@ function Header() {
   let quantity;
 
   try {
-    productCart = productCart.data;
-    totalPrice = productCart.totalPrice;
+    productCart = cart.data;
+    totalPrice = cart.totalPrice;
     quantity = productCart.length;
   } catch (error) {
     productCart = [];
