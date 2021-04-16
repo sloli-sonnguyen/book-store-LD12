@@ -54,7 +54,7 @@ export const ContentWrap = styled.div`
   flex-direction: column;
 `;
 
-export const CartItem = styled.div`
+export const CartItemWrap = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -120,7 +120,7 @@ export const BoldText = styled.p`
   }
 `;
 
-export const PriceInput = styled.input`
+export const QuantityInput = styled.input`
   font-size: 1.2rem;
   width: 60px;
   padding: 0.4rem;

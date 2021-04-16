@@ -45,7 +45,20 @@ const cart = (state = initialState, action) => {
       return newState;
     // Cập nhật số lượng của 1 loại sản phần trong giỏ hàng
     case UPDATE_QUANTITY:
-      return state;
+      const { itemIndex, newQuantity } = action.data;
+      const { price, salePercent } = state.data[itemIndex];
+      state.data[itemIndex].quantity = newQuantity;
+      state.data[itemIndex].total = Math.floor(
+        price * salePercent * state.data[itemIndex].quantity
+      );
+      localStorage.setItem(
+        'cart',
+        JSON.stringify({ ...state, totalPrice: totalPrice(state.data) })
+      );
+      return {
+        ...state,
+        totalPrice: totalPrice(state.data),
+      };
     // Cập nhật ghi chú
     case UPDATE_CART_NOTE:
       return state;

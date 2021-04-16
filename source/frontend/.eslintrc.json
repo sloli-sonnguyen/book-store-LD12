@@ -47,6 +47,7 @@
     "operator-linebreak": "off",
     "react/jsx-indent": "off",
     "arrow-body-style": "off",
-    "no-case-declarations": "off"
+    "no-case-declarations": "off",
+    "no-param-reassign": "off"
   }
 }

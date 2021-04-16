@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import CartItem from './CartItem';
 import {
   Wrapper,
   Container,
@@ -6,16 +8,7 @@ import {
   TableHeaderTitle,
   TableHeader,
   ContentWrap,
-  CartItem,
-  TextWrap,
-  CartItemInfo,
-  CartItemImage,
-  CartItemTitle,
-  CartItemSubTitle,
-  BoldText,
   Column,
-  PriceInput,
-  Icon,
   LastRowWrap,
   Note,
   LeftBlockTitle,
@@ -24,11 +17,17 @@ import {
   CartPageButton,
   NormalText,
   SpanText,
-  HiddenTitle,
 } from './Style';
+
+const renderCartItems = (cartItems) => {
+  if (cartItems) {
+    return cartItems.map((item, index) => <CartItem key={item.id} {...item} itemIndex={index} />);
+  }
+};
 
 function CartTable() {
   const [shoudBeShowNote, setShoudBeShowNote] = useState(false);
+  const cart = useSelector((state) => state.cart);
 
   const handleAddNoteClick = () => {
     setShoudBeShowNote(!shoudBeShowNote);
@@ -56,141 +55,7 @@ function CartTable() {
             </Column>
           </TableHeader>
           <ContentWrap>
-            <CartItem>
-              <Column xs={5}>
-                <CartItemInfo>
-                  <CartItemImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-16_grande.jpg?v=1587117190" />
-                  <TextWrap>
-                    <CartItemTitle>Last Time We Broke Up</CartItemTitle>
-                    <CartItemSubTitle>Audible Audiobook / Korean</CartItemSubTitle>
-                  </TextWrap>
-                </CartItemInfo>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Price: </HiddenTitle>
-                <BoldText>$100.00</BoldText>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Quantity: </HiddenTitle>
-                <PriceInput type="number" min="1" />
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Total: </HiddenTitle>
-                <BoldText>$900.00</BoldText>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Remove: </HiddenTitle>
-                <Icon className="bx bx-x" />
-              </Column>
-            </CartItem>
-            <CartItem>
-              <Column xs={5}>
-                <CartItemInfo>
-                  <CartItemImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-1_grande.jpg?v=1613036885" />
-                  <TextWrap>
-                    <CartItemTitle>Last Time We Broke Up</CartItemTitle>
-                    <CartItemSubTitle>Audible Audiobook / Korean</CartItemSubTitle>
-                  </TextWrap>
-                </CartItemInfo>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Price: </HiddenTitle>
-                <BoldText>$100.00</BoldText>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Quantity: </HiddenTitle>
-                <PriceInput type="number" min="1" />
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Total: </HiddenTitle>
-                <BoldText>$900.00</BoldText>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Remove: </HiddenTitle>
-                <Icon className="bx bx-x" />
-              </Column>
-            </CartItem>
-            <CartItem>
-              <Column xs={5}>
-                <CartItemInfo>
-                  <CartItemImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-101_grande.jpg?v=1587115881" />
-                  <TextWrap>
-                    <CartItemTitle>Last Time We Broke Up</CartItemTitle>
-                    <CartItemSubTitle>Audible Audiobook / Korean</CartItemSubTitle>
-                  </TextWrap>
-                </CartItemInfo>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Price: </HiddenTitle>
-                <BoldText>$100.00</BoldText>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Quantity: </HiddenTitle>
-                <PriceInput type="number" min="1" />
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Total: </HiddenTitle>
-                <BoldText>$900.00</BoldText>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Remove: </HiddenTitle>
-                <Icon className="bx bx-x" />
-              </Column>
-            </CartItem>
-            <CartItem>
-              <Column xs={5}>
-                <CartItemInfo>
-                  <CartItemImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-65_grande.jpg?v=1587118346" />
-                  <TextWrap>
-                    <CartItemTitle>Last Time We Broke Up</CartItemTitle>
-                    <CartItemSubTitle>Audible Audiobook / Korean</CartItemSubTitle>
-                  </TextWrap>
-                </CartItemInfo>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Price: </HiddenTitle>
-                <BoldText>$100.00</BoldText>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Quantity: </HiddenTitle>
-                <PriceInput type="number" min="1" />
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Total: </HiddenTitle>
-                <BoldText>$900.00</BoldText>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Remove: </HiddenTitle>
-                <Icon className="bx bx-x" />
-              </Column>
-            </CartItem>
-            <CartItem>
-              <Column xs={5}>
-                <CartItemInfo>
-                  <CartItemImage src="https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-71_grande.jpg?v=1587117773" />
-                  <TextWrap>
-                    <CartItemTitle>Last Time We Broke Up</CartItemTitle>
-                    <CartItemSubTitle>Audible Audiobook / Korean</CartItemSubTitle>
-                  </TextWrap>
-                </CartItemInfo>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Price: </HiddenTitle>
-                <BoldText>$100.00</BoldText>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Quantity: </HiddenTitle>
-                <PriceInput type="number" min="1" />
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Total: </HiddenTitle>
-                <BoldText>$900.00</BoldText>
-              </Column>
-              <Column xs={1.75}>
-                <HiddenTitle>Remove: </HiddenTitle>
-                <Icon className="bx bx-x" />
-              </Column>
-            </CartItem>
+            {renderCartItems(cart.data)}
 
             <LastRowWrap>
               <NormalText onClick={handleAddNoteClick}>
@@ -200,7 +65,7 @@ function CartTable() {
               <LeftBlock>
                 <LeftBlockTitle>
                   Subtotal:
-                  <SpanText>$930.00</SpanText>
+                  <SpanText>${cart.totalPrice}</SpanText>
                 </LeftBlockTitle>
                 <LeftBlockNormalText>
                   Shipping, taxes, and discounts will be calculated at checkout
