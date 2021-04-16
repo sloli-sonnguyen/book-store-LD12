@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { BWrapper } from '../../Layout/Base';
 import { Button } from '../../Buttons/Buttons';
@@ -113,7 +114,7 @@ function Header() {
                     <CartTotal shouldScroll={shouldScroll}>
                       CART TOTAL :<TotalPrice> {totalPrice} $</TotalPrice>
                     </CartTotal>
-                    <Button as="a" href="/cart">
+                    <Button as={Link} to="/cart">
                       <IconBag className="bx bxs-shopping-bag" />
                       View cart
                     </Button>
@@ -122,8 +123,8 @@ function Header() {
                   <EmptyCart>Your cart is currently empty!</EmptyCart>
                 )}
               </Tooltip>
-              <Icon className="bx bxs-shopping-bag" as="a" href="/cart" />
-              <DetailCartWrapper as="a" href="/cart">
+              <Icon className="bx bxs-shopping-bag" as={Link} to="/cart" />
+              <DetailCartWrapper as={Link} to="/cart">
                 <p>Shopping Cart</p>
                 <p>
                   {quantity} item - {totalPrice} $
