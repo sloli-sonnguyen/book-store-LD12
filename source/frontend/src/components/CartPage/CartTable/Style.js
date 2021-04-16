@@ -156,6 +156,8 @@ export const Note = styled.textarea`
   height: 10rem;
   width: 40%;
   margin-bottom: 2rem;
+  font-size: 1.4rem;
+  padding: 0.7rem;
 
   @media (max-width: 600px) {
     width: 80%;

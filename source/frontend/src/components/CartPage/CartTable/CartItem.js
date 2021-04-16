@@ -15,7 +15,7 @@ import {
   HiddenTitle,
 } from './Style';
 
-import { updateItemQuantity } from '../../../redux/actions/cartAction';
+import { updateItemQuantity, deleteCartItem } from '../../../redux/actions/cartAction';
 
 function CartItem({
   id,
@@ -36,6 +36,10 @@ function CartItem({
     const { value } = target;
     const newQuantity = parseInt(value, 10);
     dispatch(updateItemQuantity(itemIndex, newQuantity));
+  };
+
+  const handleRemoveButtonClick = (index) => {
+    dispatch(deleteCartItem(index));
   };
 
   if (id) {
@@ -71,7 +75,7 @@ function CartItem({
         </Column>
         <Column xs={1.75}>
           <HiddenTitle>Remove: </HiddenTitle>
-          <Icon className="bx bx-x" />
+          <Icon onClick={() => handleRemoveButtonClick(itemIndex)} className="bx bx-x" />
         </Column>
       </CartItemWrap>
     );

@@ -61,15 +61,27 @@ const cart = (state = initialState, action) => {
       };
     // Cập nhật ghi chú
     case UPDATE_CART_NOTE:
-      return state;
+      localStorage.setItem('cart', JSON.stringify({ ...state, note: action.data }));
+      return {
+        ...state,
+        note: action.data,
+      };
     // Xóa 1 sản phầm trong giỏ hàng
     case REMOVE_FROM_CART:
       state.data.splice(action.data, 1);
       state.cartItemIdList.splice(action.data, 1);
-      localStorage.setItem('cart', JSON.stringify(state));
+      // luu len localStorage
+      localStorage.setItem(
+        'cart',
+        JSON.stringify({
+          ...state,
+          totalPrice: totalPrice(state.data),
+        })
+      );
       alert('Xoa thanh cong');
       return {
         ...state,
+        totalPrice: totalPrice(state.data),
       };
     //  Mặc định
     default:
