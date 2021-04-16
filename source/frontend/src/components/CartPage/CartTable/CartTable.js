@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CartItem from './CartItem';
 import {
   Wrapper,
@@ -19,6 +19,8 @@ import {
   SpanText,
 } from './Style';
 
+import { updateCartNote } from '../../../redux/actions/cartAction';
+
 const renderCartItems = (cartItems) => {
   if (cartItems) {
     return cartItems.map((item, index) => <CartItem key={item.id} {...item} itemIndex={index} />);
@@ -26,11 +28,18 @@ const renderCartItems = (cartItems) => {
 };
 
 function CartTable() {
+  const dispatch = useDispatch();
   const [shoudBeShowNote, setShoudBeShowNote] = useState(false);
   const cart = useSelector((state) => state.cart);
 
   const handleAddNoteClick = () => {
     setShoudBeShowNote(!shoudBeShowNote);
+  };
+
+  const handleNoteChange = (event) => {
+    const { target } = event;
+    const { value } = target;
+    dispatch(updateCartNote(value));
   };
 
   return (
@@ -61,7 +70,7 @@ function CartTable() {
               <NormalText onClick={handleAddNoteClick}>
                 {shoudBeShowNote ? 'Special instructions for seller' : 'Add a note to your order'}
               </NormalText>
-              {shoudBeShowNote && <Note />}
+              {shoudBeShowNote && <Note value={cart.note} onChange={handleNoteChange} />}
               <LeftBlock>
                 <LeftBlockTitle>
                   Subtotal:
