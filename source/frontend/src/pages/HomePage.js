@@ -29,7 +29,10 @@ function HomePage() {
       }
    */
   useEffect(() => {
-    dispatch(loadProducts());
+    const { data } = products;
+    if (!data) {
+      dispatch(loadProducts());
+    }
   }, []);
 
   return (

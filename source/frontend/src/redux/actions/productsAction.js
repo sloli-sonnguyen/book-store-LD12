@@ -9,7 +9,6 @@ import {
 export const loadProducts = () => async (dispatch) => {
   try {
     dispatch({ type: FETCH_PRODUCTS_REQUEST });
-
     const url = process.env.REACT_APP_BOOKS_API_URL;
     const response = await axios(url);
     dispatch({
