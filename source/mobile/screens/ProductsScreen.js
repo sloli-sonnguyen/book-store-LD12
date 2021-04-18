@@ -8,7 +8,7 @@ function ProductsScreen() {
   console.log(products);
   return (
     <View style={styles.container}>
-      <Header title='Products' />
+      <Header title="Products" />
       <ScrollView>
         <View style={styles.productsWrapper}>
           <Text style={styles.title}>1058 Books</Text>
