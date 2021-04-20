@@ -20,12 +20,7 @@ const renderProductCards = (data) => {
     return data.slice(0, 6).map((item) => (
       <View style={styles.card} key={item.id}>
         <View style={styles.imageWrap}>
-          <Image
-            style={styles.image}
-            source={{
-              uri: item.imageUrl,
-            }}
-          />
+          <Image style={styles.image} source={{ uri: item.imageUrl }} />
         </View>
       </View>
     ));
@@ -33,9 +28,7 @@ const renderProductCards = (data) => {
     return (
       <ActivityIndicator
         color="#2196f3"
-        style={{
-          width: '100%',
-        }}
+        style={{ width: '100%' }}
         size="large"
       />
     );
@@ -44,7 +37,6 @@ const renderProductCards = (data) => {
 
 function HomeScreen() {
   const products = useSelector((state) => state.products);
-  const { success } = products;
   const { data } = products;
   const dispatch = useDispatch();
 
