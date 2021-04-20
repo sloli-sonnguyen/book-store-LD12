@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -19,6 +20,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ListItems from '../../components/Dashboard/commons/ListItems';
 import Overview from '../../components/Dashboard/Overview/Overview';
+
+import { dashboardRoutes } from '../../routes';
 
 const drawerWidth = 240;
 
@@ -106,6 +109,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const SubView = ({ match }) => (
+  <>
+    {dashboardRoutes.map((route) => (
+      <Route
+        key={route.id}
+        exact={route.exact && true}
+        path={`${match.path}/${route.path}`}
+        name={route.name}
+        component={route.component}
+      />
+    ))}
+  </>
+);
+
 export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
@@ -163,7 +180,7 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="xl" className={classes.container}>
-          <Overview />
+          <Route path="/admin/dashboard" component={SubView} />
         </Container>
       </main>
     </div>

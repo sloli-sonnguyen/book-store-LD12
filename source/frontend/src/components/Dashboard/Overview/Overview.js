@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { SaleLineChart, CategoryChart } from '../commons/Chart';
-import { OrdersTable } from '../commons/Table';
+import { RecentOrdersTable } from '../commons/Table';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -34,7 +34,7 @@ export default function Overview() {
         </Grid>
         <Grid item xs={12} lg={8}>
           <Paper>
-            <OrdersTable />
+            <RecentOrdersTable />
           </Paper>
         </Grid>
         {/* Pie Chart */}

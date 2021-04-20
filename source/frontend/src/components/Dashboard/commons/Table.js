@@ -46,13 +46,17 @@ const useStyles = makeStyles((theme) => ({
   boldText: {
     fontWeight: 'bold',
   },
+
+  x: {
+    paddingLeft: theme.spacing(10),
+  },
 }));
 
-export const OrdersTable = () => {
+export const RecentOrdersTable = () => {
   const classes = useStyles();
   return (
     <>
-      <Title>Recent Orders</Title>
+      <Title> Recent Orders</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -82,6 +86,112 @@ export const OrdersTable = () => {
           See more orders
         </Button>
       </div>
+    </>
+  );
+};
+
+export const OrdersTable = () => {
+  const classes = useStyles();
+  return (
+    <>
+      <Title>Orders</Title>
+      <Table size="small">
+        <TableHead>
+          <TableRow>
+            <TableCell>Date</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Ship To</TableCell>
+            <TableCell>Nb Items</TableCell>
+            <TableCell align="right">Total</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.id}>
+              <TableCell>{row.date}</TableCell>
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.shipTo}</TableCell>
+              <TableCell>{row.quantityItem}</TableCell>
+              <TableCell align="right" className={classes.boldText}>
+                {row.total} $
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <div className={classes.seeMore}>
+        <Button onClick={preventDefault} variant="contained" color="primary">
+          See more orders
+        </Button>
+      </div>
+    </>
+  );
+};
+
+export const CustomersTable = () => {
+  const classes = useStyles();
+  return (
+    <>
+      <Title>Customers</Title>
+      <Table size="small">
+        <TableHead>
+          <TableRow>
+            <TableCell>Date</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Ship To</TableCell>
+            <TableCell>Nb Items</TableCell>
+            <TableCell align="right">Total</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.id}>
+              <TableCell>{row.date}</TableCell>
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.shipTo}</TableCell>
+              <TableCell>{row.quantityItem}</TableCell>
+              <TableCell align="right" className={classes.boldText}>
+                {row.total} $
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <div className={classes.seeMore}>Navigation</div>
+    </>
+  );
+};
+
+export const ReviewsTable = () => {
+  const classes = useStyles();
+  return (
+    <>
+      <Title>Reviews</Title>
+      <Table size="small">
+        <TableHead>
+          <TableRow>
+            <TableCell>Date</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Ship To</TableCell>
+            <TableCell>Nb Items</TableCell>
+            <TableCell align="right">Total</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.id}>
+              <TableCell>{row.date}</TableCell>
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.shipTo}</TableCell>
+              <TableCell>{row.quantityItem}</TableCell>
+              <TableCell align="right" className={classes.boldText}>
+                {row.total} $
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <div className={classes.seeMore}>Navigation</div>
     </>
   );
 };

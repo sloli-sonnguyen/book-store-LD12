@@ -31,3 +31,15 @@ export const adminRoutes = [
   { id: 1, path: '', name: 'AdminSignin', exact: true, component: AdminSigninPage },
   { id: 2, path: 'dashboard', name: 'Dashboard', component: Dashboard },
 ];
+
+const Overview = React.lazy(() => import('./components/Dashboard/Overview/Overview'));
+const Orders = React.lazy(() => import('./components/Dashboard/Orders/Orders'));
+const Customers = React.lazy(() => import('./components/Dashboard/Customers/Customers'));
+const Reviews = React.lazy(() => import('./components/Dashboard/Reviews/Reviews'));
+
+export const dashboardRoutes = [
+  { id: 1, path: '', name: 'Dashboard', exact: true, component: Overview },
+  { id: 2, path: 'orders', name: 'Orders', exact: true, component: Orders },
+  { id: 3, path: 'customers', name: 'Customers', exact: true, component: Customers },
+  { id: 4, path: 'reviews', name: 'Reviews', exact: true, component: Reviews },
+];
