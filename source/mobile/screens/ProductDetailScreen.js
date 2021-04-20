@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -10,39 +10,52 @@ import {
 import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 import Header from '../components/Header/Header';
 import { Button } from 'react-native-paper';
+import { useSelector } from 'react-redux';
 
-export default function ProductDetailScreen() {
+const renderStar = (rateNumber) => {
+  const star = Math.round(rateNumber);
+  const emptyStar = 5 - star;
+  let starArr = [];
+  for (let i = 0; i < star; i++) starArr.push(1);
+  for (let j = 0; j < emptyStar; j++) starArr.push(0);
+  return starArr.map((item, index) => {
+    return item ? (
+      <AntDesign name="star" size={18} color="orange" key={index} />
+    ) : (
+      <AntDesign name="staro" size={18} color="orange" key={index} />
+    );
+  });
+};
+
+export default function ProductDetailScreen({ route }) {
+  const products = useSelector((state) => state.products.data);
+  const productId = route.params.id;
+  const findProduct = products.find((item) => item.id === productId);
+
   return (
     <View style={styles.container}>
       <Header title="ProductDetail" />
       <ScrollView style={styles.productDetailWrapper}>
         <View style={styles.titleWrapper}>
-          <Text style={styles.titleText}>
-            Harry Potter and the goblet of fire
-          </Text>
+          <Text style={styles.titleText}>{findProduct.title}</Text>
         </View>
         <View style={styles.item}>
           <View style={styles.imageWrap}>
             <Image
               style={styles.image}
-              source={{
-                uri:
-                  'https://themeswow.com/themeforest/silvius/silvius-light/img/11.jpg',
-              }}
+              source={{ uri: findProduct.imageUrl }}
             />
           </View>
           <View style={styles.infoWrapper}>
             <View style={styles.bookAuthorWrapper}>
-              <Text style={styles.bookAuthorReview}>By J.K. Rowling</Text>
-              <Text style={styles.bookAuthorReview}>Series Harry Potter</Text>
+              <Text style={styles.bookAuthorReview}>
+                By {findProduct.author}
+              </Text>
+              <Text style={styles.bookAuthorReview}>{findProduct.price} $</Text>
             </View>
             <View style={styles.rateWrapper}>
-              <AntDesign name="star" size={18} color="orange" />
-              <AntDesign name="star" size={18} color="orange" />
-              <AntDesign name="star" size={18} color="orange" />
-              <AntDesign name="star" size={18} color="orange" />
-              <AntDesign name="staro" size={18} color="orange" />
-              <Text style={styles.rateScore}>4.6/5</Text>
+              {renderStar(findProduct.rating)}
+              <Text style={styles.rateScore}>{findProduct.rating}/5</Text>
             </View>
             <Button
               mode="contained"

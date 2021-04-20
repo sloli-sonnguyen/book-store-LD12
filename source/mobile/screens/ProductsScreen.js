@@ -17,7 +17,7 @@ const renderProductCards = (data, navigation) => {
       <TouchableOpacity
         style={styles.card}
         key={item.id}
-        onPress={() => navigation.navigate('Detail')}
+        onPress={() => navigation.navigate('ProductDetail', {id: item.id})}
       >
         <View style={styles.imageWrap}>
           <Image style={styles.image} source={{ uri: item.imageUrl }} />
