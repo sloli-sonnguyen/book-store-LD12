@@ -50,6 +50,7 @@
     "no-case-declarations": "off",
     "no-param-reassign": "off",
     "import/no-unresolved": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "no-restricted-syntax": "off"
   }
 }
