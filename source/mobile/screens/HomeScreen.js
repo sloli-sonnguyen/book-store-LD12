@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -7,11 +7,45 @@ import {
   ScrollView,
   ImageBackground,
   TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
 import { Button } from 'react-native-paper';
 import Header from '../components/Header/Header';
+import { useSelector, useDispatch } from 'react-redux';
+import { loadProducts } from '../redux/actions/productsAction';
+
+const renderProductCards = (data) => {
+  console.log(data);
+  if (data) {
+    return data.slice(0, 6).map((item) => (
+      <View style={styles.card} key={item.id}>
+        <View style={styles.imageWrap}>
+          <Image style={styles.image} source={{ uri: item.imageUrl }} />
+        </View>
+      </View>
+    ));
+  } else {
+    return (
+      <ActivityIndicator
+        color="#2196f3"
+        style={{ width: '100%' }}
+        size="large"
+      />
+    );
+  }
+};
 
 function HomeScreen() {
+  const products = useSelector((state) => state.products);
+  const { data } = products;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!data) {
+      dispatch(loadProducts());
+    }
+  }, []);
+
   return (
     <View style={styles.container}>
       <Header title="Home" />
@@ -44,74 +78,7 @@ function HomeScreen() {
               <Text style={styles.linkText}>View all</Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.products}>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/1.jpg',
-                  }}
-                />
-              </View>
-            </View>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/2.jpg',
-                  }}
-                />
-              </View>
-            </View>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/3.jpg',
-                  }}
-                />
-              </View>
-            </View>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/4.jpg',
-                  }}
-                />
-              </View>
-            </View>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/5.jpg',
-                  }}
-                />
-              </View>
-            </View>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/6.jpg',
-                  }}
-                />
-              </View>
-            </View>
-          </View>
+          <View style={styles.products}>{renderProductCards(data)}</View>
           <View style={styles.titleWrapper}>
             <Text style={styles.titleText}>Genres</Text>
             <TouchableOpacity onPress={() => console.log('PressedView')}>

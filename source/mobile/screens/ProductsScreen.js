@@ -3,95 +3,39 @@ import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 import { useSelector } from 'react-redux';
 import Header from '../components/Header/Header';
 
+const renderProductCards = (data) => {
+  console.log(data);
+  if (data) {
+    return data.map((item) => (
+      <View style={styles.card} key={item.id}>
+        <View style={styles.imageWrap}>
+          <Image style={styles.image} source={{ uri: item.imageUrl }} />
+        </View>
+        <Text style={styles.cardTitle}>{item.title}</Text>
+        <Text style={styles.cardAuthor}>{item.author}</Text>
+      </View>
+    ));
+  } else {
+    return (
+      <ActivityIndicator
+        color="#2196f3"
+        style={{ width: '100%' }}
+        size="large"
+      />
+    );
+  }
+};
+
 function ProductsScreen() {
   const products = useSelector((state) => state.products.data);
   console.log(products);
   return (
     <View style={styles.container}>
-      <Header title='Products' />
+      <Header title="Products" />
       <ScrollView>
         <View style={styles.productsWrapper}>
           <Text style={styles.title}>1058 Books</Text>
-          <View style={styles.products}>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/8.jpg',
-                  }}
-                />
-              </View>
-              <Text style={styles.cardTitle}>Drawing the head and hands</Text>
-              <Text style={styles.cardAuthor}>Andrew Loomis</Text>
-            </View>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/9.jpg',
-                  }}
-                />
-              </View>
-              <Text style={styles.cardTitle}>Crazy Rich Asians</Text>
-              <Text style={styles.cardAuthor}>Kevin Kwan</Text>
-            </View>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/5.jpg',
-                  }}
-                />
-              </View>
-              <Text style={styles.cardTitle}>Wonder</Text>
-              <Text style={styles.cardAuthor}>R J Palacio</Text>
-            </View>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/6.jpg',
-                  }}
-                />
-              </View>
-              <Text style={styles.cardTitle}>Wonder</Text>
-              <Text style={styles.cardAuthor}>R J Palacio</Text>
-            </View>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/1.jpg',
-                  }}
-                />
-              </View>
-              <Text style={styles.cardTitle}>Wonder</Text>
-              <Text style={styles.cardAuthor}>R J Palacio</Text>
-            </View>
-            <View style={styles.card}>
-              <View style={styles.imageWrap}>
-                <Image
-                  style={styles.image}
-                  source={{
-                    uri:
-                      'https://themeswow.com/themeforest/silvius/silvius-light/img/2.jpg',
-                  }}
-                />
-              </View>
-              <Text style={styles.cardTitle}>Wonder</Text>
-              <Text style={styles.cardAuthor}>R J Palacio</Text>
-            </View>
-          </View>
+          <View style={styles.products}>{renderProductCards(products)}</View>
         </View>
       </ScrollView>
     </View>

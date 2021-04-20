@@ -1,11 +1,20 @@
+import {
+  FETCH_PRODUCTS_REQUEST,
+  FETCH_PRODUCTS_SUCCESS,
+  FETCH_PRODUCTS_ERROR,
+} from '../constants/productsContants';
+
 const initialState = {
+  requesting: false,
+  success: false,
+  message: null,
   languages: [
     { id: 1, content: 'english' },
     { id: 2, content: 'spanish' },
     { id: 3, content: 'japanese' },
     { id: 4, content: 'korean' },
     { id: 5, content: 'vietnamese' },
-    { id: 6, content: 'italia' },
+    { id: 6, content: 'chinese' },
   ],
   category: [
     { id: 1, content: 'all' },
@@ -15,183 +24,230 @@ const initialState = {
     { id: 5, content: 'business' },
     { id: 6, content: 'science' },
   ],
-  data: [
-    {
-      id: '1',
-      title: 'Corporate Infrastructure Associate',
-      author: 'Newton Mertz',
-      description: 'description 1',
-      price: '449.00',
-      salePercent: 0.3,
-      stock: 71647,
-      rating: 100,
-      category: ['history', 'fiction'],
-      language: ['english', 'japanese'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-1.jpg',
-    },
-    {
-      id: '2',
-      title: 'Dynamic Security Orchestrator',
-      author: 'Tate Gusikowski',
-      description: 'description 2',
-      price: '843.00',
-      salePercent: 0.7,
-      stock: 36367,
-      rating: 49,
-      category: ['history', 'fiction'],
-      language: ['english', 'japanese'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-100.jpg',
-    },
-    {
-      id: '3',
-      title: 'National Accountability Director',
-      author: 'Rodolfo Mosciski',
-      description: 'description 3',
-      price: '170.00',
-      salePercent: 0.5,
-      stock: 64556,
-      rating: 60,
-      category: ['history', 'fiction'],
-      language: ['english', 'japanese'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-34.jpg',
-    },
-    {
-      id: '4',
-      title: 'Future Program Agent',
-      author: 'Romaine Christiansen',
-      description: 'description 4',
-      price: '712.00',
-      salePercent: 0.8,
-      stock: 93122,
-      rating: 23,
-      category: ['history', 'fiction'],
-      language: ['english', 'japanese'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-40.jpg',
-    },
-    {
-      id: '5',
-      title: 'Global Markets Strategist',
-      author: 'Luther Marks',
-      description: 'description 5',
-      price: '849.00',
-      salePercent: 0,
-      stock: 51486,
-      rating: 62,
-      category: ['fiction'],
-      language: ['english', 'japanese'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-44.jpg',
-    },
-    {
-      id: '6',
-      title: 'Legacy Implementation Consultant',
-      author: 'Cleora Boyle DDS',
-      description: 'description 6',
-      price: '132.00',
-      salePercent: 0,
-      stock: 18899,
-      rating: 57,
-      category: ['fiction'],
-      language: ['english', 'vietnamese', 'chinese'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-30.jpg',
-    },
-    {
-      id: '7',
-      title: 'Human Usability Officer',
-      author: 'Annie Corkery',
-      description: 'description 7',
-      price: '701.00',
-      salePercent: 0,
-      stock: 59760,
-      rating: 71,
-      category: ['fiction'],
-      language: ['english', 'vietnamese', 'chinese'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-102.jpg',
-    },
-    {
-      id: '8',
-      title: 'Corporate Branding Facilitator',
-      author: 'Mr. Houston Lakin',
-      description: 'description 8',
-      price: '70.00',
-      salePercent: 0.3,
-      stock: 29032,
-      rating: 42,
-      category: ['religion'],
-      language: ['english', 'vietnamese', 'chinese'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-71.jpg',
-    },
-    {
-      id: '9',
-      title: 'Customer Metrics Associate',
-      author: 'Jose Sanford',
-      description: 'description 9',
-      price: '519.00',
-      salePercent: 0.3,
-      stock: 53806,
-      rating: 78,
-      category: ['business'],
-      language: ['english', 'vietnamese', 'chinese'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-16.jpg',
-    },
-    {
-      id: '10',
-      title: 'Future Implementation Coordinator',
-      author: 'Mr. Elody Weber',
-      description: 'description 10',
-      price: '436.00',
-      salePercent: 0,
-      stock: 19892,
-      rating: 63,
-      category: ['business'],
-      language: ['english', 'vietnamese', 'chinese'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-65.jpg',
-    },
-    {
-      id: '11',
-      title: 'Product Brand Facilitator',
-      author: 'Mr. Dorthy Schiller',
-      description: 'description 11',
-      price: '312.00',
-      salePercent: 0.2,
-      stock: 27643,
-      rating: 38,
-      category: ['business'],
-      language: ['english'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-21.jpg',
-    },
-    {
-      id: '12',
-      title: 'Lead Integration Architect',
-      author: 'Magnolia Bosco',
-      description: 'description 12',
-      price: '790.00',
-      salePercent: 0.7,
-      stock: 39660,
-      rating: 61,
-      category: ['business'],
-      language: ['vietnamese'],
-      imageUrl:
-        'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-89.jpg',
-    },
-  ],
+  data: null,
 };
 
 const products = (state = initialState, action) => {
   switch (action.type) {
+    case FETCH_PRODUCTS_REQUEST:
+      return {
+        ...state,
+        requesting: true,
+      };
+    case FETCH_PRODUCTS_SUCCESS:
+      return {
+        ...state,
+        requesting: false,
+        success: true,
+        data: action.data,
+      };
+    case FETCH_PRODUCTS_ERROR:
+      return {
+        ...state,
+        requesting: false,
+        message: action.message,
+      };
     default:
       return state;
   }
 };
 
 export default products;
+
+// const initialState = {
+//   languages: [
+//     { id: 1, content: 'english' },
+//     { id: 2, content: 'spanish' },
+//     { id: 3, content: 'japanese' },
+//     { id: 4, content: 'korean' },
+//     { id: 5, content: 'vietnamese' },
+//     { id: 6, content: 'italia' },
+//   ],
+//   category: [
+//     { id: 1, content: 'all' },
+//     { id: 2, content: 'fiction' },
+//     { id: 3, content: 'history' },
+//     { id: 4, content: 'religion' },
+//     { id: 5, content: 'business' },
+//     { id: 6, content: 'science' },
+//   ],
+//   data: [
+//     {
+//       id: '1',
+//       title: 'Corporate Infrastructure Associate',
+//       author: 'Newton Mertz',
+//       description: 'description 1',
+//       price: '449.00',
+//       salePercent: 0.3,
+//       stock: 71647,
+//       rating: 100,
+//       category: ['history', 'fiction'],
+//       language: ['english', 'japanese'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-1.jpg',
+//     },
+//     {
+//       id: '2',
+//       title: 'Dynamic Security Orchestrator',
+//       author: 'Tate Gusikowski',
+//       description: 'description 2',
+//       price: '843.00',
+//       salePercent: 0.7,
+//       stock: 36367,
+//       rating: 49,
+//       category: ['history', 'fiction'],
+//       language: ['english', 'japanese'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-100.jpg',
+//     },
+//     {
+//       id: '3',
+//       title: 'National Accountability Director',
+//       author: 'Rodolfo Mosciski',
+//       description: 'description 3',
+//       price: '170.00',
+//       salePercent: 0.5,
+//       stock: 64556,
+//       rating: 60,
+//       category: ['history', 'fiction'],
+//       language: ['english', 'japanese'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-34.jpg',
+//     },
+//     {
+//       id: '4',
+//       title: 'Future Program Agent',
+//       author: 'Romaine Christiansen',
+//       description: 'description 4',
+//       price: '712.00',
+//       salePercent: 0.8,
+//       stock: 93122,
+//       rating: 23,
+//       category: ['history', 'fiction'],
+//       language: ['english', 'japanese'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-40.jpg',
+//     },
+//     {
+//       id: '5',
+//       title: 'Global Markets Strategist',
+//       author: 'Luther Marks',
+//       description: 'description 5',
+//       price: '849.00',
+//       salePercent: 0,
+//       stock: 51486,
+//       rating: 62,
+//       category: ['fiction'],
+//       language: ['english', 'japanese'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-44.jpg',
+//     },
+//     {
+//       id: '6',
+//       title: 'Legacy Implementation Consultant',
+//       author: 'Cleora Boyle DDS',
+//       description: 'description 6',
+//       price: '132.00',
+//       salePercent: 0,
+//       stock: 18899,
+//       rating: 57,
+//       category: ['fiction'],
+//       language: ['english', 'vietnamese', 'chinese'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-30.jpg',
+//     },
+//     {
+//       id: '7',
+//       title: 'Human Usability Officer',
+//       author: 'Annie Corkery',
+//       description: 'description 7',
+//       price: '701.00',
+//       salePercent: 0,
+//       stock: 59760,
+//       rating: 71,
+//       category: ['fiction'],
+//       language: ['english', 'vietnamese', 'chinese'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-102.jpg',
+//     },
+//     {
+//       id: '8',
+//       title: 'Corporate Branding Facilitator',
+//       author: 'Mr. Houston Lakin',
+//       description: 'description 8',
+//       price: '70.00',
+//       salePercent: 0.3,
+//       stock: 29032,
+//       rating: 42,
+//       category: ['religion'],
+//       language: ['english', 'vietnamese', 'chinese'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-71.jpg',
+//     },
+//     {
+//       id: '9',
+//       title: 'Customer Metrics Associate',
+//       author: 'Jose Sanford',
+//       description: 'description 9',
+//       price: '519.00',
+//       salePercent: 0.3,
+//       stock: 53806,
+//       rating: 78,
+//       category: ['business'],
+//       language: ['english', 'vietnamese', 'chinese'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-16.jpg',
+//     },
+//     {
+//       id: '10',
+//       title: 'Future Implementation Coordinator',
+//       author: 'Mr. Elody Weber',
+//       description: 'description 10',
+//       price: '436.00',
+//       salePercent: 0,
+//       stock: 19892,
+//       rating: 63,
+//       category: ['business'],
+//       language: ['english', 'vietnamese', 'chinese'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-65.jpg',
+//     },
+//     {
+//       id: '11',
+//       title: 'Product Brand Facilitator',
+//       author: 'Mr. Dorthy Schiller',
+//       description: 'description 11',
+//       price: '312.00',
+//       salePercent: 0.2,
+//       stock: 27643,
+//       rating: 38,
+//       category: ['business'],
+//       language: ['english'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-21.jpg',
+//     },
+//     {
+//       id: '12',
+//       title: 'Lead Integration Architect',
+//       author: 'Magnolia Bosco',
+//       description: 'description 12',
+//       price: '790.00',
+//       salePercent: 0.7,
+//       stock: 39660,
+//       rating: 61,
+//       category: ['business'],
+//       language: ['vietnamese'],
+//       imageUrl:
+//         'https://cdn.shopify.com/s/files/1/0359/5979/9852/products/shop-new-89.jpg',
+//     },
+//   ],
+// };
+
+// const products = (state = initialState, action) => {
+//   switch (action.type) {
+//     default:
+//       return state;
+//   }
+// };
+
+// export default products;
