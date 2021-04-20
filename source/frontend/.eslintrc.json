@@ -49,6 +49,7 @@
     "arrow-body-style": "off",
     "no-case-declarations": "off",
     "no-param-reassign": "off",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "react/no-array-index-key": "off"
   }
 }

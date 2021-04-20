@@ -4,7 +4,7 @@ import {
   FETCH_PRODUCTS_REQUEST,
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_ERROR,
-} from '../constants/productsContants';
+} from '../constants/productsConstants';
 
 export const loadProducts = () => async (dispatch) => {
   try {

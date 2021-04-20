@@ -4,7 +4,7 @@ import {
   REMOVE_FROM_CART,
   UPDATE_QUANTITY,
   UPDATE_CART_NOTE,
-} from '../constants/cartContants';
+} from '../constants/cartConstants';
 
 const initialState = JSON.parse(localStorage.getItem('cart')) || null;
 

@@ -4,7 +4,7 @@ import {
   UPDATE_QUANTITY,
   UPDATE_CART_NOTE,
   REMOVE_FROM_CART,
-} from '../constants/cartContants';
+} from '../constants/cartConstants';
 
 import { generateUniqueId } from '../../utils/random.utils';
 

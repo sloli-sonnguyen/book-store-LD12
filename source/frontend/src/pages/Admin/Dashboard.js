@@ -17,7 +17,8 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import ListItems from '../../components/Dashboard/ListItems';
+import ListItems from '../../components/Dashboard/commons/ListItems';
+import Overview from '../../components/Dashboard/Overview/Overview';
 
 const drawerWidth = 240;
 
@@ -96,6 +97,13 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'auto',
     flexDirection: 'column',
   },
+  intro: {
+    background:
+      'linear-gradient(to right, #8975fb 0%, #746be7 35%), linear-gradient(to bottom, #8975fb 0%, #6f4ceb 50%), #6f4ceb',
+  },
+  fixedHeight: {
+    height: 400,
+  },
 }));
 
 export default function Dashboard() {
@@ -107,6 +115,8 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div className={classes.root}>
@@ -152,17 +162,8 @@ export default function Dashboard() {
       {/* Main */}
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper>oke oke</Paper>
-            </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper>oke oke</Paper>
-            </Grid>
-          </Grid>
+        <Container maxWidth="xl" className={classes.container}>
+          <Overview />
         </Container>
       </main>
     </div>
