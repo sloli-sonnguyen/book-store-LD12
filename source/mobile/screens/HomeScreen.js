@@ -15,7 +15,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loadProducts } from '../redux/actions/productsAction';
 
 const renderProductCards = (data) => {
-  console.log(data);
   if (data) {
     return data.slice(0, 6).map((item) => (
       <View style={styles.card} key={item.id}>

@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { MaterialIcons } from '@expo/vector-icons';
 import React from 'react';
 import navigators from './navigation/main';
 import store from './redux/store';
@@ -12,8 +12,8 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         <Tab.Navigator
-          initialRouteName='Home'
-          activeColor='#2196f3'
+          initialRouteName="Home"
+          activeColor="#2196f3"
           barStyle={{ backgroundColor: 'white' }}
         >
           {navigators.map(({ id, title, screen, icon }) => (
@@ -24,7 +24,7 @@ export default function App() {
               options={{
                 tabBarLabel: title,
                 tabBarIcon: ({ color }) => (
-                  <MaterialCommunityIcons name={icon} color={color} size={26} />
+                  <MaterialIcons name={icon} color={color} size={26} />
                 ),
               }}
             />

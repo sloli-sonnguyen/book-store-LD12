@@ -7,7 +7,7 @@ import ProductDetailScreen from '../screens/ProductDetailScreen';
 const navigators = [
   { id: 0, title: 'Home', icon: 'home', screen: HomeScreen },
   { id: 1, title: 'Products', icon: 'book', screen: ProductsScreen },
-  { id: 2, title: 'Cart', icon: 'cart', screen: CartScreen },
+  { id: 2, title: 'Cart', icon: 'shopping-cart', screen: CartScreen },
   { id: 3, title: 'History', icon: 'history', screen: HistoryScreen },
   { id: 4, title: 'Detail', icon: 'more', screen: ProductDetailScreen },
 ];

@@ -1,19 +1,30 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ScrollView,
+  ActivityIndicator,
+  TouchableOpacity,
+} from 'react-native';
 import { useSelector } from 'react-redux';
 import Header from '../components/Header/Header';
 
-const renderProductCards = (data) => {
-  console.log(data);
+const renderProductCards = (data, navigation) => {
   if (data) {
     return data.map((item) => (
-      <View style={styles.card} key={item.id}>
+      <TouchableOpacity
+        style={styles.card}
+        key={item.id}
+        onPress={() => navigation.navigate('Detail')}
+      >
         <View style={styles.imageWrap}>
           <Image style={styles.image} source={{ uri: item.imageUrl }} />
         </View>
         <Text style={styles.cardTitle}>{item.title}</Text>
         <Text style={styles.cardAuthor}>{item.author}</Text>
-      </View>
+      </TouchableOpacity>
     ));
   } else {
     return (
@@ -26,16 +37,17 @@ const renderProductCards = (data) => {
   }
 };
 
-function ProductsScreen() {
+function ProductsScreen({ navigation }) {
   const products = useSelector((state) => state.products.data);
-  console.log(products);
   return (
     <View style={styles.container}>
       <Header title="Products" />
       <ScrollView>
         <View style={styles.productsWrapper}>
           <Text style={styles.title}>1058 Books</Text>
-          <View style={styles.products}>{renderProductCards(products)}</View>
+          <View style={styles.products}>
+            {renderProductCards(products, navigation)}
+          </View>
         </View>
       </ScrollView>
     </View>

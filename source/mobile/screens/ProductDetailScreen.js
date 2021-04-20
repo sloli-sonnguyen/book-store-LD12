@@ -5,7 +5,6 @@ import {
   View,
   ScrollView,
   Image,
-  TouchableHighlight,
   TouchableOpacity,
 } from 'react-native';
 import { AntDesign, MaterialIcons } from '@expo/vector-icons';
