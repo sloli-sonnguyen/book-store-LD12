@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React from 'react';
 import navigators from './navigation/main';
 import store from './redux/store';
@@ -24,7 +24,7 @@ export default function App() {
               options={{
                 tabBarLabel: title,
                 tabBarIcon: ({ color }) => (
-                  <MaterialIcons name={icon} color={color} size={26} />
+                  <MaterialCommunityIcons name={icon} color={color} size={26} />
                 ),
               }}
             />

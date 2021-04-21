@@ -47,7 +47,7 @@ function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Header title="Home" />
+      {/* <Header title="Home" /> */}
       <ScrollView>
         <ImageBackground
           source={{
