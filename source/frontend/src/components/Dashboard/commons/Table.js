@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
+import Checkbox from '@material-ui/core/Checkbox';
 import Title from './Title';
 
 // Generate Order Data
@@ -191,10 +192,35 @@ const customersData = [
   ),
 ];
 
+/** ============================CUSTOMERS======================================= */
+
 export const CustomersTable = () => {
   const history = useHistory();
   const currentPath = history.location.pathname;
-  console.log(currentPath);
+  const [checkList, setCheckList] = useState([]);
+
+  const handleAllCheckChange = (event) => {
+    const { checked } = event.target;
+    if (checked) {
+      setCheckList([...Array(customersData.length).keys()]);
+    } else {
+      setCheckList([]);
+    }
+  };
+
+  const handleCheckChange = (number) => {
+    const index = checkList.indexOf(number);
+    let newCheckList;
+    if (index > -1) {
+      checkList.splice(index, 1);
+      newCheckList = [...checkList];
+    } else {
+      checkList.push(number);
+      newCheckList = [...checkList];
+    }
+    setCheckList(newCheckList);
+  };
+
   const classes = useStyles();
   return (
     <>
@@ -202,6 +228,13 @@ export const CustomersTable = () => {
       <Table size="small">
         <TableHead>
           <TableRow className={classes.row}>
+            <TableCell>
+              <Checkbox
+                color="primary"
+                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                onChange={handleAllCheckChange}
+              />
+            </TableCell>
             <TableCell>Id</TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Phone</TableCell>
@@ -212,13 +245,21 @@ export const CustomersTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {customersData.map((row) => (
+          {customersData.map((row, index) => (
             <TableRow
-              component={Link}
-              to={`${currentPath}/${row.id}`}
+              // component={Link}
+              // to={`${currentPath}/${row.id}`}
               className={classes.row}
               key={row.id}
             >
+              <TableCell>
+                <Checkbox
+                  color="primary"
+                  checked={checkList.includes(index)}
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                  onChange={() => handleCheckChange(index)}
+                />
+              </TableCell>
               <TableCell>{row.id}</TableCell>
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.phone}</TableCell>

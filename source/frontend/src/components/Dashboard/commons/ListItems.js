@@ -5,7 +5,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
 import CommentIcon from '@material-ui/icons/Comment';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import { Link } from 'react-router-dom';
