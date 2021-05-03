@@ -18,12 +18,12 @@ function ListItems() {
         </ListItemIcon>
         <ListItemText primary="Dashboard" />
       </ListItem>
-      <ListItem button component={Link} to="/admin/dashboard/orders">
+      {/* <ListItem button component={Link} to="/admin/dashboard/orders">
         <ListItemIcon>
           <ShoppingCartIcon />
         </ListItemIcon>
         <ListItemText primary="Orders" />
-      </ListItem>
+      </ListItem> */}
       <ListItem button component={Link} to="/admin/dashboard/products">
         <ListItemIcon>
           <PhotoLibraryIcon />
@@ -36,12 +36,12 @@ function ListItems() {
         </ListItemIcon>
         <ListItemText primary="Customers" />
       </ListItem>
-      <ListItem button component={Link} to="/admin/dashboard/reviews">
+      {/* <ListItem button component={Link} to="/admin/dashboard/reviews">
         <ListItemIcon>
           <CommentIcon />
         </ListItemIcon>
         <ListItemText primary="Reviews" />
-      </ListItem>
+      </ListItem> */}
     </div>
   );
 }

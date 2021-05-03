@@ -39,7 +39,7 @@ const Reviews = React.lazy(() => import('./components/Dashboard/Reviews/Reviews'
 
 export const dashboardRoutes = [
   { id: 1, path: '', name: 'Dashboard', exact: true, component: Overview },
-  { id: 2, path: 'orders', name: 'Orders', exact: true, component: Orders },
+  // { id: 2, path: 'orders', name: 'Orders', exact: true, component: Orders },
   { id: 3, path: 'customers', name: 'Customers', exact: true, component: Customers },
-  { id: 4, path: 'reviews', name: 'Reviews', exact: true, component: Reviews },
+  // { id: 4, path: 'reviews', name: 'Reviews', exact: true, component: Reviews },
 ];
