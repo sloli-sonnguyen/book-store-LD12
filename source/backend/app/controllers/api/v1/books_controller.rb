@@ -1,24 +1,14 @@
-$client = Mysql2::Client.new(:host => "localhost", :username => "sonnguyen", :password => "20184186", :database => "bookstoreDB")
 module Api
     module V1
         
         class BooksController < ApplicationController
             def index
-                books = $client.query("SELECT * FROM books,categorys, authors, languages
-                                    where books.category_id = categorys.category_id
-                                    and books.language_id = languages.language_id
-                                    and books.author_id = authors.author_id
-                                    ")
+                books = Book.all
                 render json: {status: 'SUCCESS', message:'Loaded books', data:books},status: :ok
             end
 
             def show
-                book =  $client.query("SELECT * FROM books,categorys, authors, languages
-                                        where books.category_id = categorys.category_id
-                                        and books.language_id = languages.language_id
-                                        and books.author_id = authors.author_id
-                                        and books.book_id = #{params[:id]}
-                                    ")
+                book = Book.find(params[:id])
                 render json: {status: 'SUCCESS', message:'Loaded book', data:book},status: :ok
             end
         
